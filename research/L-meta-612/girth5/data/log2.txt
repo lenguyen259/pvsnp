@@ -1,0 +1,23 @@
+circs/01_02_04_05_23_36_56.json 906 348s
+circs/01_03_04_12_25_26.json 27 4s
+circs/01_03_04_12_56.json 28 4s
+circs/01_04_12_15_23_34.json 85 44s
+circs/01_04_12_23.json 2 0s
+circs/01_05_12_23_34_45.json 9 19s
+TIMEOUT/ERR [[0,1],[0,6],[1,2],[2,3],[3,4],[4,5],[5,6]]
+circs/01_12_13_14_25_26.json 122 4s
+circs/01_12_13_14_36_45.json 548 34s
+circs/01_12_13_24_35.json 77 2s
+circs/01_12_23_24_25_26.json 294 4s
+circs/01_12_34.json 1 0s
+circs/01_23.json 1 0s
+circs/02_04_13_35.json 2 0s
+circs/03_04_05_12.json 6 0s
+circs/03_04_12_25_26.json 9 0s
+circs/03_13_14_24_25_26.json 65 26s
+circs/04_05_13_23_34.json 11 0s
+circs/04_13_23_34.json 8 0s
+circs/05_12_34_45.json 8 0s
+circs/06_12_23_45_56.json 8 2s
+circs/06_16_26_36_46_56.json 1041 2s
+DONE
