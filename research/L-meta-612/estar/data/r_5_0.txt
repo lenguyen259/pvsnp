@@ -1,0 +1,17 @@
+2 1 Phi 1 #c 1 {'L6': 1, 'E*': 1, 'E*b0': 1, 'star': 1, 'star_good': 1, 'star11': 1, 'star11_good': 1} [(0, 1)] 0s
+3 2 Phi 2 #c 1 {'L6': 1, 'E*': 1, 'E*b0': 1, 'star': 1, 'star_good': 1, 'ctr_good': 1, 'ctr_good_b0': 1} [(0, 1), (0, 2)] 0s
+3 3 Phi 4 #c 12 {'L6': 12, 'E*': 12, 'E*b0': 12, 'star': 18, 'star_good': 18, 'star11': 12, 'star11_good': 12, 'ctr_good': 6, 'ctr_good_b0': 6} [(0, 1), (0, 2), (1, 2)] 0s
+4 2 Phi 3 #c 1 {'L6': 1, 'E*': 1, 'E*b0': 1, 'star': 2, 'star_good': 2, 'star11': 2, 'star11_good': 2} [(0, 1), (2, 3)] 0s
+4 3 Phi 3 #c 3 {'L6': 3, 'E*': 3, 'E*b0': 3, 'star': 3, 'star_good': 3, 'ctr_good': 3, 'ctr_good_b0': 3} [(0, 3), (1, 3), (2, 3)] 0s
+4 3 Phi 4 #c 5 {'L6': 5, 'E*': 5, 'E*b0': 5, 'star': 8, 'star_good': 8, 'star11': 5, 'star11_good': 5, 'ctr_good': 3, 'ctr_good_b0': 3} [(0, 1), (0, 3), (1, 2)] 0s
+4 4 Phi 5 #c 13 {'L6': 13, 'E*': 13, 'E*b0': 13, 'star': 19, 'star_good': 19, 'ctr_good': 11, 'ctr_good_b0': 11, 'star11': 8, 'star11_good': 8} [(0, 3), (1, 2), (1, 3), (2, 3)] 0s
+5 3 Phi 4 #c 1 {'L6': 1, 'E*': 1, 'E*b0': 1, 'star': 2, 'star_good': 2, 'ctr_good': 1, 'ctr_good_b0': 1, 'star11': 1, 'star11_good': 1} [(0, 1), (1, 2), (3, 4)] 0s
+5 4 Phi 4 #c 15 {'L6': 15, 'E*': 15, 'E*b0': 15, 'star': 15, 'star_good': 15, 'ctr_good': 15, 'ctr_good_b0': 15} [(0, 4), (1, 4), (2, 4), (3, 4)] 0s
+5 4 Phi 5 #c 8 {'L6': 8, 'E*': 8, 'E*b0': 8, 'star': 12, 'star_good': 12, 'star11': 6, 'star11_good': 6, 'ctr_good': 6, 'ctr_good_b0': 6} [(0, 4), (1, 3), (2, 3), (3, 4)] 0s
+5 4 Phi 5 #c 2 {'L6': 2, 'E*': 2, 'E*b0': 2, 'star': 4, 'star_good': 4, 'ctr_good': 4, 'ctr_good_b0': 4} [(0, 1), (0, 4), (1, 2), (2, 3)] 0s
+5 4 Phi 6 #c 24 {'L6': 24, 'E*': 24, 'E*b0': 24, 'star': 66, 'star_good': 66, 'star11': 48, 'star11_good': 48, 'ctr_good': 18, 'ctr_good_b0': 18} [(0, 1), (0, 2), (1, 2), (3, 4)] 0s
+5 5 Phi 6 #c 59 {'L6': 59, 'E*': 59, 'E*b0': 59, 'star': 87, 'star_good': 87, 'star11': 44, 'star11_good': 44, 'ctr_good': 43, 'ctr_good_b0': 43} [(0, 4), (1, 4), (2, 3), (2, 4), (3, 4)] 0s
+5 5 Phi 6 #c 24 {'L6': 24, 'E*': 24, 'E*b0': 24, 'star': 35, 'star_good': 35, 'ctr_good': 35, 'ctr_good_b0': 35, 'rect': 1, 'rect_good': 1} [(0, 1), (0, 2), (0, 4), (1, 2), (2, 3)] 0s
+5 5 Phi 7 #c 87 {'L6': 87, 'E*': 87, 'E*b0': 87, 'star': 198, 'star_good': 198, 'star11': 121, 'star11_good': 121, 'ctr_good': 77, 'ctr_good_b0': 77} [(0, 4), (1, 2), (1, 3), (2, 3), (3, 4)] 2s
+5 5 Phi 7 #c 38 {'L6': 38, 'E*': 38, 'E*b0': 38, 'star': 97, 'star_good': 97, 'star11': 38, 'star11_good': 38, 'ctr_good': 59, 'ctr_good_b0': 59} [(0, 1), (0, 4), (1, 2), (2, 3), (3, 4)] 2s
+5 6 Phi 8 #c 431 {'L6': 431, 'E*': 431, 'E*b0': 431, 'star': 963, 'star_good': 963, 'star11': 600, 'star11_good': 600, 'ctr_good': 363, 'ctr_good_b0': 363} [(0, 1), (0, 4), (1, 4), (2, 3), (2, 4), (3, 4)] 26s
