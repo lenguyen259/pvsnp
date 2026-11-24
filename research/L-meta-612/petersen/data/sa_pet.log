@@ -1,0 +1,10 @@
+size T=0.5 seed=1 final None
+size T=0.5 seed=2 final (21, (0, 21, 14, 7, 0))
+or T=0.5 seed=1 final (14, (0, 21, 14, 7, 0))
+or T=0.5 seed=2 final (14, (0, 21, 14, 7, 0))
+and T=0.5 seed=1 final (6, (0, 20, 14, 6, 0))
+and T=0.5 seed=2 final (6, (0, 20, 14, 6, 0))
+size T=1.0 seed=1 final (20, (0, 20, 14, 6, 0))
+size T=1.0 seed=2 final None
+or T=1.0 seed=1 final (14, (0, 20, 14, 6, 0))
+or T=1.0 seed=2 final (13, (0, 21, 13, 8, 0))
