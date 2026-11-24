@@ -1,0 +1,15 @@
+('and', True) 149931
+('unc', 1) 24
+('unc', 2) 86
+('unc', 3) 80
+('unc_has', 'carrier') 189
+('unc_has', 'kZ<delta') 181
+('unc_has', 'pen') 151
+('unc_viol', ('N1', 'N2', 'N3')) 3
+('unc_viol', ('N1',)) 27
+('unc_viol', ('N2', 'N3')) 148
+('unc_viol', ('N3',)) 9
+('unc_viol', ()) 3
+or 237659
+or_viol 0
+unc_only_pen 0

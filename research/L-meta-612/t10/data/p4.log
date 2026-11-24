@@ -1,0 +1,16 @@
+('first', 'M', 'N1') 1
+('first', 'M', 'N2') 6
+('first', 'M', 'N3') 28
+('first', 'M', 'OTHER') 3313
+('first', 'P', 'OTHER') 63
+('first', 'S', 'N1') 134
+('first', 'S', 'N2') 245
+('first', 'S', 'N3') 6918
+('first', 'S', 'REC') 31
+('wit', 'M') 3332
+('wit', 'P') 81
+('wit', 'S') 7322
+('wit_has_nonviol', 'M') 3313
+('wit_has_nonviol', 'P') 63
+('wit_has_nonviol', 'S') 31
+{}
