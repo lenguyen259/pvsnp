@@ -1,0 +1,19 @@
+/usr/local/lib/python3.13/site-packages/networkx/algorithms/graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+20 classes
+2 19 m 1 tau 1 phi 1 lo 1 LB 1 tight []
+3 16 m 2 tau 1 phi 2 lo 2 LB 2 tight []
+4 17 m 2 tau 2 phi 3 lo 2 LB 3 tight [(2, 'UNSAT', 0.1)]
+4 15 m 3 tau 2 phi 4 lo 3 LB 4 tight [(3, 'UNSAT', 0.1)]
+4 18 m 3 tau 1 phi 3 lo 3 LB 3 tight []
+5 10 m 4 tau 2 phi 5 lo 5 LB 5 tight []
+5 14 m 4 tau 2 phi 5 lo 5 LB 5 tight []
+5 13 m 5 tau 3 phi 7 lo 5 LB 7 tight [(5, 'UNSAT', 0.1), (6, 'UNSAT', 0.3)]
+6 12 m 3 tau 3 phi 5 lo 4 LB 5 tight [(4, 'UNSAT', 0.1)]
+6 9 m 5 tau 3 phi 7 lo 6 LB 7 tight [(6, 'UNSAT', 0.3)]
+6 11 m 5 tau 2 phi 6 lo 6 LB 6 tight []
+6 7 m 6 tau 3 phi 8 lo 6 LB 8 tight [(6, 'UNSAT', 0.2), (7, 'UNSAT', 1.9)]
+6 8 m 6 tau 3 phi 8 lo 8 LB 8 tight []
+7 6 m 6 tau 3 phi 8 lo 8 LB 8 tight []
+7 4 m 7 tau 3 phi 9 lo 9 LB 9 tight []
+7 5 m 8 tau 4 phi 11 lo 9 LB 10 open [(9, 'UNSAT', 10.9), (10, 'TO', 600)]

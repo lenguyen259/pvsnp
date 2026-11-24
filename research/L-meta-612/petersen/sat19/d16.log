@@ -1,0 +1,2 @@
+s 16 rows 40 (T15 F15 S10) vars 16326 clauses 612400 {'s': 16, 'symb': True, 'solver': 'cadical195', 'viol': True, 'factc': True, 'chain': True}
+EXIT rc=124 wall=3600s

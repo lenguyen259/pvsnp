@@ -1,0 +1,1 @@
+s 20 rows 30 (T15 F15 S0) vars 14979 clauses 85677 {'s': 20, 'rep': 3, 'solver': 'kissat404', 'sing': False, 'viol': False, 'nor': None, 'maxor': None, 'nand': None, 'nodist': False, 'outor': False, 'fix': None, 'dimacs': None}
