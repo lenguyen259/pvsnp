@@ -14,6 +14,7 @@ ap.add_argument('--fixc',help='json canonical circuit [[op,j,k],...] to impose (
 ap.add_argument('--partial',help='json list of [gateidx,op,j,k] (op may be "?") to impose')
 ap.add_argument('--cube',help='json list of literal specs')
 ap.add_argument('--nand',type=int); ap.add_argument('--nor',type=int); ap.add_argument('--maxand',type=int); ap.add_argument('--minand',type=int)
+ap.add_argument('--lexbot',action='store_true')
 ap.add_argument('--outop',choices=['&','|'])
 ap.add_argument('--dimacs'); ap.add_argument('--solve',action='store_true'); ap.add_argument('--solver',default='cadical195')
 ap.add_argument('--timeout',type=float); ap.add_argument('--meta')
@@ -171,6 +172,38 @@ for ri,(th,tl,aL,oL,tL) in enumerate(RR):
     if aL>0: cl.extend(CardEnc.atleast(sa,aL,vpool=pool,encoding=EncType.seqcounter).clauses)
     if oL>0: cl.extend(CardEnc.atleast(so,oL,vpool=pool,encoding=EncType.seqcounter).clauses)
     if tL>aL+oL: cl.extend(CardEnc.atleast(sa+so,tL,vpool=pool,encoding=EncType.totalizer).clauses)
+if A.lexbot:
+    # bottom layer lex-leader: b(p,o) <-> some gate reads input pair p with op o; b-vector lex-max over Aut(G)
+    import networkx as nx
+    from networkx.algorithms.isomorphism import GraphMatcher
+    GG=nx.Graph(E); GG.add_nodes_from(range(n))
+    AUT=[m for m in GraphMatcher(GG,GG).isomorphisms_iter()]
+    PAIRS=[(j,k) for j in range(n) for k in range(j+1,n)]
+    BITS=[(p,o) for p in PAIRS for o in (1,0)]  # (pair, AND=1 first)
+    bidx={b:t for t,b in enumerate(BITS)}
+    bv={}
+    for (p,o) in BITS:
+        j,k=p; b=pool.id(('bot',p,o)); bv[(p,o)]=b; gs=[]
+        for i in G:
+            if k>=i: continue
+            g=pool.id(('botg',i,p,o)); gs.append(g)
+            ol=op(i) if o==1 else -op(i)
+            cl.extend([[-g,lv(i,j)],[-g,rv(i,k)],[-g,ol],[g,-lv(i,j),-rv(i,k),-ol],[-g,b]])
+        cl.append([-b]+gs)
+    print('lexbot: |Aut| =',len(AUT),flush=True)
+    for ai,m in enumerate(AUT):
+        if all(m[v]==v for v in range(n)): continue
+        X=[bv[b] for b in BITS]
+        Y=[bv[(tuple(sorted((m[p[0]],m[p[1]]))),o)] for p,o in BITS]
+        e=None
+        for t in range(len(BITS)):
+            x,y=X[t],Y[t]
+            if x==y: continue
+            et=[-e] if e is not None else []
+            cl.append(et+[x,-y])
+            e2=pool.id(('lexe',ai,t))
+            cl.append(et+[x,e2]); cl.append(et+[-y,e2])
+            e=e2
 ands=[op(i) for i in G]
 if A.nand is not None: cl.extend(CardEnc.equals(ands,A.nand,vpool=pool,encoding=EncType.seqcounter).clauses)
 if A.maxand is not None: cl.extend(CardEnc.atmost(ands,A.maxand,vpool=pool,encoding=EncType.seqcounter).clauses)
