@@ -99,10 +99,12 @@ def main():
         M.append("| %s | %s |" % (name, ", ".join(ids)))
     M.append("")
     M.append("Open on the path, in the form needed: one of **T2** (deg3.md; with R-TOT on C3), **T2F**/**mANB** "
-             "(with B options), **T2-LR** (structural) or **E\\*opt**, for minimum circuits of a vertex-minimal "
+             "(with B options) or **E\\*opt**, for minimum circuits of a vertex-minimal "
              "counterexample of size Phi-1 (structure COR-M); plus the SAT base cases **SAT-H9**, **PET-EXACT** "
              "and the open 7-10 vertex graphs listed in subcubic.md. The split route (OR)+(AND) is dead on C3 "
-             "(OR-C3 is refuted on an 8-vertex subcubic graph of girth 5).\n")
+             "(OR-C3 is refuted on an 8-vertex subcubic graph of girth 5), and so is every purely syntactic "
+             "payment count (T2-LO, T2-LT, T2-LD, and now T2-LR, refuted on Petersen at Phi+2): a proof of T2 "
+             "must count functional eliminations.\n")
 
     for s in st_order:
         es = [e for e in out if e["st"] == s]

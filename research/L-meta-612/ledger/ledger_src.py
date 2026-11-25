@@ -204,20 +204,22 @@ C(id="AND-C3", st="OPEN", title="(AND) on max degree <= 3",
 C(id="T2", st="DATA", title="Lemma T2 (deg3.md): the surviving route for C3",
   stmt="G in C3 with an edge, not a star, C reduced: some v has tot(v) >= Phi(G)-Phi(G-v) with G-v not edgeless, or tot(N[v]) >= Phi(G)-Phi(G-N[v]) with G-N[v] not edgeless (tot = total functional eliminations under x_X := 0).",
   scope=("C4-free, Delta <= 3", "reduced"), where="deg3/deg3.md 7", fz="T2", uses=["F-RTOT"], implies=["MAIN-C3"],
-  ev="0 violations on the store (also on non-subcubic graphs) and in deg3 fuzzing on 17 graphs (fewest good options: 1, net). Leaves need the N[v] option (P6). Only minimum circuits of a min cex (size Phi-1) are needed.",
+  ev="0 violations on the store (225k circuits, also non-subcubic graphs), in deg3 fuzzing on 17 graphs (fewest good options: 1, net) and in seeded adversarial walks here (Petersen, Pet-v, n8, constrS7, 2tri+bridge, net, C5{012}; ~38k distinct circuits). Leaves need the N[v] option (P6). Only minimum circuits of a min cex (size Phi-1) are needed. Its structural strengthening T2-LR is now refuted.",
   c3="open-on-path")
 C(id="T2F", st="DATA", title="T2F: some A, N or B option is good",
   stmt="G C4-free non-star, C reduced: some v has A(v), N(v) or B(v) good (B(v): x_v := 1, need Phi(G) - deg v - Phi(G-N[v])).",
   scope=("C4-free", "reduced"), where="t2/t2.md 0, 2", fz="T2F", uses=["F-RTOT"], implies=["MAIN"], c3="open-on-path",
-  ev="Implied by T2 on C3 (weaker requirement). 0 violations on the store.")
+  ev="Implied by T2 on C3 (weaker requirement). 0 violations on the store and on seeded adversarial walks (Petersen, Pet-v, n8, constrS7, 2tri+bridge, net, C5{012}).")
 C(id="mANB", st="DATA", title="mANB: good option at a minimal-AND support vertex",
   stmt="Some v in the support of a minimal AND gate has a good A, N or B option.",
   scope=("C4-free", "reduced"), where="t2/t2.md 5", fz="mANB", implies=["T2F"], c3="open-on-path",
   ev="0 violations on the store and on t2 fuzzing (14 graphs; fewest good options 1: net, Petersen, sun5). Dropping N refutes it (E*+); requiring every minimal AND refutes it.")
-C(id="T2-LR", st="DATA", title="T2-LR: structural payment (rule R + Top merge)",
+C(id="T2-LR", st="REFUTED", title="T2-LR: structural payment (rule R + Top merge); also T2-LR(g5)",
   stmt="Some A/N/B option has LR(rho) = size - |ruleR(C|rho)| + (#Top survivors - 1) >= need(rho).",
-  scope=("C4-free", "reduced"), where="t7/t7.md 3; t10.md 0 (T2-LR(g5))", fz="T2LR", implies=["T2F"], c3="open-on-path",
-  ev="Purely structural (no min-cex caveat). 0 violations on the store; survives LR fuzzing on 10 graphs incl. Petersen.")
+  scope=("C4-free (and girth >= 5)", "reduced"), where="t7/t7.md 3; t10.md 0 (T2-LR(g5)); refuted here (ledger/witnesses_new.jsonl)",
+  fz="T2LR", c3="dead-route",
+  wit=["10=4|7 11=5|3 12=3|7 13=5|4 14=6|11 15=14&8 16=11&10 17=0|6 18=16&13 19=18|2 20=12&19 21=13&0 22=21|20 23=1|22 24=22|15 25=17&23 26=24|25 27=2&23 28=6|10 29=28&9 30=27|29 31=26|30"],
+  ev="NEW (this ledger): refuted on Petersen at size 22 = Phi+2 (reduced; max LR - need = -1), found by falsify.py --fresh-from-store and re-checked with the original t2lib/lib7 code. T2F still holds on it (A(1), N(0), N(2), N(3), N(6), N(7) are good under functional reduction), so any payment proof must count functional (not only syntactic) eliminations. Before this, 0 violations on 225k store circuits and on t7/t10 LR fuzzing.")
 C(id="E*opt", st="OPEN", title="Lemma E* for minimum circuits",
   stmt="E* (some minimal AND gate, v in its support, b with elim >= Phi(G)-Phi(G_b)) for minimum-size circuits only.",
   scope=("C4-free", "minimum"), where="estar/proof.md 2", implies=["MAIN"], c3="open-on-path",

@@ -215,8 +215,18 @@ def text_sources():
             add(C, "%s:%d" % (short(p), ln), tag=tag)
 
 
+def new_witnesses():
+    """counterexamples found by falsify.py fresh searches (ledger/witnesses_new.jsonl)"""
+    p = os.path.join(HERE, "witnesses_new.jsonl")
+    if os.path.exists(p):
+        for i, line in enumerate(open(p)):
+            r = json.loads(line)
+            add(parse_str(r["circuit"]), "%s#%d" % (short(p), i), E=r["edges"], tag="new-witness:" + r["claim"])
+
+
 def main():
     t0 = time.time()
+    new_witnesses()
     text_sources()
     print("text done", len(store), round(time.time() - t0, 1), flush=True)
     misc_json()
@@ -235,7 +245,7 @@ def main():
         print("bulk done", len(store), round(time.time() - t0, 1), flush=True)
 
     # ---- curation: a compact core store (< ~5 MB) and the gzipped bulk store
-    CUR_TAGS = {"md-witness", "log", "petersen", "petersen19", "t5-config2", "t8-uncertified",
+    CUR_TAGS = {"new-witness:T2LR", "md-witness", "log", "petersen", "petersen19", "t5-config2", "t8-uncertified",
                 "t10-exchange-stuck", "t3-cex2", "t3-cex4", "t3-sl2", "t3-starpool", "t3-starpool2", "exact-min"}
     pins = set()
     pp = os.path.join(HERE, "pins.json")
@@ -249,7 +259,7 @@ def main():
     for r in recs:
         g = gkey(r["n"], r["edges"])
         c = r["cls"]
-        core = bool(CUR_TAGS & set(r["tags"])) or r["_rstr"] in pins or r["n"] >= 9
+        core = bool(CUR_TAGS & set(r["tags"])) or any(t.startswith("new-witness") for t in r["tags"]) or r["_rstr"] in pins or r["n"] >= 9
         if r["_rstr"] in pins and "pinned-witness" not in r["tags"]:
             r["tags"].append("pinned-witness")
         if not core and r["slack"] <= 0:                       # minimum (or below-Phi) circuits

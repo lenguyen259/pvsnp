@@ -4,7 +4,11 @@ import enc2
 from enc2 import Enc2
 which=sys.argv[1]; s=int(sys.argv[2]); seed=int(sys.argv[3])
 opt={a.split('=')[0]:(a.split('=')[1] if '=' in a else True) for a in sys.argv[4:]}
-if which=='H':
+if which.startswith('['):
+    import json as _j
+    EE=[tuple(e) for e in _j.loads(which)]; vs=sorted(set(v for e in EE for v in e)); rl={v:i for i,v in enumerate(vs)}
+    enc2.n=len(vs); enc2.E[:]=[(rl[a],rl[b]) for a,b in EE]; which='S%d'%len(EE)
+elif which=='H':
     enc2.n=8; enc2.E[:]=[(0,4),(0,5),(1,5),(2,5),(1,6),(3,6),(2,7),(3,7),(4,7),(6,7)]
 random.seed(seed); n=enc2.n; N=1<<n; f=enc2.f
 mono='--mono' in opt

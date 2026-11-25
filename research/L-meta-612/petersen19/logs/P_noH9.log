@@ -13,3 +13,4 @@ P_noH9 s=12 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.4s
 P_noH9 s=13 [rest2_P_noH9.json lexbot] RESULT UNSAT 1.6s 
 P_noH9 s=14 [rest2_P_noH9.json lexbot] RESULT UNSAT 7.4s 
 P_noH9 s=15 [rest2_P_noH9.json lexbot] RESULT UNSAT 559.1s 
+P_noH9 s=16 [rest2_P_noH9.json lexbot] TIMEOUT (3600 s)

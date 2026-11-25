@@ -115,8 +115,12 @@ class Ctx:
         return self._cache["viol"]
 
 
+_NGOOD = [0]   # number of good options seen by the last best() call (fresh-search objective)
+
+
 def best(vals):
     vals = [v for v in vals if v is not None]
+    _NGOOD[0] = sum(1 for v in vals if v >= 0)
     return max(vals) if vals else None
 
 
@@ -337,7 +341,7 @@ CLAIMS = {
     "mAB": (c_mAB, "refuted", "E*+"),
     "Estar": (c_Estar, "refuted", "E*"),
     "T2LD": (c_T2LD, "refuted", "T2-LD"),
-    "T2LR": (c_T2LR, "survive", "T2-LR"),
+    "T2LR": (c_T2LR, "refuted", "T2-LR"),
     "NF5": (c_NF5, "refuted", "NF5"),
     "J5": (c_J5, "refuted", "J5"),
 }
@@ -481,19 +485,30 @@ def mutate(C, rng):
     return Circ(n, gates, C.out)
 
 
-def fresh(fn, n, edges, seconds, max_slack, seed, report, gname):
+def store_seeds(n, edges, paths):
+    """circuits of the store for exactly this labelled graph (restart points for the fresh walk)"""
+    k = gkey(n, edges)
+    return [rec_circ(r) for r in load_store(paths) if gkey(r["n"], r["edges"]) == k]
+
+
+def fresh(fn, n, edges, seconds, max_slack, seed, report, gname, seeds=None):
     rng = random.Random(seed)
     G = gctx(n, edges)
     target = fG_tt(n, G.E)
-    cur = star_cover(n, G.E, rng)
-    cur_m = fn(Ctx(cur, G.E))
+    start = (lambda: red(rng.choice(seeds))) if seeds else (lambda: star_cover(n, G.E, rng))
+    cur = start()
+    def key(c):
+        _NGOOD[0] = 0
+        m = fn(Ctx(c, G.E))
+        return m, (None if m is None else (min(m, 0), _NGOOD[0]))
+    cur_m, cur_k = key(cur)
     t0 = time.time()
     tried = valid = 0
     seen = set()
     while time.time() - t0 < seconds:
         if rng.random() < 0.002:
-            cur = star_cover(n, G.E, rng)
-            cur_m = fn(Ctx(cur, G.E))
+            cur = start()
+            cur_m, cur_k = key(cur)
         D = mutate(cur, rng)
         tried += 1
         if D.out_tt() != target:
@@ -503,14 +518,17 @@ def fresh(fn, n, edges, seconds, max_slack, seed, report, gname):
             continue
         valid += 1
         x = Ctx(D, G.E)
+        _NGOOD[0] = 0
         mval = fn(x)
+        kval = None if mval is None else (min(mval, 0), _NGOOD[0])
         k = D.to_str()
         if k not in seen:
             seen.add(k)
             report.see(x, mval, "fresh:%s:seed%d" % (gname, seed))
         # adversarial acceptance: move if margin does not increase (with some noise)
-        if mval is None or cur_m is None or mval <= cur_m or rng.random() < 0.05:
-            cur, cur_m = D, mval
+        # adversarial acceptance: minimise (violation depth, number of good options, margin)
+        if kval is None or cur_k is None or kval <= cur_k or rng.random() < 0.1:
+            cur, cur_m, cur_k = D, mval, kval
     return tried, valid, len(seen)
 
 
@@ -607,6 +625,8 @@ def main():
     ap.add_argument("--closure", action="store_true", help="also test red(C|x_X:=0) for X={v}, N[v]")
     ap.add_argument("--fresh", action="append", default=[], help="graph:seconds (graph = name or 0-1,1-2,...)")
     ap.add_argument("--fresh-slack", type=int, default=4)
+    ap.add_argument("--fresh-from-store", action="store_true",
+                    help="start/restart the fresh walk from store circuits of the same labelled graph")
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--no-store", action="store_true")
     ap.add_argument("--out")
@@ -660,8 +680,11 @@ def main():
     for spec in a.fresh:
         gname, secs = spec.rsplit(":", 1)
         n, E = parse_graph(gname)
+        seeds = store_seeds(n, norm_edges(E), paths) if a.fresh_from_store else None
+        if a.fresh_from_store:
+            print("fresh %s: %d store circuits as restart points" % (gname, len(seeds)))
         for nm in names:
-            tr, va, un = fresh(claims[nm], n, E, float(secs) / len(names), a.fresh_slack, a.seed, reps[nm], gname)
+            tr, va, un = fresh(claims[nm], n, E, float(secs) / len(names), a.fresh_slack, a.seed, reps[nm], gname, seeds)
             fr.append({"claim": nm, "graph": gname, "edits": tr, "valid": va, "distinct": un})
     print("store circuits read: %d   (%.0f s)" % (cnt, time.time() - t0))
     for f in fr:

@@ -1,5 +1,11 @@
 {
  "sources": {
+  "research/L-meta-612/ledger/witnesses_new.jsonl": {
+   "read": 5,
+   "kept_new": 3,
+   "dup": 2,
+   "dropped": 0
+  },
   "research/L-meta-612/core/core.md": {
    "read": 1,
    "kept_new": 1,
@@ -1658,7 +1664,7 @@
   }
  ],
  "non_c4free": 0,
- "n_core": 3150,
+ "n_core": 3153,
  "n_bulk": 221918,
- "seconds": 68.7
+ "seconds": 41.8
 }
