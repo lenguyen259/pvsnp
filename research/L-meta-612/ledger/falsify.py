@@ -8,16 +8,16 @@ Margins let the fresh-circuit search hill-climb towards violations.
 
 Examples
   python3 -I falsify.py --list
-  python3 -I falsify.py --claim T2 --claim or_E1                    # core store
-  python3 -I falsify.py --claim T2 --filter subcubic --bulk         # + bulk pool
+  python3 -I falsify.py --claim T2 --claim or_E1                    # whole store (core + bulk)
+  python3 -I falsify.py --claim T2 --filter subcubic --core-only    # curated core store only (fast)
   python3 -I falsify.py --claim T2 --fresh petersen:60 --fresh n8:30  # + adversarial fresh circuits
   python3 -I falsify.py --pred-file my.py --claim mine              # my.py defines CLAIMS = {name: (fn, doc)}
   python3 -I falsify.py --claim T2 --closure                        # also all red(C|x_X:=0), X = {v}, N[v]
   python3 -I falsify.py --sanity                                     # every built-in claim, report json
   python3 -I falsify.py --stats                                      # composition of the store
 
-Light CPU: one process; please run under `nice`. The core store has ~96k circuits; a full --sanity
-pass takes a few minutes.
+Light CPU: one process; please run under `nice`. The store (core ~10k + bulk ~215k circuits) is read
+from circuits.jsonl and circuits_bulk.jsonl.gz; a full --sanity pass takes several minutes.
 """
 import sys, os, json, time, random, argparse, importlib.util, itertools
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -600,7 +600,7 @@ def main():
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--sanity", action="store_true", help="run every built-in claim; write sanity_report.json")
     ap.add_argument("--stats", action="store_true")
-    ap.add_argument("--bulk", action="store_true", help="include circuits_bulk.jsonl.gz")
+    ap.add_argument("--core-only", action="store_true", help="skip circuits_bulk.jsonl.gz")
     ap.add_argument("--filter", action="append", default=[],
                     help="subcubic | girth5 | trianglefree | pf | nonpf | mindeg2 | slack<=K | n>=K | n<=K")
     ap.add_argument("--limit", type=int, default=0)
@@ -623,7 +623,7 @@ def main():
         for k, v in CLAIMS.items():
             print("%-9s expected %-8s ledger %-10s %s" % (k, v[1], v[2], (v[0].__doc__ or "").split("\n")[0]))
         return
-    paths = [CORE] + ([BULK] if a.bulk else [])
+    paths = [CORE] + ([] if a.core_only else [BULK])
     if a.stats:
         stats(paths)
         return
@@ -680,7 +680,7 @@ def main():
         print("\nsanity: %d claims, %d as expected; unexpected: %s" % (len(out), len(out) - len(bad), bad or "none"))
     outp = a.out or (os.path.join(HERE, "sanity_report.json") if a.sanity else None)
     if outp:
-        json.dump({"store_circuits": cnt, "filters": a.filter, "bulk": a.bulk, "fresh": fr, "results": out,
+        json.dump({"store_circuits": cnt, "filters": a.filter, "core_only": a.core_only, "fresh": fr, "results": out,
                    "seconds": round(time.time() - t0, 1)}, open(outp, "w"), indent=1)
         print("wrote", outp)
 

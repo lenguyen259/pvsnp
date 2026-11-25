@@ -3,8 +3,12 @@
 Reads every circuit dump of the 612 research (research folders + the scratchpad folders of earlier
 sessions), verifies each circuit on all 2^n inputs against f_G, keeps only C4-free graphs,
 deduplicates, and writes
-  circuits.jsonl        core store (all sources except the big t3 fuzz pool pool_ML)
-  circuits_bulk.jsonl.gz the remaining unique circuits of t3/pool_ML.jsonl (partial suns, net, spider)
+  circuits.jsonl         curated core store (< ~5 MB): every circuit cited in a .md/.log file, the special
+                         Petersen / config-(2) / uncertified / exact-minimum files, pinned refutation
+                         witnesses (pins.json), all n >= 9 circuits, up to 40 minimum circuits per graph,
+                         up to 80 circuits per (graph, slack) for subcubic non-pseudoforests, up to 40 per
+                         (graph, slack) for subcubic graphs with n >= 8
+  circuits_bulk.jsonl.gz all other unique verified circuits (SAT enumeration dumps, t3 fuzz pools)
   collect_report.json   per-source counts, dropped circuits with reasons
 
 Usage: python3 -I collect.py [--no-bulk]
@@ -85,6 +89,7 @@ def add(C, src, E=None, name=None, tag=None, bulk=False):
         "tier": "bulk" if bulk else "core",
     }
     r["key"] = k
+    r["_rstr"] = gkey(C.n, Eg) + "|" + R.to_str()
     store[k] = r
     order.append(k)
     return r
@@ -229,14 +234,43 @@ def main():
         jsonl_pool(os.path.join(SCR, "t3/pool_ML.jsonl"), bulk=True, tag="t3-pool_ML")
         print("bulk done", len(store), round(time.time() - t0, 1), flush=True)
 
-    # stable ids: core first, sorted by (n, E, size, key); then bulk
+    # ---- curation: a compact core store (< ~5 MB) and the gzipped bulk store
+    CUR_TAGS = {"md-witness", "log", "petersen", "petersen19", "t5-config2", "t8-uncertified",
+                "t10-exchange-stuck", "t3-cex2", "t3-cex4", "t3-sl2", "t3-starpool", "t3-starpool2", "exact-min"}
+    pins = set()
+    pp = os.path.join(HERE, "pins.json")
+    if os.path.exists(pp):
+        for d in json.load(open(pp)):
+            pins.add(gkey(d["n"], [tuple(e) for e in d["edges"]]) + "|" + d["circuit"])
     recs = list(store.values())
-    recs.sort(key=lambda r: (r["tier"] != "core", r["n"], r["E"], r["size"], r["key"]))
+    recs.sort(key=lambda r: (r["n"], r["E"], r["size"], r["key"]))
+    per_min = {}
+    per_sub = {}
+    for r in recs:
+        g = gkey(r["n"], r["edges"])
+        c = r["cls"]
+        core = bool(CUR_TAGS & set(r["tags"])) or r["_rstr"] in pins or r["n"] >= 9
+        if r["_rstr"] in pins and "pinned-witness" not in r["tags"]:
+            r["tags"].append("pinned-witness")
+        if not core and r["slack"] <= 0:                       # minimum (or below-Phi) circuits
+            per_min[g] = per_min.get(g, 0) + 1
+            core = per_min[g] <= 40
+        if not core and c["subcubic"] and not c["pseudoforest"]:  # subcubic, not covered by PF
+            k2 = (g, r["slack"])
+            per_sub[k2] = per_sub.get(k2, 0) + 1
+            core = per_sub[k2] <= 80
+        if not core and c["subcubic"] and r["n"] >= 8:          # larger subcubic graphs (partial suns, n8)
+            k2 = (g, r["slack"], "big")
+            per_sub[k2] = per_sub.get(k2, 0) + 1
+            core = per_sub[k2] <= 40
+        r["tier"] = "core" if core else "bulk"
     nc = nb = 0
     with open(os.path.join(HERE, "circuits.jsonl"), "w") as fc, \
             gzip.open(os.path.join(HERE, "circuits_bulk.jsonl.gz"), "wt") as fb:
         for r in recs:
             r.pop("key", None)
+            r.pop("_rstr", None)
+            r["sources"] = r["sources"][:2]
             if r["tier"] == "core":
                 nc += 1
                 r["id"] = "c%06d" % nc

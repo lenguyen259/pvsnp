@@ -58,4 +58,4 @@ while True:
     G=e.decode(mod); bad=[t for t in range(N) if ev(G,t)!=f(t)]
     print('iter',it,'rows',len(e.X),'bad',len(bad),'t=%.1f'%(time.time()-t0),flush=True)
     if not bad: print('FOUND',json.dumps(G)); break
-    for t in random.sample(bad,min(4,len(bad))): e.addrow(t)
+    for t in random.sample(bad,min(int(opt.get("--add",4)),len(bad))): e.addrow(t)
