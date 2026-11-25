@@ -1,0 +1,1664 @@
+{
+ "sources": {
+  "research/L-meta-612/core/core.md": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/data/c1.log": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/data/c2.log": {
+   "read": 18,
+   "kept_new": 18,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/data/c3.log": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/data/c4.log": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/data/found.txt": {
+   "read": 6,
+   "kept_new": 0,
+   "dup": 6,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/data/pet_or13.txt": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/deg3/deg3.md": {
+   "read": 5,
+   "kept_new": 1,
+   "dup": 4,
+   "dropped": 0
+  },
+  "research/L-meta-612/estar/data/r5_6_1_nostar.txt": {
+   "read": 42,
+   "kept_new": 33,
+   "dup": 9,
+   "dropped": 0
+  },
+  "research/L-meta-612/estar/proof.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/lemma-d-case-a/lemDa.md": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/lemma-d/lemD.md": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/nf/nf.md": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/or-bound/or.md": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen/README.md": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen/data/or13.txt": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/star-case/star.md": {
+   "read": 2,
+   "kept_new": 1,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/camp_dv2.log": {
+   "read": 16,
+   "kept_new": 16,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/camp_ld.log": {
+   "read": 16,
+   "kept_new": 16,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/ex1.log": {
+   "read": 45,
+   "kept_new": 39,
+   "dup": 6,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/p2.log": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/p3.log": {
+   "read": 13,
+   "kept_new": 9,
+   "dup": 4,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/p5.log": {
+   "read": 3,
+   "kept_new": 2,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/p6.log": {
+   "read": 2,
+   "kept_new": 1,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/p7.log": {
+   "read": 4,
+   "kept_new": 0,
+   "dup": 4,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/data/petcex.txt": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t10/t10.md": {
+   "read": 6,
+   "kept_new": 1,
+   "dup": 5,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/camp2.log": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/camp3.log": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/camp4.log": {
+   "read": 4,
+   "kept_new": 4,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/exch.log": {
+   "read": 20,
+   "kept_new": 10,
+   "dup": 10,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/exch2.log": {
+   "read": 10,
+   "kept_new": 0,
+   "dup": 10,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/lochk.log": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/data/scan.log": {
+   "read": 9,
+   "kept_new": 5,
+   "dup": 4,
+   "dropped": 0
+  },
+  "research/L-meta-612/t2/t2.md": {
+   "read": 9,
+   "kept_new": 1,
+   "dup": 8,
+   "dropped": 0
+  },
+  "research/L-meta-612/t3/t3.md": {
+   "read": 4,
+   "kept_new": 4,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t4/sat.log": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t4/t4.md": {
+   "read": 2,
+   "kept_new": 1,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t5/t5.md": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t7/data/camp.log": {
+   "read": 19,
+   "kept_new": 16,
+   "dup": 3,
+   "dropped": 0
+  },
+  "research/L-meta-612/t7/data/camp2.log": {
+   "read": 10,
+   "kept_new": 9,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t7/t7.md": {
+   "read": 3,
+   "kept_new": 1,
+   "dup": 2,
+   "dropped": 0
+  },
+  "research/L-meta-612/t8/data/camp.log": {
+   "read": 23,
+   "kept_new": 22,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t8/data/camp2.log": {
+   "read": 9,
+   "kept_new": 9,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t8/data/camp3.log": {
+   "read": 22,
+   "kept_new": 22,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t8/t8.md": {
+   "read": 8,
+   "kept_new": 3,
+   "dup": 4,
+   "dropped": 1
+  },
+  "research/L-meta-612/t9/data/and.log": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t9/data/min5.txt": {
+   "read": 25,
+   "kept_new": 24,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/t9/data/min6.txt": {
+   "read": 6,
+   "kept_new": 6,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t9/data/min7.txt": {
+   "read": 35,
+   "kept_new": 27,
+   "dup": 8,
+   "dropped": 0
+  },
+  "research/L-meta-612/t9/data/min7_partial.txt": {
+   "read": 35,
+   "kept_new": 0,
+   "dup": 35,
+   "dropped": 0
+  },
+  "research/L-meta-612/t9/data/nonvac.log": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/t9/t9.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/core/core.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/deg3/c1.log": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/deg3/c2.log": {
+   "read": 18,
+   "kept_new": 0,
+   "dup": 18,
+   "dropped": 0
+  },
+  "scratch/deg3/c3.log": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/deg3/c4.log": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/deg3/deg3.md": {
+   "read": 5,
+   "kept_new": 0,
+   "dup": 5,
+   "dropped": 0
+  },
+  "scratch/deg3/found.txt": {
+   "read": 6,
+   "kept_new": 0,
+   "dup": 6,
+   "dropped": 0
+  },
+  "scratch/deg3/pet_or13.txt": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/deg3/petc.txt": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/e612/proof.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/e612/r5_6_1_nostar.txt": {
+   "read": 42,
+   "kept_new": 0,
+   "dup": 42,
+   "dropped": 0
+  },
+  "scratch/lemD/lemD.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/lemDa/lemDa.md": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/nf/nf.md": {
+   "read": 3,
+   "kept_new": 0,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/orb/or.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/pet/or13.txt": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/s_case/star.md": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t10/camp_dv2.log": {
+   "read": 16,
+   "kept_new": 0,
+   "dup": 16,
+   "dropped": 0
+  },
+  "scratch/t10/camp_ld.log": {
+   "read": 16,
+   "kept_new": 0,
+   "dup": 16,
+   "dropped": 0
+  },
+  "scratch/t10/ex1.log": {
+   "read": 45,
+   "kept_new": 0,
+   "dup": 45,
+   "dropped": 0
+  },
+  "scratch/t10/p2.log": {
+   "read": 3,
+   "kept_new": 0,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/t10/p3.log": {
+   "read": 13,
+   "kept_new": 0,
+   "dup": 13,
+   "dropped": 0
+  },
+  "scratch/t10/p5.log": {
+   "read": 3,
+   "kept_new": 0,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/t10/p6.log": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t10/p7.log": {
+   "read": 4,
+   "kept_new": 0,
+   "dup": 4,
+   "dropped": 0
+  },
+  "scratch/t10/petcex.txt": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t10/t10.md": {
+   "read": 6,
+   "kept_new": 0,
+   "dup": 6,
+   "dropped": 0
+  },
+  "scratch/t2/camp2.log": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t2/camp3.log": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t2/camp4.log": {
+   "read": 4,
+   "kept_new": 0,
+   "dup": 4,
+   "dropped": 0
+  },
+  "scratch/t2/exch.log": {
+   "read": 20,
+   "kept_new": 0,
+   "dup": 20,
+   "dropped": 0
+  },
+  "scratch/t2/exch2.log": {
+   "read": 10,
+   "kept_new": 0,
+   "dup": 10,
+   "dropped": 0
+  },
+  "scratch/t2/lochk.log": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t2/scan.log": {
+   "read": 9,
+   "kept_new": 0,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/t2/t2.md": {
+   "read": 9,
+   "kept_new": 0,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/t3/t3.md": {
+   "read": 4,
+   "kept_new": 0,
+   "dup": 4,
+   "dropped": 0
+  },
+  "scratch/t4/sat.log": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t4/t4.md": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t5/t5.md": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t7/camp.log": {
+   "read": 19,
+   "kept_new": 0,
+   "dup": 19,
+   "dropped": 0
+  },
+  "scratch/t7/camp2.log": {
+   "read": 10,
+   "kept_new": 0,
+   "dup": 10,
+   "dropped": 0
+  },
+  "scratch/t7/t7.md": {
+   "read": 3,
+   "kept_new": 0,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/t8/camp.log": {
+   "read": 23,
+   "kept_new": 0,
+   "dup": 23,
+   "dropped": 0
+  },
+  "scratch/t8/camp2.log": {
+   "read": 9,
+   "kept_new": 0,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/t8/camp3.log": {
+   "read": 22,
+   "kept_new": 0,
+   "dup": 22,
+   "dropped": 0
+  },
+  "scratch/t8/t8.md": {
+   "read": 8,
+   "kept_new": 0,
+   "dup": 7,
+   "dropped": 1
+  },
+  "scratch/t9/data/and.log": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t9/data/min5.txt": {
+   "read": 25,
+   "kept_new": 0,
+   "dup": 25,
+   "dropped": 0
+  },
+  "scratch/t9/data/min6.txt": {
+   "read": 6,
+   "kept_new": 0,
+   "dup": 6,
+   "dropped": 0
+  },
+  "scratch/t9/data/min7.txt": {
+   "read": 35,
+   "kept_new": 0,
+   "dup": 35,
+   "dropped": 0
+  },
+  "scratch/t9/data/min7_partial.txt": {
+   "read": 35,
+   "kept_new": 0,
+   "dup": 35,
+   "dropped": 0
+  },
+  "scratch/t9/data/nonvac.log": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/t9/t9.md": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t8/unc157.json": {
+   "read": 157,
+   "kept_new": 103,
+   "dup": 54,
+   "dropped": 0
+  },
+  "scratch/t10/ex1_stuck.json": {
+   "read": 45,
+   "kept_new": 0,
+   "dup": 45,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen/data/or13.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen/data/gad.json": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen/data/init27.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/pet19/C13.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/pet19/U.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen19/known_OR13.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen19/known_OR13_lb.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen19/known_OR13b.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen19/known_U.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen19/known_U_lb.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "research/L-meta-612/petersen19/pool20.json": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/s612/results.jsonl": {
+   "read": 94,
+   "kept_new": 93,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t3/cex2.jsonl": {
+   "read": 40,
+   "kept_new": 2,
+   "dup": 38,
+   "dropped": 0
+  },
+  "scratch/t3/cex4.jsonl": {
+   "read": 20,
+   "kept_new": 0,
+   "dup": 20,
+   "dropped": 0
+  },
+  "scratch/t3/sl2.jsonl": {
+   "read": 30,
+   "kept_new": 10,
+   "dup": 20,
+   "dropped": 0
+  },
+  "scratch/t3/starpool.jsonl": {
+   "read": 13,
+   "kept_new": 7,
+   "dup": 6,
+   "dropped": 0
+  },
+  "scratch/t3/starpool2.jsonl": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/t5/pool.jsonl": {
+   "read": 507,
+   "kept_new": 317,
+   "dup": 190,
+   "dropped": 0
+  },
+  "scratch/t5/pool2.jsonl": {
+   "read": 264,
+   "kept_new": 128,
+   "dup": 136,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02.json": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_03_04_05_23_45.json": {
+   "read": 2000,
+   "kept_new": 840,
+   "dup": 1160,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_03_04_14_23_35.json": {
+   "read": 1200,
+   "kept_new": 255,
+   "dup": 945,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_03_34_35.json": {
+   "read": 21,
+   "kept_new": 12,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_03_34_35_45.json": {
+   "read": 259,
+   "kept_new": 89,
+   "dup": 170,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_04_12_23.json": {
+   "read": 24,
+   "kept_new": 12,
+   "dup": 12,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_12.json": {
+   "read": 12,
+   "kept_new": 5,
+   "dup": 7,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_12_23_34_24_45.json": {
+   "read": 563,
+   "kept_new": 261,
+   "dup": 302,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_02_12_34.json": {
+   "read": 24,
+   "kept_new": 12,
+   "dup": 12,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_03_12.json": {
+   "read": 5,
+   "kept_new": 4,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_04_12_15_23_34.json": {
+   "read": 85,
+   "kept_new": 38,
+   "dup": 47,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_04_12_23.json": {
+   "read": 2,
+   "kept_new": 1,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_04_12_23_34.json": {
+   "read": 38,
+   "kept_new": 0,
+   "dup": 38,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_04_14_23_24_34.json": {
+   "read": 431,
+   "kept_new": 223,
+   "dup": 208,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_05_12_23_34_45.json": {
+   "read": 9,
+   "kept_new": 0,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_05_23_34_45.json": {
+   "read": 18,
+   "kept_new": 13,
+   "dup": 5,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_12_13_23_45.json": {
+   "read": 31,
+   "kept_new": 20,
+   "dup": 11,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_12_13_24_35.json": {
+   "read": 77,
+   "kept_new": 41,
+   "dup": 36,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_12_14_15_23.json": {
+   "read": 71,
+   "kept_new": 36,
+   "dup": 35,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_12_34.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/01_23.json": {
+   "read": 1,
+   "kept_new": 1,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/02_04_13_35.json": {
+   "read": 2,
+   "kept_new": 1,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/02_05_12_13_23_34_45.json": {
+   "read": 29,
+   "kept_new": 25,
+   "dup": 4,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/02_12_13_14_24_35.json": {
+   "read": 183,
+   "kept_new": 73,
+   "dup": 110,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/03_04_05_12.json": {
+   "read": 6,
+   "kept_new": 3,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/03_04_14_24_34_35.json": {
+   "read": 71,
+   "kept_new": 51,
+   "dup": 20,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/03_04_15_25_34.json": {
+   "read": 32,
+   "kept_new": 12,
+   "dup": 20,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/03_12_13_23.json": {
+   "read": 13,
+   "kept_new": 10,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/03_12_45.json": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/03_13_23.json": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_05_12_13_23_34.json": {
+   "read": 175,
+   "kept_new": 20,
+   "dup": 155,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_05_12_13_23_45.json": {
+   "read": 1716,
+   "kept_new": 198,
+   "dup": 1518,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_05_12_14_24_34.json": {
+   "read": 434,
+   "kept_new": 193,
+   "dup": 241,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_05_13_23_34.json": {
+   "read": 11,
+   "kept_new": 3,
+   "dup": 8,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_12_13_23_34.json": {
+   "read": 87,
+   "kept_new": 55,
+   "dup": 32,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_13_23_34.json": {
+   "read": 8,
+   "kept_new": 8,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_14_23_24_34.json": {
+   "read": 59,
+   "kept_new": 42,
+   "dup": 17,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_14_24_34.json": {
+   "read": 15,
+   "kept_new": 15,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_15_23_34_35_45.json": {
+   "read": 489,
+   "kept_new": 279,
+   "dup": 210,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_15_23_34_35_45_36.json": {
+   "read": 1500,
+   "kept_new": 693,
+   "dup": 807,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/04_15_23_34_35_45_46.json": {
+   "read": 1500,
+   "kept_new": 668,
+   "dup": 832,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/05_12_34_45.json": {
+   "read": 8,
+   "kept_new": 8,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/05_15_25_34_35_45.json": {
+   "read": 446,
+   "kept_new": 270,
+   "dup": 176,
+   "dropped": 0
+  },
+  "scratch/s_case/circs/05_15_25_35_45.json": {
+   "read": 108,
+   "kept_new": 105,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01.json": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_02.json": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_02_03_34_35.json": {
+   "read": 21,
+   "kept_new": 0,
+   "dup": 21,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_02_04_05_23_36_56.json": {
+   "read": 906,
+   "kept_new": 174,
+   "dup": 732,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_03_04_12_25_26.json": {
+   "read": 27,
+   "kept_new": 9,
+   "dup": 18,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_03_04_12_36_45.json": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_03_04_12_56.json": {
+   "read": 28,
+   "kept_new": 16,
+   "dup": 12,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_03_12.json": {
+   "read": 5,
+   "kept_new": 0,
+   "dup": 5,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_04_12_15_23_34.json": {
+   "read": 85,
+   "kept_new": 0,
+   "dup": 85,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_04_12_23.json": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_04_12_23_25_45_56.json": {
+   "read": 50,
+   "kept_new": 24,
+   "dup": 26,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_04_12_23_34.json": {
+   "read": 38,
+   "kept_new": 0,
+   "dup": 38,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_04_12_23_34_56.json": {
+   "read": 156,
+   "kept_new": 105,
+   "dup": 51,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_05_12_23_34_45.json": {
+   "read": 9,
+   "kept_new": 0,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_05_23_34_45.json": {
+   "read": 18,
+   "kept_new": 0,
+   "dup": 18,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_06_12_23_34_45.json": {
+   "read": 6,
+   "kept_new": 3,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_13_14_25_26.json": {
+   "read": 122,
+   "kept_new": 48,
+   "dup": 74,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_13_14_25_56.json": {
+   "read": 34,
+   "kept_new": 15,
+   "dup": 19,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_13_14_36_45.json": {
+   "read": 548,
+   "kept_new": 167,
+   "dup": 381,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_13_14_56.json": {
+   "read": 18,
+   "kept_new": 15,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_13_24_35.json": {
+   "read": 77,
+   "kept_new": 0,
+   "dup": 77,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_14_15_23.json": {
+   "read": 71,
+   "kept_new": 0,
+   "dup": 71,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_23_24_25_26.json": {
+   "read": 294,
+   "kept_new": 240,
+   "dup": 54,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_23_34_56.json": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_12_34.json": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_13_14_26_36_45.json": {
+   "read": 40,
+   "kept_new": 16,
+   "dup": 24,
+   "dropped": 0
+  },
+  "scratch/tf/circs/01_23.json": {
+   "read": 1,
+   "kept_new": 0,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/tf/circs/02_04_13_35.json": {
+   "read": 2,
+   "kept_new": 0,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/tf/circs/02_05_12_23_36_45_56.json": {
+   "read": 184,
+   "kept_new": 69,
+   "dup": 115,
+   "dropped": 0
+  },
+  "scratch/tf/circs/03_04_05_12.json": {
+   "read": 6,
+   "kept_new": 0,
+   "dup": 6,
+   "dropped": 0
+  },
+  "scratch/tf/circs/03_04_12_25_26.json": {
+   "read": 9,
+   "kept_new": 3,
+   "dup": 6,
+   "dropped": 0
+  },
+  "scratch/tf/circs/03_04_12_25_26_36_45.json": {
+   "read": 36,
+   "kept_new": 9,
+   "dup": 27,
+   "dropped": 0
+  },
+  "scratch/tf/circs/03_12_45.json": {
+   "read": 3,
+   "kept_new": 0,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/tf/circs/03_13_14_24_25_26.json": {
+   "read": 65,
+   "kept_new": 31,
+   "dup": 34,
+   "dropped": 0
+  },
+  "scratch/tf/circs/03_13_23.json": {
+   "read": 3,
+   "kept_new": 0,
+   "dup": 3,
+   "dropped": 0
+  },
+  "scratch/tf/circs/04_05_13_23_34.json": {
+   "read": 11,
+   "kept_new": 0,
+   "dup": 11,
+   "dropped": 0
+  },
+  "scratch/tf/circs/04_12_13_14_25_26.json": {
+   "read": 154,
+   "kept_new": 67,
+   "dup": 87,
+   "dropped": 0
+  },
+  "scratch/tf/circs/04_13_23_34.json": {
+   "read": 8,
+   "kept_new": 0,
+   "dup": 8,
+   "dropped": 0
+  },
+  "scratch/tf/circs/04_14_24_34.json": {
+   "read": 15,
+   "kept_new": 0,
+   "dup": 15,
+   "dropped": 0
+  },
+  "scratch/tf/circs/05_12_34_45.json": {
+   "read": 8,
+   "kept_new": 0,
+   "dup": 8,
+   "dropped": 0
+  },
+  "scratch/tf/circs/05_15_25_35_45.json": {
+   "read": 108,
+   "kept_new": 0,
+   "dup": 108,
+   "dropped": 0
+  },
+  "scratch/tf/circs/06_12_23_45.json": {
+   "read": 3,
+   "kept_new": 3,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/tf/circs/06_12_23_45_56.json": {
+   "read": 8,
+   "kept_new": 8,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/tf/circs/06_16_26_36_46_56.json": {
+   "read": 1041,
+   "kept_new": 945,
+   "dup": 96,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_03_34_35_45_x1.json": {
+   "read": 3000,
+   "kept_new": 1960,
+   "dup": 1040,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_03_34_35_x1.json": {
+   "read": 1066,
+   "kept_new": 613,
+   "dup": 453,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_04_12_23_x1.json": {
+   "read": 1386,
+   "kept_new": 735,
+   "dup": 651,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_04_12_23_x2.json": {
+   "read": 4000,
+   "kept_new": 3620,
+   "dup": 380,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_12_34_x1.json": {
+   "read": 1139,
+   "kept_new": 624,
+   "dup": 515,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_12_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3520,
+   "dup": 480,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_12_x1.json": {
+   "read": 208,
+   "kept_new": 131,
+   "dup": 77,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_12_x2.json": {
+   "read": 4000,
+   "kept_new": 2137,
+   "dup": 1863,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_x1.json": {
+   "read": 7,
+   "kept_new": 7,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_02_x2.json": {
+   "read": 97,
+   "kept_new": 88,
+   "dup": 9,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_03_12_x1.json": {
+   "read": 106,
+   "kept_new": 84,
+   "dup": 22,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_03_12_x2.json": {
+   "read": 2962,
+   "kept_new": 1930,
+   "dup": 1032,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_12_15_23_34_x1.json": {
+   "read": 3000,
+   "kept_new": 1535,
+   "dup": 1465,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_12_23_34_x1.json": {
+   "read": 3208,
+   "kept_new": 1888,
+   "dup": 1320,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_12_23_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3753,
+   "dup": 247,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_12_23_x1.json": {
+   "read": 76,
+   "kept_new": 50,
+   "dup": 26,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_12_23_x2.json": {
+   "read": 3196,
+   "kept_new": 1841,
+   "dup": 1355,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_14_23_24_34_x1.json": {
+   "read": 4000,
+   "kept_new": 2750,
+   "dup": 1250,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_04_14_23_24_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3288,
+   "dup": 712,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_05_12_23_34_45_x1.json": {
+   "read": 1405,
+   "kept_new": 729,
+   "dup": 676,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_05_23_34_45_x1.json": {
+   "read": 1517,
+   "kept_new": 920,
+   "dup": 597,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_12_13_23_45_x1.json": {
+   "read": 2758,
+   "kept_new": 1470,
+   "dup": 1288,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_12_13_24_35_x1.json": {
+   "read": 3000,
+   "kept_new": 1923,
+   "dup": 1077,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_12_14_15_23_x1.json": {
+   "read": 3000,
+   "kept_new": 1665,
+   "dup": 1335,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_12_34_x1.json": {
+   "read": 24,
+   "kept_new": 23,
+   "dup": 1,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_12_34_x2.json": {
+   "read": 747,
+   "kept_new": 591,
+   "dup": 156,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_23_x1.json": {
+   "read": 12,
+   "kept_new": 12,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_23_x2.json": {
+   "read": 267,
+   "kept_new": 218,
+   "dup": 49,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_x1.json": {
+   "read": 2,
+   "kept_new": 2,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/nf/circs/01_x2.json": {
+   "read": 18,
+   "kept_new": 16,
+   "dup": 2,
+   "dropped": 0
+  },
+  "scratch/nf/circs/02_04_13_35_x1.json": {
+   "read": 60,
+   "kept_new": 34,
+   "dup": 26,
+   "dropped": 0
+  },
+  "scratch/nf/circs/02_12_13_14_24_35_x1.json": {
+   "read": 3000,
+   "kept_new": 2002,
+   "dup": 998,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_04_05_12_x1.json": {
+   "read": 171,
+   "kept_new": 102,
+   "dup": 69,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_04_14_24_34_35_x1.json": {
+   "read": 3000,
+   "kept_new": 2142,
+   "dup": 858,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_04_15_25_34_x1.json": {
+   "read": 2011,
+   "kept_new": 804,
+   "dup": 1207,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_12_13_23_x1.json": {
+   "read": 513,
+   "kept_new": 378,
+   "dup": 135,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_12_13_23_x2.json": {
+   "read": 4000,
+   "kept_new": 3349,
+   "dup": 651,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_12_45_x1.json": {
+   "read": 97,
+   "kept_new": 90,
+   "dup": 7,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_13_23_x1.json": {
+   "read": 42,
+   "kept_new": 42,
+   "dup": 0,
+   "dropped": 0
+  },
+  "scratch/nf/circs/03_13_23_x2.json": {
+   "read": 852,
+   "kept_new": 765,
+   "dup": 87,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_05_12_13_23_34_x1.json": {
+   "read": 3000,
+   "kept_new": 1208,
+   "dup": 1792,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_05_12_14_24_34_x1.json": {
+   "read": 3000,
+   "kept_new": 1585,
+   "dup": 1415,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_05_13_23_34_x1.json": {
+   "read": 465,
+   "kept_new": 165,
+   "dup": 300,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_12_13_23_34_x1.json": {
+   "read": 4000,
+   "kept_new": 2451,
+   "dup": 1549,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_12_13_23_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3753,
+   "dup": 247,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_13_23_34_x1.json": {
+   "read": 318,
+   "kept_new": 280,
+   "dup": 38,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_13_23_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3247,
+   "dup": 753,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_14_23_24_34_x1.json": {
+   "read": 3357,
+   "kept_new": 2236,
+   "dup": 1121,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_14_23_24_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3679,
+   "dup": 321,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_14_24_34_x1.json": {
+   "read": 370,
+   "kept_new": 363,
+   "dup": 7,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_14_24_34_x2.json": {
+   "read": 4000,
+   "kept_new": 3661,
+   "dup": 339,
+   "dropped": 0
+  },
+  "scratch/nf/circs/04_15_23_34_35_45_x1.json": {
+   "read": 3000,
+   "kept_new": 2557,
+   "dup": 443,
+   "dropped": 0
+  },
+  "scratch/nf/circs/05_12_34_45_x1.json": {
+   "read": 477,
+   "kept_new": 394,
+   "dup": 83,
+   "dropped": 0
+  },
+  "scratch/nf/circs/05_15_25_34_35_45_x1.json": {
+   "read": 3000,
+   "kept_new": 2643,
+   "dup": 357,
+   "dropped": 0
+  },
+  "scratch/nf/circs/05_15_25_35_45_x1.json": {
+   "read": 3000,
+   "kept_new": 2848,
+   "dup": 152,
+   "dropped": 0
+  },
+  "scratch/t3/locpool.jsonl": {
+   "read": 17762,
+   "kept_new": 7999,
+   "dup": 9763,
+   "dropped": 0
+  },
+  "scratch/t3/pool_net.jsonl": {
+   "read": 20358,
+   "kept_new": 1280,
+   "dup": 19078,
+   "dropped": 0
+  },
+  "scratch/t3/pool_ML.jsonl": {
+   "read": 203979,
+   "kept_new": 129314,
+   "dup": 74665,
+   "dropped": 0
+  }
+ },
+ "dropped": [
+  {
+   "src": "research/L-meta-612/t8/t8.md:145",
+   "reason": "not an edge function f_G",
+   "c": "6=0|2 7=3|1 8=2|1 9=7&8 10=9&6 11=4|10 12=3|5 13=11&12 14=10&13"
+  },
+  {
+   "src": "scratch/t8/t8.md:145",
+   "reason": "not an edge function f_G",
+   "c": "6=0|2 7=3|1 8=2|1 9=7&8 10=9&6 11=4|10 12=3|5 13=11&12 14=10&13"
+  }
+ ],
+ "non_c4free": 0,
+ "n_core": 95754,
+ "n_bulk": 129314,
+ "seconds": 56.9
+}

@@ -1,0 +1,358 @@
+[
+ {
+  "kind": "session",
+  "project": "-home-user",
+  "file": "session-0fc37754-home-user.jsonl.gz",
+  "records": 1030
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a00977e698d7a217f.jsonl.gz",
+  "records": 67,
+  "description": "Red-team pseudoforest AND proof",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a02421674f8917d3b.jsonl.gz",
+  "records": 88,
+  "description": "SAT search C4-free with triangles",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a07fd201315cfeb84.jsonl.gz",
+  "records": 70,
+  "description": "Survey AI-for-math pipelines",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a1508c71471480799.jsonl.gz",
+  "records": 105,
+  "description": "Search 13-gate circuit for L-meta-10531",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a15274262d3c5829b.jsonl.gz",
+  "records": 113,
+  "description": "Attack lemma E* for L-meta-612",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a1dc271ca13b0510e.jsonl.gz",
+  "records": 211,
+  "description": "Attack Lemma T2 total-savings induction",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a207d26af7c9fb1d7.jsonl.gz",
+  "records": 91,
+  "description": "Prove L-meta-10524 circuit lower bound",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a2c40f0f1ba8c30db.jsonl.gz",
+  "records": 114,
+  "description": "Proof design for L-meta-612",
+  "model": "claude-sonnet-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a304a19d0e754fd55.jsonl.gz",
+  "records": 72,
+  "description": "Triangle-free route: clean lemma",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a34263aa6d1454d5e.jsonl.gz",
+  "records": 66,
+  "description": "Prove L-gct-196 level space 4x7",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a356478589b742ba3.jsonl.gz",
+  "records": 170,
+  "description": "Petersen exact size SAT",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a373149532fffe669.jsonl.gz",
+  "records": 76,
+  "description": "Formalize Theorem PF in Lean",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a3897c2135f684574.jsonl.gz",
+  "records": 96,
+  "description": "DV2-Phi: girth-5 charging argument",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a39fba088407b1292.jsonl.gz",
+  "records": 310,
+  "description": "Decide Petersen size-19 circuit question",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a465dfce30cd9f292.jsonl.gz",
+  "records": 116,
+  "description": "Third attack on L-gct-196",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a46f5eb0e789014c5.jsonl.gz",
+  "records": 218,
+  "description": "Close pseudoforests: SAT bases + N(w)",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a4996fc8cd60589cf.jsonl.gz",
+  "records": 126,
+  "description": "Dead-gate Reader Lemma for T2-LR",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a514e4bae0fd81472.jsonl.gz",
+  "records": 92,
+  "description": "Literature check for Theorem PF",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a75caeb37edf45338.jsonl.gz",
+  "records": 27,
+  "description": "Lean proofs: 418, 420, 510, 421",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a7aebe611ec03802f.jsonl.gz",
+  "records": 82,
+  "description": "Prove T2-LT via Top collapse",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a7c67f3e7766e1cb2.jsonl.gz",
+  "records": 108,
+  "description": "Prove bound for monotone formulas",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a7cc49dd896e9d13d.jsonl.gz",
+  "records": 148,
+  "description": "Second attack on L-gct-196",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a7d4cdca9e5b08f98.jsonl.gz",
+  "records": 170,
+  "description": "Partial suns: one extra gate per run",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a912e50dbee839f39.jsonl.gz",
+  "records": 250,
+  "description": "Petersen bottom-up exact bounds",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-ab16d522a864f28bf.jsonl.gz",
+  "records": 65,
+  "description": "Prove Lemma D (charged ORs)",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-abae0fac9128dd436.jsonl.gz",
+  "records": 104,
+  "description": "Prove normal-form lemma NF5",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-abc3babf2d0e23005.jsonl.gz",
+  "records": 154,
+  "description": "Hunt Lemma D counterexample, Petersen",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-ad1a4d354f080290d.jsonl.gz",
+  "records": 92,
+  "description": "Bad-leaf and double-star cases",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-adbb2c211813eeb30.jsonl.gz",
+  "records": 17,
+  "description": "Lean proof for L-meta-413 triangle",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-addfd963925df7f71.jsonl.gz",
+  "records": 98,
+  "description": "Prove star case of E*_opt",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-ae282bd09bdff1fe7.jsonl.gz",
+  "records": 91,
+  "description": "Star case N(a) pays proof",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-ae72e86719f409451.jsonl.gz",
+  "records": 138,
+  "description": "Insertion impossibility for C_n circuits",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-aea38da7f5518d99b.jsonl.gz",
+  "records": 82,
+  "description": "Theory: hub charging, min degree 3",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-af176ce982f47b48f.jsonl.gz",
+  "records": 86,
+  "description": "Attack OR-count bound #OR>=|E|-1",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-af6d89ced4062f6a3.jsonl.gz",
+  "records": 71,
+  "description": "Lemma D case (a): two hubs",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-af80ebf71ddadbf32.jsonl.gz",
+  "records": 102,
+  "description": "Prove L-meta-10952 circuit lower bound",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-af8cbe40347d57164.jsonl.gz",
+  "records": 170,
+  "description": "Prove claim for max degree 3",
+  "model": "claude-opus-5-5",
+  "effort": "medium"
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-afc6a7fd1df3ade49.jsonl.gz",
+  "records": 123,
+  "description": "Build claim ledger and falsifier",
+  "model": "claude-opus-5-5",
+  "effort": "high"
+ },
+ {
+  "kind": "session",
+  "project": "-home-user-pvsnp",
+  "file": "session-0fc37754-home-user-pvsnp.jsonl.gz",
+  "records": 143
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a001afb055e18fee6.jsonl.gz",
+  "records": 26,
+  "description": "Map reusable Lean helpers",
+  "model": "claude-sonnet-5-5",
+  "effort": null
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a33674107c9ec4014.jsonl.gz",
+  "records": 6,
+  "description": "Design proof of L-meta-608",
+  "model": "claude-sonnet-5-5",
+  "effort": null
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a45cc07381b728343.jsonl.gz",
+  "records": 36,
+  "description": "Find 16-gate refuting circuit",
+  "model": "claude-sonnet-5-5",
+  "effort": null
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a8163fc922ba5ef2a.jsonl.gz",
+  "records": 6,
+  "description": "Fetch pequalnp.com/live",
+  "model": "claude-sonnet-5-5",
+  "effort": null
+ },
+ {
+  "kind": "subagent",
+  "file": "agent-a9bf2e64e46b6ec81.jsonl.gz",
+  "records": 36,
+  "description": "Search counterexample L-meta-608",
+  "model": "claude-sonnet-5-5",
+  "effort": null
+ }
+]
