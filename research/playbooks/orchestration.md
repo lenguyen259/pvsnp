@@ -37,3 +37,6 @@
   - Treat all solver runs as lost after a worker restart, and check with `ps`.
 - 2026-11-25 16:3x: The human set new agents to model `fable`, effort `medium`, replacing Opus
   high. Agents already running keep their model.
+- 2026-11-25 17:2x: The human paused steps 2 and 3 (LLM-heavy) to save tokens and avoid hitting the
+  usage limit. Run at most about 3 agents at once, prefer CPU-bound SAT agents, which are
+  token-light, and start LLM-heavy loops only when asked.

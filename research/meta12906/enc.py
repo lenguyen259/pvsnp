@@ -12,7 +12,7 @@ N = 4276813546 * 2**32 + 4276791976
 n = 6
 F = [(N >> r) & 1 for r in range(64)]
 
-def build(s, mono, sym=True):
+def build(s, mono, sym=True, strict=False):
     P = IDPool(); cl = []
     W = 1 + n + s
     def val(j, r):  # literal or bool
@@ -33,7 +33,8 @@ def build(s, mono, sym=True):
                 cl.append([-A[j], -B[k]])
         if not mono:
             # NOT / TRUE: b fixed to wire 0 ; TRUE: a fixed to 0
-            cl.append([-T['not'], B[0]]); cl.append([-T['true'], B[0]]); cl.append([-T['true'], A[0]])
+            if not strict: cl.append([-T['not'], B[0]])
+            cl.append([-T['true'], B[0]]); cl.append([-T['true'], A[0]])
         for r in range(64):
             v = P.id(('v', i, r)); pa = P.id(('pa', i, r)); pb = P.id(('pb', i, r))
             for X, p in ((A, pa), (B, pb)):
@@ -48,6 +49,27 @@ def build(s, mono, sym=True):
                 cl += [[-T['not'], pa, v], [-T['not'], -pa, -v], [-T['true'], v]]
     for r in range(64):
         v = P.id(('v', W - 1, r)); cl.append([v] if F[r] else [-v])
+    if strict:
+        # normal form of a minimum circuit of a non-constant function (see README):
+        # no constants, no copies, no NOT of NOT, gates in colex order of (b,a) unless reading the previous gate.
+        for i in range(1 + n, W):
+            A = [P.id(('a', i, j)) for j in range(i)]; B = [P.id(('b', i, j)) for j in range(i)]
+            cl.append([-A[0]])
+            if mono:
+                for j in range(i): cl.append([-A[j], -B[j]])
+            else:
+                cl.append([-P.id(('t', i, 'true'))])
+                for j in range(1, i):
+                    cl.append([-A[j], -B[j], P.id(('t', i, 'not'))])   # a=b only for NOT
+                    cl.append([-P.id(('t', i, 'not')), -A[j], B[j]])   # NOT: b:=a
+                    if j > n: cl.append([-P.id(('t', i, 'not')), -A[j], -P.id(('t', j, 'not'))])
+        for i in range(1 + n, W - 1):
+            A = [P.id(('a', i, j)) for j in range(i)]; B = [P.id(('b', i, j)) for j in range(i)]
+            A2 = [P.id(('a', i+1, j)) for j in range(i+1)]; B2 = [P.id(('b', i+1, j)) for j in range(i+1)]
+            for j in range(i):
+                for k in range(j): cl.append([-B[j], -B2[k], A2[i]])
+                for p in range(j + 1):
+                    for q in range(p): cl.append([-B[j], -B2[j], -A[p], -A2[q]])
     if sym:
         # every gate but the last is read by a later gate (sound: pad with copies at the end)
         for j in range(1 + n, W - 1):
@@ -85,7 +107,7 @@ def ev(pg, x):
 
 if __name__ == '__main__':
     s = int(sys.argv[1]); mono = sys.argv[2] == 'mono'
-    P, cl, kinds = build(s, mono, '--nosym' not in sys.argv)
+    P, cl, kinds = build(s, mono, '--nosym' not in sys.argv, '--strict' in sys.argv)
     if '--cnf' in sys.argv:
         CNF(from_clauses=cl).to_file(sys.argv[sys.argv.index('--cnf') + 1]); sys.exit()
     S = Cadical153(bootstrap_with=cl)
