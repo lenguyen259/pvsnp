@@ -35,3 +35,5 @@
   - Release leases before a likely long pause.
   - Restart heartbeats on every resume.
   - Treat all solver runs as lost after a worker restart, and check with `ps`.
+- 2026-11-25 16:3x: The human set new agents to model `fable`, effort `medium`, replacing Opus
+  high. Agents already running keep their model.
