@@ -20,7 +20,8 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 | L-gct-196 | 2026-11-25T10:46Z | 2026-11-25T12:19Z (withdrawn by desk) | TRACTABLE (desk label), plain statement says open case | withdrawn by desk while in work | withdrawn | 3 Opus agents (medium 11 min, high 48 min, high 27 min) |
 | L-meta-10524 | 2026-11-25T12:03Z | 2026-11-25T12:16Z | solid, 30 points | proved; PR open-goat/pequalnp-proofs#14149 awaiting official check | submitted | 1 Opus agent (high), ~8 min; orchestrator re-verified build and axioms |
 | L-meta-10952 | 2026-11-25T12:16Z | 2026-11-25T12:41Z | solid, 34 points | released | missing_lemma | 1 Opus agent (high), ~25 min |
-| L-meta-10531 | 2026-11-25T12:41Z |  | hard, 216 points | in progress |  | 1 Opus agent (high), SAT exact synthesis with CEGAR |
+| L-meta-10531 | 2026-11-25T12:41Z | 2026-11-25T~14:00Z (lease expired during usage-limit outage) | hard, 216 points | lease expired; not settled | expired | 1 Opus agent (high), SAT exact synthesis with CEGAR |
+| L-meta-9745 | 2026-11-25T16:12Z | 2026-11-25T17:10Z | open, 793 points | released | exhausted | 1 Opus agent (high), ~55 min, 1 CPU slot |
 
 ## Notes
 
@@ -35,11 +36,13 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - **L-gct-196**: level space of 4x7 complex matrices has dimension <= 9. Partial Lean (no sorry): expansion identity, row/two-row bounds, dim L <= 9 + dim D, cases D=0 and low row rank. New 8-dim family N8, conjecture 3 dim L <= pq. research/gct196/.
 - **L-meta-10524**: 9-vertex graph (10 edges): edge function needs >= 14 AND/OR/NOT gates. Desk said its recursion reaches only k-1; agent found the missing base row (theta(2,3,3) >= 11 from accepted L-meta-982 via L-meta-9409). Tree: b2 3, f0 6, base.
 - **L-meta-10952**: 9-vertex graph (11 edges): edge function needs >= 15 AND/OR/NOT gates. Exact search over the accepted gate-elimination checker: best certifiable bound 13 (14 with hypothetical rows); base rows capped at 12. SAT inconclusive. research/meta10952/.
-- **L-meta-10531**: refute: exhibit a <=13-gate AND/OR/NOT circuit for a 9-vertex, 11-edge graph (tau 4, k 14). research/meta10531/.
+- **L-meta-10531**: refute: exhibit a <=13-gate AND/OR/NOT circuit for a 9-vertex, 11-edge graph (tau 4, k 14). Agent stopped by the 5-hour usage limit before validating its NOT-basis encoding (could not yet rediscover the 14-gate circuit). research/meta10531/.
+- **L-meta-9745**: exhibit a <=25-gate AND/OR/NOT circuit for a 14-vertex 20-edge graph (Heawood graph minus one edge; C4-free, tau 7, |E|+tau-1 = 26). A monotone 25-gate circuit would refute L-meta-612. Window LNS with exact don't-cares (3005 windows, up to 9 gates) never went below 26; SAT never chose NOT. Restriction + rectangle-gadget analysis explains why simple gadgets cannot save. research/meta9745/.
 
 ## Summary so far
 
-- Assigned: 12. Proved and submitted: 1 (L-meta-10524). In progress: 1. Withdrawn by the desk: 1.
-  Lease lost: 1 (L-meta-612, research continued). Released: 8. Of those, 6 were judged to be
-  instances of the open L-meta-612 family or stronger, and 2 hit a checker or lemma limit.
+- Assigned: 13. Proved and submitted: 1 (L-meta-10524, upstream PR #14149 awaiting the official check).
+  Withdrawn by the desk: 1. Lease lost or expired: 2 (L-meta-612, L-meta-10531). Released: 9. Of
+  those, 7 were judged to be instances of the open L-meta-612 family or stronger, and 2 hit a checker
+  or lemma limit.
 - Triage time for out-of-reach steps: under 1 minute each.
