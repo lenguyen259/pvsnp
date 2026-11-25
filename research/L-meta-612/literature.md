@@ -101,3 +101,20 @@ Problem 22 there asks for an explicit graph with Gap(G) = n^{Omega(1)}. Problem 
 1. Full texts of [LW] (TCS 81, 1991) and [AM] (Algorithmica 46, 2006 / ISAAC 2004) were not readable because sciencedirect.com and link.springer.com are blocked in this session. The Lenz-Wegener 3-vs-4 example graph should be checked for C4-freeness. It almost surely has a C4, but this is unverified.
 2. Bloniarz's thesis (MIT LCS TR-238, 1979) was not readable. [W-book] cites it only for the AND-count exercise ("f in H2n can be computed with n-1 AND-gates"; smallest n with n-2) and for C(H^1_{n,n}) facts.
 3. Russian-language work (Krichevskii; Sergeev; Grinchuk) was not checked beyond secondary citations.
+
+## Addendum: full text of Lenz-Wegener (TCS 81 (1991) 257-268) read
+
+The full journal version was read (12 pages). What it contains, relative to our results:
+
+- **Theorem 2.1.** The single-level AND complexity C^1_∧(f_G) equals the biclique cover number of G. In a C4-free graph every biclique is a star, so C^1_∧(f_G) = tau(G). This confirms the inference in the main text.
+- **Proposition 2.3.** C_∧(f_G) = C^1_∧(f_G) = 2 for the graph of Fig. 2, with edges 14, 15, 24, 25, 26, 35, 36. The lower bound is proved by "the well-known elimination method". This graph contains the C4 1-4-2-5.
+- **Theorem 4.2.** For G(n) = floor(n/3) disjoint triangles, C_∧(f_G) = 2 floor(n/3). The lower bound comes from eliminating two AND gates per triangle by setting x_1 := 1 and the other two variables := 0. **This is a special case of the AND half of Theorem PF**, since disjoint triangles form a C4-free pseudoforest with tau = 2 per triangle. So PF's AND half is known for disjoint triangles. Its leaf step (our Lemma AL) is the same elimination method.
+- **Theorem 5.3.** The counterexample to the single-level conjecture (C_∧ = 3 < 4 = C^1_∧) is the 8-vertex graph of Fig. 3. Its vertices 1, 3, 5, 7 form a K4, so **it contains C4s**. This confirms that the known counterexamples avoid the C4-free class.
+- **Section 6, open problem (6).** "Does the single level conjecture hold for quadratic functions and the monotone circuit complexity, i.e. if we count conjunctions *and* disjunctions?" Theorem PF, combined with L_meta_599, gives a **positive answer for C4-free pseudoforests**: the star-cover single-level circuit of size |E| + tau - 1 is optimal for total size. Problems (3) and (7) concern worst-case values and are not touched.
+- Nothing on paths, cycles C_n (n >= 5), forests or pseudoforests beyond the triangle example. Nothing on the number of OR gates.
+
+**Updated verdict for item 1 (Theorem PF):**
+- AND half: known for forests (folklore elimination) and for disjoint triangles (LW Thm 4.2). For cycles C_n with n >= 5, and for general C4-free pseudoforests, apparently new. A single elimination step does not suffice there, which is why Lemma AND-core is needed.
+- Total-size statement: apparently new. It is a restricted positive case of LW's open problem (6).
+
+Amano-Maruoka (Algorithmica 2006) is still unread.
