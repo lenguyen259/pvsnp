@@ -61,3 +61,37 @@ Induced subgraphs of P that are not pseudoforests, up to isomorphism: H7 = P - (
 (7 v, 8 e, Phi 11), H8a = P - edge (8 v, 10 e, Phi 13), H8b = P - non-edge (8 v, 9 e, Phi 12),
 H9 = P - v (9 v, 12 e, Phi 16). Every induced subgraph on <= 6 vertices, and every 7-vertex one other
 than H7, is a pseudoforest (checked in plib.py/grest.py). Each level is proved with the levels below.
+
+## 3. Runs and results
+
+All solver times are wall-clock on a shared 4-core machine. Sizes s <= 4 are trivially UNSAT at every
+level (some restriction demands more surviving gates than s; the encoder then emits an empty clause).
+
+### 3.1 Hierarchy levels
+
+| graph | Phi | sizes | result | certificate |
+|---|---|---|---|---|
+| H7 = [01,05,16,24,46,63,35,52] | 11 | s=7..10 (`rest_H7.json`, factc, viol) | UNSAT (s=10: 68.5 s pysat) | DRAT, s=5..10 kissat + drat-trim VERIFIED |
+| H8b = P - {0,2} | 12 | s<=11 (`rest_H8b.json`, uses H7) | UNSAT (s=11: 0.4 s) | DRAT s=5..11 VERIFIED |
+| H8a = P - {0,1} | 13 | s<=11 (`rest_H8a.json`); s=12 (`rest2_H8a.json`, lexbot) | UNSAT (s=12: 243.6 s pysat) | DRAT s=5..12 VERIFIED |
+| H9 = P - 0 | 16 | s<=14 (`rest2_H9.json`, lexbot, uses H7/H8a/H8b) | UNSAT (s=13: 7.7 s, s=14: 3292.9 s pysat) | no DRAT yet |
+| H9 | 16 | s=15 monolithic | TIMEOUT (pysat 5400 s; kissat 5400 s) | |
+| H9 | 16 | s=15 cube-and-conquer | see 3.3 | |
+
+Non-vacuity at s = Phi (U circuit in lexbot form, all flags except viol): SAT for H7 (also found
+unconstrained at s=11 in 7.5 s), H8a, H8b, H9 and P (both `rest2_P_noH9.json`; P also accepts the
+13-OR circuit with viol).
+
+**PROVED (modulo the cited theorems and solver correctness; DRAT-certified):** C(f_H7) = 11,
+C(f_H8b) = 12, C(f_H8a) = 13 (upper bounds: U circuits). The H7 value was open in sat19/README.md.
+
+### 3.2 Petersen, unconditional family (`rest2_P_noH9.json`: pseudoforests + H7/H8a/H8b + U-singletons, minL 8)
+
+| s | result |
+|---|---|
+| 1..14 | UNSAT (s=14: 7.4 s) |
+| 15 | UNSAT (559.1 s pysat) |
+| 16 | TIMEOUT (no result after ~1 h; a parallel kissat run stopped after 46 min) |
+
+So **C(f_P) >= 16 unconditionally** (UNSAT, not yet DRAT-certified for s=15). Earlier (first try,
+weak family `rest_all.json` = pseudoforest restrictions only) s=15 did not finish in 600 s.

@@ -1,0 +1,12 @@
+16:28:50 graph [[0, 1], [0, 2], [0, 3], [1, 4], [2, 5], [3, 6], [4, 5], [4, 6], [5, 6]] n=7 |E|=9 tau=4 Phi=12; restrictions 717 (max tL 9); missing proper subgraph bounds: []
+16:28:50 VALIDATION U circuit at s=Phi=12 (rest+factc+lexbot, fixc): VERIFIED 7=1|2 8=1&4 9=2|4 10=3|4 11=3|7 12=6|9 13=6&10 14=0&11 15=5&12 16=8|14 17=15|16 18=13|17 | RESULT SAT 0.4s
+16:28:51 s=1 vars=2583 clauses=12081 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.1 MB)
+16:28:51 s=2 vars=5839 clauses=25306 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:51 s=3 vars=10891 clauses=43040 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:52 s=4 vars=16113 clauses=63130 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:52 s=5 vars=22012 clauses=85942 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:52 s=6 vars=27895 clauses=110757 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:53 s=7 vars=33773 clauses=137546 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:53 s=8 vars=39657 clauses=166359 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:28:57 s=9 vars=46391 clauses=198484 kissat: UNSAT 0.6s ; drat-trim: VERIFIED (3.4s, proof 2.6 MB)
+16:30:16 s=10 vars=52965 clauses=232215 kissat: UNSAT 28.3s ; drat-trim: VERIFIED (49.5s, proof 52.6 MB)

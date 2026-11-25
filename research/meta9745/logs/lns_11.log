@@ -1,1 +1,11 @@
-done 5 best 26 [["or", 10, 11], ["or", 14, 13], ["and", 4, 15], ["or", 12, 7], ["or", 17, 11], ["and", 3, 18], ["or", 9, 11], ["or", 20, 8], ["and", 6, 21], ["or", 10, 8], ["and", 0, 23], ["or", 9, 10], ["or", 12, 25], ["and", 5, 26], ["or", 24, 27], ["or", 13, 12], ["or", 29, 8], ["and", 2, 30], ["or", 28, 31], ["or", 22, 32], ["or", 19, 33], ["or", 9, 13], ["or", 7, 35], ["and", 1, 36], ["or", 34, 37], ["or", 16, 38]]
+it 20 size 26 best 26 withNOT 0 13
+it 40 size 26 best 26 withNOT 0 32
+it 60 size 26 best 26 withNOT 0 43
+it 80 size 27 best 26 withNOT 0 52
+it 120 size 27 best 26 withNOT 0 71
+it 140 size 27 best 26 withNOT 0 82
+it 160 size 27 best 26 withNOT 0 93
+it 180 size 27 best 26 withNOT 0 106
+it 340 size 27 best 26 withNOT 0 182
+it 380 size 27 best 26 withNOT 0 205
+done 473 best 26 [["or", 9, 11], ["and", 6, 14], ["or", 0, 6], ["and", 8, 16], ["or", 10, 13], ["or", 11, 18], ["and", 4, 19], ["or", 17, 20], ["or", 8, 12], ["or", 13, 22], ["and", 2, 23], ["or", 21, 24], ["or", 7, 9], ["or", 13, 26], ["and", 1, 27], ["or", 10, 12], ["or", 9, 29], ["and", 5, 30], ["or", 28, 31], ["or", 7, 12], ["or", 11, 33], ["and", 3, 34], ["or", 32, 35], ["or", 25, 36], ["and", 0, 10], ["or", 37, 38], ["or", 15, 39]]
