@@ -41,3 +41,6 @@
   renaming accepted `L_meta_9409` and searching for a new elimination tree.
 - 2026-11-25: The lease heartbeat loop lives at most 2 h as a background task and dies on a worker
   restart. Re-check the lease (`POST /desk/beat`) after any pause, and restart the loop.
+- 2026-11-25: The release reason `exhausted` is only for sharded-search leases; the desk rejects it
+  otherwise. For an ordinary step that we tried and failed, use `other`, or `missing_lemma` when
+  the precise missing ingredient is known.

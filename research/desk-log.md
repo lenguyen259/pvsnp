@@ -21,7 +21,7 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 | L-meta-10524 | 2026-11-25T12:03Z | 2026-11-25T12:16Z | solid, 30 points | proved; PR open-goat/pequalnp-proofs#14149 awaiting official check | submitted | 1 Opus agent (high), ~8 min; orchestrator re-verified build and axioms |
 | L-meta-10952 | 2026-11-25T12:16Z | 2026-11-25T12:41Z | solid, 34 points | released | missing_lemma | 1 Opus agent (high), ~25 min |
 | L-meta-10531 | 2026-11-25T12:41Z | 2026-11-25T~14:00Z (lease expired during usage-limit outage) | hard, 216 points | lease expired; not settled | expired | 1 Opus agent (high), SAT exact synthesis with CEGAR |
-| L-meta-9745 | 2026-11-25T16:12Z | 2026-11-25T17:10Z | open, 793 points | released | exhausted | 1 Opus agent (high), ~55 min, 1 CPU slot |
+| L-meta-9745 | 2026-11-25T16:12Z | 2026-11-25T17:10Z | open, 793 points | released | other | 1 Opus agent (high), ~55 min, 1 CPU slot |
 
 ## Notes
 
