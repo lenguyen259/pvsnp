@@ -9,6 +9,9 @@ f_G has at least |E| + tau(G) - 1 gates.
   graph of PG(2,q), which is C4-free with Theta(n^{3/2}) edges (`core/core.md`).
 
 ## Proved
+- **Full bound for every C4-free pseudoforest** (`t9/t9.md`, independently reviewed in `review9/`):
+  #AND >= tau (new) plus #OR >= |E| - 1 (accepted Lean proof L_meta_599).
+- Full bound for forests and for max degree <= 2 (`t2/t2.md`); clean monotone formulas (`t10/t10.md`).
 - Upper bound |E| + tau - 1 (`argument.md`).
 - Theorem S: the bound holds for every STAR-ALL circuit, for every C4-free G (`girth5/girth5.md`).
   It contains and strengthens the Amano-Maruoka single-level bound.

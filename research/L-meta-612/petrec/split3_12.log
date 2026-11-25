@@ -1,0 +1,4 @@
+CLASS 3 phi 13 s 12 case 5 | nrest 134 RESULT UNSAT 41.5s
+CLASS 3 phi 13 s 12 case 5 & nrest 134 RESULT UNSAT 3.3s
+CLASS 3 phi 13 s 12 case 4 | nrest 134 RESULT UNSAT 88.0s
+CLASS 3 phi 13 s 12 case 4 & nrest 134 RESULT UNSAT 2.9s
