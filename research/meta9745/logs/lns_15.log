@@ -1,0 +1,10 @@
+it 40 size 27 best 26 withNOT 0 29
+it 60 size 27 best 26 withNOT 0 38
+it 80 size 26 best 26 withNOT 0 44
+it 160 size 26 best 26 withNOT 0 84
+it 200 size 26 best 26 withNOT 0 104
+it 220 size 26 best 26 withNOT 0 115
+it 260 size 26 best 26 withNOT 0 141
+it 340 size 26 best 26 withNOT 0 182
+it 360 size 26 best 26 withNOT 0 193
+done 424 best 26 [["or", 7, 9], ["or", 13, 14], ["and", 1, 15], ["or", 8, 12], ["or", 13, 17], ["and", 2, 18], ["or", 11, 12], ["or", 7, 20], ["and", 3, 21], ["or", 19, 22], ["or", 16, 23], ["or", 10, 11], ["or", 13, 25], ["and", 4, 26], ["or", 24, 27], ["or", 8, 10], ["and", 0, 29], ["or", 28, 30], ["or", 8, 9], ["or", 11, 32], ["and", 6, 33], ["or", 9, 10], ["or", 12, 35], ["and", 5, 36], ["or", 34, 37], ["or", 31, 38]]
