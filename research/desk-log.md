@@ -22,6 +22,7 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 | L-meta-10952 | 2026-11-25T12:16Z | 2026-11-25T12:41Z | solid, 34 points | released | missing_lemma | 1 Opus agent (high), ~25 min |
 | L-meta-10531 | 2026-11-25T12:41Z | 2026-11-25T~14:00Z (lease expired during usage-limit outage) | hard, 216 points | lease expired; not settled | expired | 1 Opus agent (high), SAT exact synthesis with CEGAR |
 | L-meta-9745 | 2026-11-25T16:12Z | 2026-11-25T17:10Z | open, 793 points | released | other | 1 Opus agent (high), ~55 min, 1 CPU slot |
+| L-meta-12906 | 2026-11-25T17:06Z | 2026-11-25T17:5xZ | solid, 30 points | released (statement false) | statement_seems_false | 1 Fable agent (medium), ~45 min, 1 CPU slot; orchestrator re-checked the 10-gate circuit |
 
 ## Notes
 
@@ -38,11 +39,12 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - **L-meta-10952**: 9-vertex graph (11 edges): edge function needs >= 15 AND/OR/NOT gates. Exact search over the accepted gate-elimination checker: best certifiable bound 13 (14 with hypothetical rows); base rows capped at 12. SAT inconclusive. research/meta10952/.
 - **L-meta-10531**: refute: exhibit a <=13-gate AND/OR/NOT circuit for a 9-vertex, 11-edge graph (tau 4, k 14). Agent stopped by the 5-hour usage limit before validating its NOT-basis encoding (could not yet rediscover the 14-gate circuit). research/meta10531/.
 - **L-meta-9745**: exhibit a <=25-gate AND/OR/NOT circuit for a 14-vertex 20-edge graph (Heawood graph minus one edge; C4-free, tau 7, |E|+tau-1 = 26). A monotone 25-gate circuit would refute L-meta-612. Window LNS with exact don't-cares (3005 windows, up to 9 gates) never went below 26; SAT never chose NOT. Restriction + rectangle-gadget analysis explains why simple gadgets cannot save. research/meta9745/.
+- **L-meta-12906**: refute: for a monotone 6-input function, NOT gates save at least one gate. Exact synthesis on all 64 rows: monotone minimum 10 (circuit verified), general AND/OR/NOT minimum also 10 (UNSAT at 9 in normal-form encoding, DRAT verified). So NOT saves nothing; the positive twin L-meta-12905 holds. research/meta12906/.
 
 ## Summary so far
 
-- Assigned: 13. Proved and submitted: 1 (L-meta-10524, upstream PR #14149 awaiting the official check).
-  Withdrawn by the desk: 1. Lease lost or expired: 2 (L-meta-612, L-meta-10531). Released: 9. Of
-  those, 7 were judged to be instances of the open L-meta-612 family or stronger, and 2 hit a checker
-  or lemma limit.
+- Assigned: 14. Proved and submitted: 1 (L-meta-10524, upstream PR #14149 awaiting the official check).
+  Settled false with machine evidence and released: 1 (L-meta-12906). Withdrawn by the desk: 1.
+  Lease lost or expired: 2. Other releases: 9 (7 were instances of the open L-meta-612 family or
+  stronger; 2 hit a checker or lemma limit).
 - Triage time for out-of-reach steps: under 1 minute each.

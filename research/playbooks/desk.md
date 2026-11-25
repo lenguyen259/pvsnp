@@ -44,3 +44,6 @@
 - 2026-11-25: The release reason `exhausted` is only for sharded-search leases; the desk rejects it
   otherwise. For an ordinary step that we tried and failed, use `other`, or `missing_lemma` when
   the precise missing ingredient is known.
+- 2026-11-25: Paired steps "for all s ..." (L-meta-12905) and its negation (L-meta-12906) on a
+  6-input truth table: triage by exact synthesis first (about 15 min CPU, `research/meta12906/`).
+  Here g = m = 10, so the negation was false; release it with `statement_seems_false` and quote m, g.

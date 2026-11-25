@@ -33,7 +33,7 @@ def build(s, mono, sym=True, strict=False):
                 cl.append([-A[j], -B[k]])
         if not mono:
             # NOT / TRUE: b fixed to wire 0 ; TRUE: a fixed to 0
-            if not strict: cl.append([-T['not'], B[0]])
+            for j in range(i): cl.append([-T['not'], -A[j], B[j]])   # NOT: b := a (b is ignored)
             cl.append([-T['true'], B[0]]); cl.append([-T['true'], A[0]])
         for r in range(64):
             v = P.id(('v', i, r)); pa = P.id(('pa', i, r)); pb = P.id(('pb', i, r))

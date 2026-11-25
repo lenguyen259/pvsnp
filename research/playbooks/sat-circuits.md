@@ -44,3 +44,11 @@ These work:
   with `python3 -u` and flush.
 - 2026-11-25: Launch long jobs with the Bash tool's run_in_background through `cpuslot.sh`; a
   `nohup ... &` launch and an extra unslotted python run were refused by the permission classifier.
+- 2026-11-25 (meta12906, 6-input truth-table function, "NOT saves a gate?"): `research/meta12906/enc.py`
+  does exact synthesis on all 64 rows in the project's model. Without a normal form the general
+  basis at s = 9 ran over 8 min; with `--strict` (no constants/copies/NOT-NOT, colex gate order unless
+  reading the previous gate) UNSAT 9 took 4 min, DRAT-checked in 7 min. Result g = m = 10, statement false.
+- 2026-11-25: Validate a NOT-basis encoding on functions that need NOT (XOR = 4 gates, MUX = 4;
+  `meta12906/validate.py`). An `a <= b` symmetry clause plus "NOT has b = missing wire" silently
+  forced NOT to read only the false wire, so two UNSAT lines were void. Finding the target at the
+  monotone size does not exercise NOT.

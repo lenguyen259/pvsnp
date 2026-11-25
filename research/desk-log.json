@@ -154,5 +154,17 @@
   "reason": "other",
   "ai": "1 Opus agent (high), ~55 min, 1 CPU slot",
   "notes": "A monotone 25-gate circuit would refute L-meta-612. Window LNS with exact don't-cares (3005 windows, up to 9 gates) never went below 26; SAT never chose NOT. Restriction + rectangle-gadget analysis explains why simple gadgets cannot save. research/meta9745/."
+ },
+ {
+  "gap": "L-meta-12906",
+  "assigned": "2026-11-25T17:06Z",
+  "ended": "2026-11-25T17:5xZ",
+  "program": "meta",
+  "level": "solid, 30 points",
+  "task": "refute: for a monotone 6-input function, NOT gates save at least one gate",
+  "outcome": "released (statement false)",
+  "reason": "statement_seems_false",
+  "ai": "1 Fable agent (medium), ~45 min, 1 CPU slot; orchestrator re-checked the 10-gate circuit",
+  "notes": "Exact synthesis on all 64 rows: monotone minimum 10 (circuit verified), general AND/OR/NOT minimum also 10 (UNSAT at 9 in normal-form encoding, DRAT verified). So NOT saves nothing; the positive twin L-meta-12905 holds. research/meta12906/."
  }
 ]
