@@ -342,7 +342,7 @@ C(id="T2-LD", st="REFUTED", title="T2-LD: constants, copies and dead gates pay s
 C(id="LOCALISE", st="REFUTED", title="Localisations of the good option (t2/t3/t10)",
   stmt="Each of: mA, mB, N-only, every vertex has a good option, every leaf / degree-2 vertex has one, the good option lies at v or u for a bad leaf, V1/V2/V4/V5 (t10), 'within distance 1 of a paid vertex'.",
   scope=("C4-free", "reduced"), where="t2.md 2 table; t3.md 1.3; t10.md 3",
-  wit=["6=0|1 7=0|3 8=0|5 9=1|3 10=4&6 11=8&9 12=2|11 13=7&12 14=10&13",
+  wit=["6=0|1 7=0|3 8=0|5 9=1|3 10=4&6 11=8&9 12=2|11 13=7&12 14=10|13",
        "8=4&3 9=8|0 10=4|5 11=7|3 12=11|1 13=2&12 14=9|6 15=1&14 16=10&9 17=15|16 18=13|17"],
   ev="First: [01,02,03,04,14,23,35] at size Phi, a vertex without good option. Second: C5{012} at size Phi, a locally-bad leaf (all of A(v),B(v),N(v),N'(v),A(u),B(u) bad). The good option can sit at distance 2-3.")
 C(id="NaNb", st="REFUTED", title="Configuration (2): N(a) or N(b) is good",
@@ -352,7 +352,7 @@ C(id="NaNb", st="REFUTED", title="Configuration (2): N(a) or N(b) is good",
   ev="Petersen, size 22 = Phi+2.")
 C(id="TOP-LB", st="REFUTED", title="Graph-term lower bound on |Top_X|", stmt="|Top_X \\ (K u Cp)| >= h(G,X) with h >= 2 for some option.",
   scope=("C4-free", "reduced"), where="t7/t7.md 1",
-  wit=["8=3|7 9=6&1 10=1|8 11=2&10 12=5|1 13=0|9 14=13&12 15=11&14 16=3|13 17=4&16 18=17|15"], ev="C5{012}, size Phi.")
+  wit=["8=3|7 9=6&1 10=1|8 11=2&10 12=5|1 13=0|9 14=13&12 15=11|14 16=3|13 17=4&16 18=17|15"], ev="C5{012}, size Phi.")
 C(id="DV2-ALL", st="REFUTED", title="Every reduced circuit has a DV2-certified vertex",
   stmt="Some vertex c satisfies the DV2 certificate (pen(c) <= k_Z - delta_c, carrier hypotheses).", scope=("C4-free", "reduced"),
   where="t8/t8.md 3b", wit=["4=0|1 5=0|2 6=1|3 7=5&6 8=4&7", "5=0|2 6=0|3 7=2|4 8=6&7 9=1|8 10=5&9"],
@@ -391,3 +391,10 @@ C(id="PORT", st="REFUTED", title="All port holders of a minimum circuit lie in o
 C(id="RHO-P", st="REFUTED", title="Partial suns: the all-pendant option pays", stmt="elim(rho_P) >= need(rho_P) and elim(U:=0, P:=1) >= need, from the local reader structure alone.",
   scope=("partial suns", "reduced"), where="t4/t4.md 4",
   wit=["8=3&4 9=3&2 10=0|9 11=7|2 12=10|4 13=12&5 14=1|9 15=6|14 16=11&14 17=15&10 18=16|13 19=17|8 20=19|18"], ev="C6{01}, Phi+2. Moot after THM-PF.")
+
+# ------------------------------------------------------------------ subcubic base-case census (subcubic.md)
+C(id="C3-BASE", st="OPEN", title="Smallest open graphs of MAIN-C3 (connected)",
+  stmt="MAIN for the connected C4-free subcubic non-pseudoforests not yet SAT-verified: 8 graphs on 7 vertices (all with triangles; the 7-vertex sweep timed out at 900 s), 31 on 8 vertices (27 with triangles, 4 triangle-free with Phi 12), 113 on 9 vertices (23 triangle-free, incl. H9).",
+  scope=("C4-free, Delta <= 3, connected, n <= 9", "any"), where="subcubic.md; subcubic_graphs.json (subcubic_enum.py)",
+  ev="Every proper induced subgraph of a 7-vertex graph is SAT-verified (n <= 6) or a pseudoforest, so petersen19/enc5.py's unconditional restriction hierarchy applies directly. Note: every subcubic graph with at most one degree-3 vertex is a pseudoforest, so THM-F adds nothing on C3.",
+  uses=["SAT-N6", "SAT-N7", "SAT-PETSUB", "THM-PF"], c3="base-case")

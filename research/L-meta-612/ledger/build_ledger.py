@@ -139,6 +139,22 @@ def main():
                          (w["n"], estr(w["edges"]), w["phi"], w["size"], w["n_and"], w["n_or"], w["girth"],
                           "subcubic" if w["subcubic"] else "max degree > 3", w["store_id"], w["circuit"]))
             M.append("")
+    M.append("## Files and usage\n")
+    M.append("""- `ledger_src.py` (edit this) -> `build_ledger.py` -> `ledger.json`, `ledger.md`.
+- `circuits.jsonl` (curated core, ~3k circuits, < 5 MB) and `circuits_bulk.jsonl.gz` (~222k more). One JSON object per
+  line: `id, n, edges, gname, E, tau, phi, gates [[op,a,b],...] (gate k is node n+k), out, size, n_and, n_or, slack,
+  red_size, red_and, red_or, reduced, cls {c4free, maxdeg, mindeg, subcubic, pseudoforest, forest, girth,
+  triangle_free, n_hubs, ...}, sources, n_sources, tags, tier`. Every circuit was checked to compute its f_G on all
+  2^n inputs; only C4-free graphs are kept; duplicates (same graph, same multiset of gate functions) are merged.
+  Built by `collect.py` (report in `collect_report.json`; `pins.json` and `witnesses_new.jsonl` force witnesses
+  into the core).
+- `falsify.py`: claims as predicates (`--list`, `--claim`, `--sanity`, `--candidates FILE`, `--fresh G:SEC`,
+  `--fresh-from-store`, `--closure`, `--filter`). `sanity_report.json`: last full sanity run (22 built-in claims,
+  all as expected). `fresh_report.json`: the seeded adversarial run that refuted T2-LR. `candidates_example.py`:
+  template for the conjecture-evolution loop.
+- `lib612.py`: semantics (truth tables, red, rule R, LD, LR, STAR-ALL, ch, graph quantities).
+- `subcubic_enum.py` -> `subcubic_graphs.json` (census used by `subcubic.md`).
+""")
     open(os.path.join(HERE, "ledger.md"), "w").write("\n".join(M) + "\n")
     print("claims", len(out), dict(cnt), "problems", problems)
 

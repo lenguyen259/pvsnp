@@ -13,10 +13,18 @@ Examples
   python3 -I falsify.py --claim T2 --fresh petersen:60 --fresh n8:30  # + adversarial fresh circuits
   python3 -I falsify.py --pred-file my.py --claim mine              # my.py defines CLAIMS = {name: (fn, doc)}
   python3 -I falsify.py --claim T2 --closure                        # also all red(C|x_X:=0), X = {v}, N[v]
+  python3 -I falsify.py --candidates cands.py [--core-only] [--fresh-from-store --fresh petersen:60]
+        # conjecture-evolution loop: run EVERY candidate in cands.py (CLAIMS = {name: (fn, statement)}),
+        # write cands_result.json = {survivors (ranked by tightness = #instances with margin 0 / in scope),
+        # dead (with the 2 smallest counterexamples), vacuous}; see candidates_example.py for the x API.
+        # Predicates may return None / bool / margin; exceptions are counted, not fatal.
   python3 -I falsify.py --sanity                                     # every built-in claim, report json
   python3 -I falsify.py --stats                                      # composition of the store
 
-Light CPU: one process; please run under `nice`. The store (core ~10k + bulk ~215k circuits) is read
+Smallest counterexample = smallest (n, |E|, reduced size). --stop-after K stops a claim after K violations
+(faster for many candidates; the reported smallest is then the smallest among those found, and the
+store is read in increasing (n, |E|, size) order within each file).
+Light CPU: one process; run under research/tools/cpuslot.sh and `nice`. The store (core ~10k + bulk ~215k circuits) is read
 from circuits.jsonl and circuits_bulk.jsonl.gz; a full --sanity pass takes several minutes.
 """
 import sys, os, json, time, random, argparse, importlib.util, itertools
@@ -532,6 +540,25 @@ def fresh(fn, n, edges, seconds, max_slack, seed, report, gname, seeds=None):
     return tried, valid, len(seen)
 
 
+def as_margin(v):
+    """normalise a predicate result: None (out of scope), bool (True holds, False violated) or number"""
+    if v is None:
+        return None
+    if isinstance(v, bool):
+        return 0 if v else -1
+    return v
+
+
+def call(fn, x, rep):
+    try:
+        return as_margin(fn(x))
+    except Exception as ex:            # a broken candidate must not stop the run
+        rep.errors += 1
+        if rep.first_error is None:
+            rep.first_error = "%s: %s" % (type(ex).__name__, ex)
+        return None
+
+
 # ============================================================== reporting
 class Report:
     def __init__(self, name, keep=5):
@@ -542,12 +569,17 @@ class Report:
         self.min_margin = None
         self.worst = []      # smallest counterexamples
         self.keep = keep
+        self.tight = 0       # in-scope instances with margin exactly 0
+        self.errors = 0
+        self.first_error = None
 
     def see(self, x, m, src):
         self.checked += 1
         if m is None:
             return
         self.in_scope += 1
+        if m == 0:
+            self.tight += 1
         if self.min_margin is None or m < self.min_margin:
             self.min_margin = m
         if m < 0:
@@ -564,6 +596,7 @@ class Report:
 
     def as_dict(self):
         return {"claim": self.name, "checked": self.checked, "in_scope": self.in_scope, "violations": self.viol,
+                "tight": self.tight, "errors": self.errors, "first_error": self.first_error,
                 "min_margin": self.min_margin, "smallest": [w[1] for w in self.worst]}
 
     def show(self):
@@ -614,7 +647,10 @@ def stats(paths):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--claim", action="append", default=[])
-    ap.add_argument("--pred-file")
+    ap.add_argument("--pred-file", help="Python file defining CLAIMS = {name: fn | (fn, doc, ...)}; adds to --claim")
+    ap.add_argument("--candidates", help="Python file of candidate predicates (CLAIMS dict); runs ALL of them and "
+                    "writes a JSON with survivors (ranked by tightness) and dead candidates with smallest counterexamples")
+    ap.add_argument("--stop-after", type=int, default=0, help="stop evaluating a claim after this many violations")
     ap.add_argument("--list", action="store_true")
     ap.add_argument("--sanity", action="store_true", help="run every built-in claim; write sanity_report.json")
     ap.add_argument("--stats", action="store_true")
@@ -633,12 +669,18 @@ def main():
     a = ap.parse_args()
 
     claims = {k: v[0] for k, v in CLAIMS.items()}
-    if a.pred_file:
-        spec = importlib.util.spec_from_file_location("userpreds", a.pred_file)
+    docs = {k: (v[0].__doc__ or "").strip() for k, v in CLAIMS.items()}
+    cand_names = []
+    for pf in [p for p in (a.pred_file, a.candidates) if p]:
+        spec = importlib.util.spec_from_file_location("userpreds_%d" % len(cand_names), pf)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         for k, v in mod.CLAIMS.items():
-            claims[k] = v[0] if isinstance(v, tuple) else v
+            fn = v[0] if isinstance(v, tuple) else v
+            claims[k] = fn
+            docs[k] = (v[1] if isinstance(v, tuple) and len(v) > 1 else (fn.__doc__ or "")).strip()
+            if pf == a.candidates:
+                cand_names.append(k)
     if a.list:
         for k, v in CLAIMS.items():
             print("%-9s expected %-8s ledger %-10s %s" % (k, v[1], v[2], (v[0].__doc__ or "").split("\n")[0]))
@@ -647,10 +689,11 @@ def main():
     if a.stats:
         stats(paths)
         return
-    names = list(CLAIMS) if a.sanity else a.claim
+    names = list(CLAIMS) if a.sanity else (a.claim + [c for c in cand_names if c not in a.claim])
     if not names:
         ap.error("give --claim NAME (or --sanity / --list / --stats)")
     reps = {nm: Report(nm) for nm in names}
+    dead_skip = set()
     t0 = time.time()
     filt = make_filter(a.filter) if a.filter else None
     cnt = 0
@@ -662,7 +705,11 @@ def main():
             C = rec_circ(r)
             x = Ctx(C, r["edges"], r)
             for nm in names:
-                reps[nm].see(x, claims[nm](x), r["id"])
+                if nm in dead_skip:
+                    continue
+                reps[nm].see(x, call(claims[nm], x, reps[nm]), r["id"])
+                if a.stop_after and reps[nm].viol >= a.stop_after:
+                    dead_skip.add(nm)
             if a.closure:
                 Rc = x.R
                 for v in x.G.V:
@@ -673,7 +720,8 @@ def main():
                             continue
                         y = Ctx(S, E2, {"id": "%s|x%s:=0" % (r["id"], "".join(map(str, X)))})
                         for nm in names:
-                            reps[nm].see(y, claims[nm](y), y.rec["id"])
+                            if nm not in dead_skip:
+                                reps[nm].see(y, call(claims[nm], y, reps[nm]), y.rec["id"])
             if cnt % 20000 == 0:
                 print("  ... %d circuits, %.0f s" % (cnt, time.time() - t0), file=sys.stderr, flush=True)
     fr = []
@@ -684,7 +732,10 @@ def main():
         if a.fresh_from_store:
             print("fresh %s: %d store circuits as restart points" % (gname, len(seeds)))
         for nm in names:
-            tr, va, un = fresh(claims[nm], n, E, float(secs) / len(names), a.fresh_slack, a.seed, reps[nm], gname, seeds)
+            if nm in dead_skip:
+                continue
+            fnw = (lambda f, rp: (lambda x: call(f, x, rp)))(claims[nm], reps[nm])
+            tr, va, un = fresh(fnw, n, E, float(secs) / len(names), a.fresh_slack, a.seed, reps[nm], gname, seeds)
             fr.append({"claim": nm, "graph": gname, "edits": tr, "valid": va, "distinct": un})
     print("store circuits read: %d   (%.0f s)" % (cnt, time.time() - t0))
     for f in fr:
@@ -702,6 +753,22 @@ def main():
         bad = [d["claim"] for d in out if not d["as_expected"]]
         print("\nsanity: %d claims, %d as expected; unexpected: %s" % (len(out), len(out) - len(bad), bad or "none"))
     outp = a.out or (os.path.join(HERE, "sanity_report.json") if a.sanity else None)
+    if a.candidates:
+        res = {d["claim"]: d for d in out}
+        surv = [dict(res[c], statement=docs[c]) for c in cand_names if res[c]["violations"] == 0]
+        dead = [dict(res[c], statement=docs[c]) for c in cand_names if res[c]["violations"] > 0]
+        surv.sort(key=lambda d: (-(d["tight"] / d["in_scope"] if d["in_scope"] else 0), -d["in_scope"]))
+        for d in dead:
+            d["smallest"] = d["smallest"][:2]
+        cj = {"candidates_file": a.candidates, "store_circuits": cnt, "filters": a.filter, "core_only": a.core_only,
+              "fresh": fr, "n_candidates": len(cand_names), "survivors": surv, "dead": dead,
+              "vacuous": [d["claim"] for d in surv if d["in_scope"] == 0],
+              "seconds": round(time.time() - t0, 1)}
+        cp = a.out or os.path.splitext(a.candidates)[0] + "_result.json"
+        json.dump(cj, open(cp, "w"), indent=1)
+        print("\ncandidates: %d survive, %d dead, %d vacuous (never in scope) -> %s" %
+              (len(surv), len(dead), len(cj["vacuous"]), cp))
+        return
     if outp:
         json.dump({"store_circuits": cnt, "filters": a.filter, "core_only": a.core_only, "fresh": fr, "results": out,
                    "seconds": round(time.time() - t0, 1)}, open(outp, "w"), indent=1)

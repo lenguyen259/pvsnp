@@ -51,7 +51,7 @@ def sat_verified():
     """graphs whose exact Phi is SAT-verified (UNSAT at Phi - 1): returns list of nx graphs + note"""
     ver = []
     for line in open(os.path.join(RES, "data/n6.txt")):
-        i = line.find("[[")
+        i = line.find("[(")
         if i >= 0:
             E = ast.literal_eval(line[i:].strip())
             ver.append((nx.Graph(E), "n6.txt (run1.py, all C4-free graphs n<=6)"))

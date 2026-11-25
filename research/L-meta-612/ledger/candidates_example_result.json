@@ -1,0 +1,188 @@
+{
+ "candidates_file": "candidates_example.py",
+ "store_circuits": 3153,
+ "filters": [],
+ "core_only": true,
+ "fresh": [],
+ "n_candidates": 4,
+ "survivors": [
+  {
+   "claim": "trade",
+   "checked": 3153,
+   "in_scope": 3153,
+   "violations": 0,
+   "tight": 1895,
+   "errors": 0,
+   "first_error": null,
+   "min_margin": 0,
+   "smallest": [],
+   "statement": "#AND - tau >= |E| - 1 - #OR (= MAIN)"
+  },
+  {
+   "claim": "t2_c3",
+   "checked": 3153,
+   "in_scope": 2364,
+   "violations": 0,
+   "tight": 1145,
+   "errors": 0,
+   "first_error": null,
+   "min_margin": 0,
+   "smallest": [],
+   "statement": "Lemma T2 on max degree <= 3 (A or N option at some vertex)"
+  }
+ ],
+ "dead": [
+  {
+   "claim": "t2_hub_only",
+   "checked": 3153,
+   "in_scope": 2364,
+   "violations": 31,
+   "tight": 1150,
+   "errors": 0,
+   "first_error": null,
+   "min_margin": -3,
+   "smallest": [
+    {
+     "id": "c000021",
+     "src": "c000021",
+     "n": 4,
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       2
+      ]
+     ],
+     "phi": 4,
+     "size": 5,
+     "slack": 1,
+     "n_and": 2,
+     "n_or": 3,
+     "margin": -1,
+     "circuit": "4=0|1 5=0|2 6=1|3 7=5&6 8=4&7"
+    },
+    {
+     "id": "c000064",
+     "src": "c000064",
+     "n": 5,
+     "edges": [
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       3
+      ],
+      [
+       3,
+       4
+      ]
+     ],
+     "phi": 5,
+     "size": 6,
+     "slack": 1,
+     "n_and": 2,
+     "n_or": 4,
+     "margin": -2,
+     "circuit": "5=0|3 6=1|2 7=3|4 8=4|6 9=5&8 10=7&9"
+    }
+   ],
+   "statement": "T2 with the good vertex of maximum degree"
+  },
+  {
+   "claim": "N_only",
+   "checked": 3153,
+   "in_scope": 3042,
+   "violations": 19,
+   "tight": 1809,
+   "errors": 0,
+   "first_error": null,
+   "min_margin": -1,
+   "smallest": [
+    {
+     "id": "c000129",
+     "src": "c000129",
+     "n": 5,
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     "phi": 6,
+     "size": 6,
+     "slack": 0,
+     "n_and": 2,
+     "n_or": 4,
+     "margin": -1,
+     "circuit": "5=0|2 6=0|3 7=2|4 8=6&7 9=1|8 10=5&9"
+    },
+    {
+     "id": "c000427",
+     "src": "c000427",
+     "n": 6,
+     "edges": [
+      [
+       0,
+       1
+      ],
+      [
+       0,
+       2
+      ],
+      [
+       0,
+       3
+      ],
+      [
+       3,
+       4
+      ],
+      [
+       3,
+       5
+      ]
+     ],
+     "phi": 6,
+     "size": 7,
+     "slack": 1,
+     "n_and": 2,
+     "n_or": 5,
+     "margin": -1,
+     "circuit": "6=0|3 7=1|2 8=4|5 9=0|8 10=3|7 11=9&10 12=6&11"
+    }
+   ],
+   "statement": "some N(v) option is good"
+  }
+ ],
+ "vacuous": [],
+ "seconds": 1.0
+}
