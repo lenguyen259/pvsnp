@@ -166,6 +166,8 @@ for ri,(th,tl,aL,oL,tL) in enumerate(RR):
             cl.append([-z,Lc(i,th)]); cl.append([-z,Rc(i,th)])
             if tl is not None: cl.append([-z,-Lc(i,tl)]); cl.append([-z,-Rc(i,tl)])
         cl.append([-x,-y])
+    if max(aL,oL,tL)>s or aL+oL>s:
+        z=pool.id(('triv',ri)); cl.append([z]); cl.append([-z]); continue
     if aL>0: cl.extend(CardEnc.atleast(sa,aL,vpool=pool,encoding=EncType.seqcounter).clauses)
     if oL>0: cl.extend(CardEnc.atleast(so,oL,vpool=pool,encoding=EncType.seqcounter).clauses)
     if tL>aL+oL: cl.extend(CardEnc.atleast(sa+so,tL,vpool=pool,encoding=EncType.totalizer).clauses)
