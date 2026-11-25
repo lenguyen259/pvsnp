@@ -33,3 +33,14 @@ These work:
 
 - 2026-11-25: Over-subscribing 4 cores (6 solvers) slowed every run. Use `cpuslot.sh`.
 - 2026-11-24: An agent's `pkill -f enc4.py` killed another agent's runs. Kill your own PIDs only.
+- 2026-11-25 (meta9745, Heawood minus edge, 26 -> 25?): window LNS with exact Boolean-relation
+  don't-cares (`research/meta9745/lns.py`: force each window-output vector, evaluate the rest on all
+  2^n inputs as big-int truth tables) is cheap and validated (27 -> 26 in 21 windows); 2764+241 windows
+  found nothing below 26, and SAT never picked a NOT gate.
+- 2026-11-25: Window encodings over all 2^|ins| patterns stall at >= 10 inputs (phase 2: ~0.1
+  window/s). Cap window inputs at 8-9, set a conflict budget (`conf_budget` + `solve_limited`), or
+  add rows by CEGAR.
+- 2026-11-25: Pipe `| tail` on a long job loses all output when `timeout` kills it; write logs to files
+  with `python3 -u` and flush.
+- 2026-11-25: Launch long jobs with the Bash tool's run_in_background through `cpuslot.sh`; a
+  `nohup ... &` launch and an extra unslotted python run were refused by the permission classifier.

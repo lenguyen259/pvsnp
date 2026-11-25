@@ -44,4 +44,20 @@ is checked on all 16384 inputs.
 Validation: from a 27-gate circuit (star of vertex 1 split as (x1&x7)|(x1&(x9|x13))) the search finds 26
 after 21 windows (`test2.py`).
 
-Results: see section below.
+## Results (DATA, 2026-11-25, about 45 min CPU in one slot)
+
+| phase | windows (gates) | max window inputs | starts | windows tried | best |
+|---|---|---|---|---|---|
+| 1 (`run.sh`, `lns.py`) | 3..7 | 8 | 6 runs x 240 s, left/right covers | 2764 | 26 |
+| 2 (`run2.sh`, `lns2.py`) | 6..9 | 10 | 2 runs x 150 s | 20 | 26 (too slow: 1024-row encodings) |
+| 3 (`run3.sh`, `lns2.py`) | 5..8 | 9 | 2 runs x 240 s | 241 | 26 |
+
+No circuit with <= 25 gates found (no `found_*.json`). The walk moved freely on the 26/27 plateau
+(e.g. mixed-side circuits such as x8 & (x0|x6) next to x6 & (x9|x11) at size 27) but never below 26.
+No accepted circuit contained a NOT gate: every window replacement SAT chose was monotone.
+This is weak evidence only (windows <= 9 gates); it does not bear on L-meta-612 beyond "no local
+NOT-saving or monotone saving near star covers".
+
+Not attempted: global SAT at 25 (out of reach, per brief); LNS with CEGAR rows for windows of 10+
+gates (would be the next step: build the window encoding incrementally on counterexample rows instead
+of all 2^|ins| patterns, which is what made phase 2 slow).
