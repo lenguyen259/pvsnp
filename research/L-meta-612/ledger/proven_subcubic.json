@@ -1482,5 +1482,139 @@
    }
   },
   "date": "2026-11-25"
+ },
+ {
+  "name": "G8tf2",
+  "edges": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    3,
+    6
+   ],
+   [
+    4,
+    7
+   ],
+   [
+    5,
+    7
+   ],
+   [
+    6,
+    7
+   ]
+  ],
+  "n": 8,
+  "m": 9,
+  "tau": 4,
+  "phi": 12,
+  "L": 12,
+  "status": "UNSAT-all-m",
+  "label": "DRAT",
+  "method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+  "flags": "--factc --viol --lexbot --rest rest/rest_G8tf2.json (grest2.family2, minL=1; 2162 restrictions)",
+  "subgraph_bounds_missing": [],
+  "validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+  "kissat_total_s": 519.0,
+  "drat": "yes",
+  "per_size": {
+   "1": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.2 MB)",
+    "vars": 7191,
+    "clauses": 34054
+   },
+   "2": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 16350,
+    "clauses": 71020
+   },
+   "3": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 31482,
+    "clauses": 122066
+   },
+   "4": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 47704,
+    "clauses": 181054
+   },
+   "5": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.2s, proof 0.0 MB)",
+    "vars": 66084,
+    "clauses": 248191
+   },
+   "6": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.2s, proof 0.0 MB)",
+    "vars": 84216,
+    "clauses": 320693
+   },
+   "7": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.2s, proof 0.0 MB)",
+    "vars": 102061,
+    "clauses": 398260
+   },
+   "8": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.2s, proof 0.0 MB)",
+    "vars": 119632,
+    "clauses": 480895
+   },
+   "9": {
+    "result": "UNSAT",
+    "kissat_s": 0.8,
+    "drat": "VERIFIED (0.7s, proof 1.2 MB)",
+    "vars": 139623,
+    "clauses": 571873
+   },
+   "10": {
+    "result": "UNSAT",
+    "kissat_s": 26.7,
+    "drat": "VERIFIED (39.3s, proof 61.4 MB)",
+    "vars": 159489,
+    "clauses": 668405
+   },
+   "11": {
+    "result": "UNSAT",
+    "kissat_s": 491.5,
+    "drat": "VERIFIED (693.4s, proof 400.5 MB)",
+    "vars": 179386,
+    "clauses": 770834
+   }
+  },
+  "date": "2026-11-25"
  }
 ]

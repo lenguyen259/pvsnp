@@ -40,3 +40,6 @@
 - 2026-11-25 17:2x: The human paused steps 2 and 3 (LLM-heavy) to save tokens and avoid hitting the
   usage limit. Run at most about 3 agents at once, prefer CPU-bound SAT agents, which are
   token-light, and start LLM-heavy loops only when asked.
+- 2026-11-25 18:1x: The human set model choice by task. Lean-writing agents use `sonnet` at medium
+  effort. Other agents use `fable` at medium effort. Run SAT jobs myself where a validated script
+  exists.
