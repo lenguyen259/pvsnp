@@ -1,0 +1,14 @@
+P_noH9 s=1 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.2s 
+P_noH9 s=2 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.1s 
+P_noH9 s=3 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.1s 
+P_noH9 s=4 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.2s 
+P_noH9 s=5 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.2s 
+P_noH9 s=6 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.2s 
+P_noH9 s=7 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.2s 
+P_noH9 s=8 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.3s 
+P_noH9 s=9 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.3s 
+P_noH9 s=10 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.3s 
+P_noH9 s=11 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.4s 
+P_noH9 s=12 [rest2_P_noH9.json lexbot] RESULT UNSAT 0.4s 
+P_noH9 s=13 [rest2_P_noH9.json lexbot] RESULT UNSAT 1.6s 
+P_noH9 s=14 [rest2_P_noH9.json lexbot] RESULT UNSAT 7.4s 
