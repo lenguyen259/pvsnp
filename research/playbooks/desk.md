@@ -39,3 +39,5 @@
   most about 45 minutes before re-triage.
 - 2026-11-25: A sibling of an accepted proof is the cheapest win. L-meta-10524 took 8 minutes by
   renaming accepted `L_meta_9409` and searching for a new elimination tree.
+- 2026-11-25: The lease heartbeat loop lives at most 2 h as a background task and dies on a worker
+  restart. Re-check the lease (`POST /desk/beat`) after any pause, and restart the loop.

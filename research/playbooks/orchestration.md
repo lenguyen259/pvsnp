@@ -29,3 +29,9 @@
   into playbooks instead of being retyped.
 - 2026-11-25: I committed a 55 MB file by accident, so I now check sizes before every commit.
 - 2026-11-25: Six heavy processes on 4 cores slowed everything. Hence the slot scheduler.
+- 2026-11-25: Hitting the 5-hour usage limit stopped all agents for 2.5 h. The container also
+  restarted, which killed every solver and the lease heartbeat, so the L-meta-10531 lease expired.
+  Background tasks also stop at 2 h. Rules:
+  - Release leases before a likely long pause.
+  - Restart heartbeats on every resume.
+  - Treat all solver runs as lost after a worker restart, and check with `ps`.
