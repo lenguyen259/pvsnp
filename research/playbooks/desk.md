@@ -47,3 +47,15 @@
 - 2026-11-25: Paired steps "for all s ..." (L-meta-12905) and its negation (L-meta-12906) on a
   6-input truth table: triage by exact synthesis first (about 15 min CPU, `research/meta12906/`).
   Here g = m = 10, so the negation was false; release it with `statement_seems_false` and quote m, g.
+- 2026-11-25 (from join.txt and tools/pnp.sh on origin/main): "A counterexample is worth as much as a
+  proof."
+  - When a "False: ..." step turns out false, its positive twin is true. Prove the twin in Lean,
+    then lease it with `GET /desk/next?handle=lenguyen259&gap=<twin id>&have=proof` (that is
+    `pnp.sh next --proof-of`). This works even while someone else holds the twin. Then submit
+    normally.
+  - Kinds: prove (default) and refute (prove the negated twin listed in the gap's `refutation`
+    field). Request a kind with `&kind=`.
+  - The pull request body should be `Lease: <lease id>` (pnp.sh writes it).
+  - Accepted "positive twin" proofs to copy: L_meta_12038 to L_meta_12056.
+- 2026-11-25: L-meta-10524 is now `checked` on the public data, so our first accepted step is
+  credited to lenguyen259.
