@@ -1,5 +1,5 @@
 # enc5: exact monotone AND/OR circuit synthesis for f_G (default Petersen), size exactly s.
-# Encoding: per gate i a left selector l(i,j) and right selector r(i,k) (j<k), child-value variables L(i,t),R(i,t),
+# Scheme: per gate i a left selector l(i,j) and right selector r(i,k) (j<k), child-value variables L(i,t),R(i,t),
 # gate values on a set of rows. Every constraint below is satisfied by (an automorphic image of) every
 # MINIMUM circuit put in depth-canonical order; see README.md for the soundness argument of each flag.
 import sys, json, time, argparse, itertools
