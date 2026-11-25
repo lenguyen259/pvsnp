@@ -1,0 +1,581 @@
+[
+ {
+  "name": "N6a",
+  "edges": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    4,
+    5
+   ]
+  ],
+  "n": 6,
+  "m": 7,
+  "tau": 3,
+  "phi": 9,
+  "L": 9,
+  "status": "UNSAT-all-m",
+  "label": "DRAT",
+  "method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+  "flags": "--factc --viol --lexbot --rest rest/rest_N6a.json (grest2.family2, minL=1; 241 restrictions)",
+  "subgraph_bounds_missing": [],
+  "validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+  "kissat_total_s": 1.4,
+  "drat": "yes",
+  "per_size": {
+   "1": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.0s, proof 0.0 MB)",
+    "vars": 939,
+    "clauses": 4345
+   },
+   "2": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.0s, proof 0.0 MB)",
+    "vars": 2117,
+    "clauses": 9226
+   },
+   "3": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 3783,
+    "clauses": 15501
+   },
+   "4": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 5480,
+    "clauses": 22559
+   },
+   "5": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 7384,
+    "clauses": 30574
+   },
+   "6": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 9302,
+    "clauses": 39364
+   },
+   "7": {
+    "result": "UNSAT",
+    "kissat_s": 0.1,
+    "drat": "VERIFIED (0.2s, proof 0.7 MB)",
+    "vars": 11273,
+    "clauses": 49011
+   },
+   "8": {
+    "result": "UNSAT",
+    "kissat_s": 1.4,
+    "drat": "VERIFIED (3.4s, proof 2.7 MB)",
+    "vars": 13222,
+    "clauses": 59392
+   }
+  },
+  "date": "2026-11-25"
+ },
+ {
+  "name": "N6b",
+  "edges": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    4
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    1,
+    5
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    3,
+    5
+   ]
+  ],
+  "n": 6,
+  "m": 7,
+  "tau": 4,
+  "phi": 10,
+  "L": 10,
+  "status": "UNSAT-all-m",
+  "label": "DRAT",
+  "method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+  "flags": "--factc --viol --lexbot --rest rest/rest_N6b.json (grest2.family2, minL=1; 256 restrictions)",
+  "subgraph_bounds_missing": [],
+  "validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+  "kissat_total_s": 4.8,
+  "drat": "yes",
+  "per_size": {
+   "1": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 1120,
+    "clauses": 4944
+   },
+   "2": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 2416,
+    "clauses": 10133
+   },
+   "3": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 4207,
+    "clauses": 16776
+   },
+   "4": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 5993,
+    "clauses": 24150
+   },
+   "5": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 8213,
+    "clauses": 33015
+   },
+   "6": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 10471,
+    "clauses": 42802
+   },
+   "7": {
+    "result": "UNSAT",
+    "kissat_s": 0.1,
+    "drat": "VERIFIED (0.2s, proof 0.7 MB)",
+    "vars": 12695,
+    "clauses": 53302
+   },
+   "8": {
+    "result": "UNSAT",
+    "kissat_s": 0.5,
+    "drat": "VERIFIED (1.6s, proof 1.2 MB)",
+    "vars": 14883,
+    "clauses": 64574
+   },
+   "9": {
+    "result": "UNSAT",
+    "kissat_s": 4.3,
+    "drat": "VERIFIED (6.8s, proof 13.1 MB)",
+    "vars": 17315,
+    "clauses": 76989
+   }
+  },
+  "date": "2026-11-25"
+ },
+ {
+  "name": "G7a",
+  "edges": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    2,
+    6
+   ],
+   [
+    4,
+    5
+   ],
+   [
+    4,
+    6
+   ],
+   [
+    5,
+    6
+   ]
+  ],
+  "n": 7,
+  "m": 8,
+  "tau": 3,
+  "phi": 10,
+  "L": 10,
+  "status": "UNSAT-all-m",
+  "label": "DRAT",
+  "method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+  "flags": "--factc --viol --lexbot --rest rest/rest_G7a.json (grest2.family2, minL=1; 702 restrictions)",
+  "subgraph_bounds_missing": [],
+  "validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+  "kissat_total_s": 0.7,
+  "drat": "yes",
+  "per_size": {
+   "1": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.1 MB)",
+    "vars": 2373,
+    "clauses": 11434
+   },
+   "2": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 5455,
+    "clauses": 24253
+   },
+   "3": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 10145,
+    "clauses": 41157
+   },
+   "4": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 14980,
+    "clauses": 60204
+   },
+   "5": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 20375,
+    "clauses": 81635
+   },
+   "6": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 25836,
+    "clauses": 105074
+   },
+   "7": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 31278,
+    "clauses": 130347
+   },
+   "8": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 36700,
+    "clauses": 157423
+   },
+   "9": {
+    "result": "UNSAT",
+    "kissat_s": 0.6,
+    "drat": "VERIFIED (2.3s, proof 2.4 MB)",
+    "vars": 42765,
+    "clauses": 187167
+   }
+  },
+  "date": "2026-11-25"
+ },
+ {
+  "name": "G7b",
+  "edges": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    3
+   ],
+   [
+    1,
+    4
+   ],
+   [
+    1,
+    6
+   ],
+   [
+    2,
+    5
+   ],
+   [
+    4,
+    6
+   ],
+   [
+    5,
+    6
+   ]
+  ],
+  "n": 7,
+  "m": 8,
+  "tau": 4,
+  "phi": 11,
+  "L": 11,
+  "status": "UNSAT-all-m",
+  "label": "DRAT",
+  "method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+  "flags": "--factc --viol --lexbot --rest rest/rest_G7b.json (grest2.family2, minL=1; 736 restrictions)",
+  "subgraph_bounds_missing": [],
+  "validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+  "kissat_total_s": 79.1,
+  "drat": "yes",
+  "per_size": {
+   "1": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.0s, proof 0.1 MB)",
+    "vars": 2435,
+    "clauses": 11768
+   },
+   "2": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 5794,
+    "clauses": 25323
+   },
+   "3": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 10777,
+    "clauses": 43073
+   },
+   "4": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 15867,
+    "clauses": 62980
+   },
+   "5": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 21837,
+    "clauses": 86031
+   },
+   "6": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 27674,
+    "clauses": 110805
+   },
+   "7": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 33516,
+    "clauses": 137511
+   },
+   "8": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 39408,
+    "clauses": 166373
+   },
+   "9": {
+    "result": "UNSAT",
+    "kissat_s": 0.6,
+    "drat": "VERIFIED (1.4s, proof 2.4 MB)",
+    "vars": 45953,
+    "clauses": 197947
+   },
+   "10": {
+    "result": "UNSAT",
+    "kissat_s": 78.4,
+    "drat": "VERIFIED (128.9s, proof 128.0 MB)",
+    "vars": 52463,
+    "clauses": 231455
+   }
+  },
+  "date": "2026-11-25"
+ },
+ {
+  "name": "G7c",
+  "edges": [
+   [
+    0,
+    1
+   ],
+   [
+    0,
+    2
+   ],
+   [
+    0,
+    6
+   ],
+   [
+    1,
+    3
+   ],
+   [
+    2,
+    4
+   ],
+   [
+    2,
+    6
+   ],
+   [
+    3,
+    5
+   ],
+   [
+    5,
+    6
+   ]
+  ],
+  "n": 7,
+  "m": 8,
+  "tau": 4,
+  "phi": 11,
+  "L": 11,
+  "status": "UNSAT-all-m",
+  "label": "DRAT",
+  "method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+  "flags": "--factc --viol --lexbot --rest rest/rest_G7c.json (grest2.family2, minL=1; 733 restrictions)",
+  "subgraph_bounds_missing": [],
+  "validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+  "kissat_total_s": 82.0,
+  "drat": "yes",
+  "per_size": {
+   "1": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.1 MB)",
+    "vars": 2458,
+    "clauses": 11825
+   },
+   "2": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 5777,
+    "clauses": 25295
+   },
+   "3": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 10764,
+    "clauses": 43022
+   },
+   "4": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 15834,
+    "clauses": 62866
+   },
+   "5": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 21628,
+    "clauses": 85492
+   },
+   "6": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 27380,
+    "clauses": 110004
+   },
+   "7": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 33182,
+    "clauses": 136560
+   },
+   "8": {
+    "result": "UNSAT",
+    "kissat_s": 0.0,
+    "drat": "VERIFIED (0.1s, proof 0.0 MB)",
+    "vars": 39007,
+    "clauses": 165177
+   },
+   "9": {
+    "result": "UNSAT",
+    "kissat_s": 1.2,
+    "drat": "VERIFIED (2.6s, proof 2.6 MB)",
+    "vars": 45475,
+    "clauses": 196476
+   },
+   "10": {
+    "result": "UNSAT",
+    "kissat_s": 80.7,
+    "drat": "VERIFIED (121.8s, proof 128.3 MB)",
+    "vars": 51908,
+    "clauses": 229689
+   }
+  },
+  "date": "2026-11-25"
+ }
+]

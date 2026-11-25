@@ -169,7 +169,7 @@ def rand_window(C,k):
     return Wset
 if __name__=='__main__':
     seed=int(sys.argv[1]); T=float(sys.argv[2]); side=sys.argv[3]
-    pp=float(sys.argv[4]) if len(sys.argv)>4 else 0.5; maxk=int(sys.argv[5]) if len(sys.argv)>5 else 7
+    pp=float(sys.argv[4]) if len(sys.argv)>4 else 0.5; maxk=int(sys.argv[5]) if len(sys.argv)>5 else 7; kick=float(sys.argv[6]) if len(sys.argv)>6 else 0.0
     random.seed(seed)
     C=star(side); assert ok(C) and len(C)==26
     best=len(C); t0=time.time(); it=0; nimp=0; npl=0; nnot=0
@@ -183,6 +183,12 @@ if __name__=='__main__':
             continue
         Wset,ins,outs,rows=pr
         r=synth(rows,len(ins),len(outs),len(Wset)-1,True)
+        if r is None and len(C)<27 and random.random()<kick:
+            r=synth(rows,len(ins),len(outs),len(Wset)+1,True)
+            if r is not None:
+                nc=rebuild(C,Wset,ins,outs,*r)
+                if nc and ok(nc) and len(nc)<=27: C=nc
+            continue
         if r is None:
             if random.random()<pp:
                 r=synth(rows,len(ins),len(outs),len(Wset),True)
@@ -190,7 +196,7 @@ if __name__=='__main__':
             else: continue
         nc=rebuild(C,Wset,ins,outs,*r)
         if nc is None or not ok(nc): print('rebuild fail'); continue
-        if len(nc)<=len(C):
+        if len(nc)<=len(C) or (len(nc)<=27 and len(C)==27):
             C=nc
             if any(g[0]=='not' for g in C): nnot+=1
             if len(C)<best:

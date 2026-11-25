@@ -1,0 +1,13 @@
+16:18:14 graph [[0, 1], [0, 2], [0, 3], [1, 4], [1, 6], [2, 5], [4, 6], [5, 6]] n=7 |E|=8 tau=4 Phi=11; restrictions 736 (max tL 9); missing proper subgraph bounds: []
+16:18:14 VALIDATION U circuit at s=Phi=11 (rest+factc+lexbot, fixc): VERIFIED 7=1|2 8=2&5 9=4|5 10=4|6 11=1&10 12=3|7 13=6&9 14=0&12 15=11|14 16=8|15 17=13|16 | RESULT SAT 0.3s
+16:18:14 s=1 vars=2435 clauses=11768 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.0s, proof 0.1 MB)
+16:18:15 s=2 vars=5794 clauses=25323 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:15 s=3 vars=10777 clauses=43073 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:15 s=4 vars=15867 clauses=62980 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:16 s=5 vars=21837 clauses=86031 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:16 s=6 vars=27674 clauses=110805 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:16 s=7 vars=33516 clauses=137511 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:17 s=8 vars=39408 clauses=166373 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
+16:18:19 s=9 vars=45953 clauses=197947 kissat: UNSAT 0.6s ; drat-trim: VERIFIED (1.4s, proof 2.4 MB)
+16:21:47 s=10 vars=52463 clauses=231455 kissat: UNSAT 78.4s ; drat-trim: VERIFIED (128.9s, proof 128.0 MB)
+16:21:47 PROVED size >= Phi = 11 (label DRAT, kissat total 79.1s); recorded in ledger/proven_subcubic.json
