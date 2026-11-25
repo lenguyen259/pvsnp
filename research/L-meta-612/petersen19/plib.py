@@ -47,3 +47,32 @@ if __name__=='__main__':
     R=restrictions(); print('restr',len(R))
     from collections import Counter
     print(Counter((len(A),len(B),m,t) for A,B,m,t in R))
+def canon(c,n=10):
+    dep={i:0 for i in range(n)}
+    for idx,(o,j,k) in enumerate(c): dep[n+idx]=1+max(dep[j],dep[k])
+    pos={i:i for i in range(n)}; out=[]; nxt=n
+    for d in range(1,max(dep.values())+1):
+        lvl=[n+idx for idx in range(len(c)) if dep[n+idx]==d]
+        keys=[]
+        for g in lvl:
+            o,j,k=c[g-n]; a,b=sorted((pos[j],pos[k])); keys.append(((a,b,0 if o=='&' else 1),g))
+        for (a,b,oo),g in sorted(keys): pos[g]=nxt; nxt+=1; out.append(['&' if oo==0 else '|',a,b])
+    return out
+def parse(txt,n=10):
+    c=[]
+    for tok in txt.split():
+        g,rhs=tok.split('='); o='&' if '&' in rhs else '|'; a,b=map(int,rhs.split(o)); c.append([o,a,b])
+    return c
+def relabel(c,p,n=10):
+    return [[o,p[j] if j<n else j,p[k] if k<n else k] for o,j,k in c]
+def verify(c,E=PET,n=10):
+    for r in range(1<<n):
+        v=[(r>>u)&1 for u in range(n)]
+        for o,j,k in c: v.append(v[j]&v[k] if o=='&' else v[j]|v[k])
+        if v[-1]!=any((r>>a)&1 and (r>>b)&1 for a,b in E): return False
+    return True
+def symb_ok(c,n=10):
+    o,j,k=c[0]
+    if (j,k)==(0,1): return True
+    if (j,k)!=(0,2): return False
+    return not any(j<n and k<n and (j,k) in ES for o,j,k in c)
