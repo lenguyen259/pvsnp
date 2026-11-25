@@ -76,3 +76,15 @@ def symb_ok(c,n=10):
     if (j,k)==(0,1): return True
     if (j,k)!=(0,2): return False
     return not any(j<n and k<n and (j,k) in ES for o,j,k in c)
+def botvec(c,n=10):
+    S=set()
+    for o,j,k in c:
+        if j<n and k<n: S.add(((min(j,k),max(j,k)),1 if o=='&' else 0))
+    PAIRS=[(j,k) for j in range(n) for k in range(j+1,n)]
+    return tuple(1 if (p,o) in S else 0 for p in PAIRS for o in (1,0))
+def lexbot_form(c,Au=None,n=10):
+    Au=Au or auts(); best=None
+    for p in Au:
+        cc=canon(relabel(c,p,n),n); v=botvec(cc,n)
+        if best is None or v>best[0]: best=(v,cc)
+    return best[1]
