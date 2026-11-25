@@ -8,3 +8,4 @@
 16:25:20 s=6 vars=28165 clauses=112068 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
 16:25:20 s=7 vars=34128 clauses=139257 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.1s, proof 0.0 MB)
 16:25:21 s=8 vars=40114 clauses=168505 kissat: UNSAT 0.2s ; drat-trim: VERIFIED (0.3s, proof 2.0 MB)
+16:25:34 s=9 vars=46713 clauses=200365 kissat: UNSAT 4.0s ; drat-trim: VERIFIED (8.1s, proof 5.9 MB)

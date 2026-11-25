@@ -5,6 +5,7 @@
 import sys, random, json, time, itertools
 from pysat.solvers import Solver
 from g import *
+BUDGET=20000
 def star(cover_side):
     C=[]; W=lambda: n+len(C)-1
     def g(*x): C.append(x); return W()
@@ -77,7 +78,8 @@ def synth(rows, m, no, k, rnd):
                     elif l is not False: S.add_clause([-osel[o][w],-l,ol])
         for vec in forb:
             S.add_clause([(-ov[o] if vec[o] else ov[o]) for o in range(no)])
-    if not S.solve(): S.delete(); return None
+    S.conf_budget(BUDGET)
+    if S.solve_limited()!=True: S.delete(); return None
     M=set(v for v in S.get_model() if v>0); S.delete()
     G=[]
     for i in range(k):
@@ -96,7 +98,7 @@ def window_problem(C,Wset):
     for i,gt in enumerate(C):
         if i not in Wset: users|=set(gt[1:])
     outs=[w for w in sorted(gw) if w in users or w==n+L-1]
-    if len(outs)>4 or len(ins)>9: return None
+    if len(outs)>3 or len(ins)>8: return None
     w0=ev(C)
     # good[o-vector] = mask of t where rest gives f with window outputs forced to o (constant)
     good={}
@@ -202,5 +204,5 @@ if __name__=='__main__':
             if len(C)<best:
                 best=len(C); print('IMPROVED',best,json.dumps(C),flush=True)
                 if best<=25: json.dump(C,open('found_%d_%d.json'%(best,seed),'w'))
-        if it%200==0: print('it',it,'size',len(C),'best',best,'withNOT',nnot,round(time.time()-t0),flush=True)
+        if it%20==0: print('it',it,'size',len(C),'best',best,'withNOT',nnot,round(time.time()-t0),flush=True)
     print('done',it,'best',best,json.dumps(C))
