@@ -224,6 +224,7 @@ if A.cube:
         if kind=='o': lit=op(spec[1])
         elif kind=='l': lit=lv(spec[1],spec[2])
         elif kind=='r': lit=rv(spec[1],spec[2])
+        elif kind=='b': lit=bv[((spec[1],spec[2]),spec[3])]
         elif kind=='v': lit=val(spec[1],row(spec[2])) if spec[2] in ridx else None
         cl.append([lit] if sign else [-lit])
 VMAP={'n':n,'s':s,'l':{},'r':{},'o':{}}
