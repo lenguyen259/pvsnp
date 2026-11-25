@@ -11,3 +11,4 @@ H9 s=10 [rest2_H9.json lexbot] RESULT UNSAT 0.3s
 H9 s=11 [rest2_H9.json lexbot] RESULT UNSAT 0.3s 
 H9 s=12 [rest2_H9.json lexbot] RESULT UNSAT 0.3s 
 H9 s=13 [rest2_H9.json lexbot] RESULT UNSAT 7.7s 
+H9 s=14 [rest2_H9.json lexbot] RESULT UNSAT 3292.9s 
