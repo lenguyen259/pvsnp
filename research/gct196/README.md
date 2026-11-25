@@ -289,3 +289,84 @@ Concrete open targets that would finish the problem:
    graph embedding ι. Equivalently, the correction coordinates cost nothing.
 2. Or a structure theorem for D = L ∩ P that gives dim λ(L) <= 9 - dim D.
 3. Or, as for 4 x 5, a full case analysis on the u_i and the pair ranks, generalised to Fin q.
+
+---
+
+# Attempt 3 (2026-11-25, third agent, about 12:00-12:45 UTC)
+
+Status: **still not proved.** No file was left at `lean/PEqualNP/Outside/L_gct_196.lean` in the
+clone, and nothing was copied to `research/lean/L_gct_196.lean` (that path is reserved for a
+finished proof). What is new: a Lean file that proves two sub-cases of the statement and the
+Gram identity, plus a numerical ledger of candidate lemmas for Route A.
+
+## A3.1 Lean, proved (no sorry): `gct196/Partial196_attempt3.lean`
+
+Imports only Mathlib and PEqualNP.Defs; namespace `PEqualNP.Outside.L_gct_196_partial3`; no
+`#`, no strings, no attributes, no native_decide. It was built in the clone as
+`PEqualNP/Outside/L_gct_196_partial3.lean` (about 20 s), then removed. `#print axioms` (temp file,
+deleted) on `Main.partAB`, `Main.splitA`, `Main.partB`, `Main.gram`: propext, Classical.choice,
+Quot.sound.
+
+Key discovery: the accepted 3-row proofs are already in the clone as Lean, under
+`lean/PEqualNP/Gct/` (L156, L157, L171, L175 with `Helpers/RadoLinear.lean`,
+`Helpers/ThreeRow.lean`, `Helpers/ThreeRowRado.lean`, `Helpers/ColumnCore.lean`). They are short
+(about 530 lines for the L157 chain) and comply with the final-file rules after deleting one
+`@[simp]`. The partial file inlines the L157 chain (namespaces `Rado`, `TR`; `TR.centred` is
+L-gct-157: a row-centred 3 x q level space has dim <= q - 1). ColumnCore (L-gct-175, any p) can
+be inlined the same way if a later route needs it.
+
+`Main.Lev t` is the exact conjunction of the statement. Proved:
+
+| name | statement (L level, n = dim L) |
+|---|---|
+| `splitA` | n <= 9 + dim (L ∩ doubly centred) (line-sum split, rank-nullity, the image of (row sums, column sums) lies in a 9-dim space) |
+| `partA` | if L ∩ (doubly centred) = 0 then n <= 9 |
+| `partB` | for every row u: n <= 6 + rank of t ↦ (row u of t, row-sum vector of t). The kernel is a row-centred 3 x 7 level space (row u deleted), so L157 gives <= 6. `red2`/`red3` reduce the 4-row order-2/3 sums to the 3-row ones when row u is zero. |
+| `partAB` | n <= 9 if D = 0, or if some u has rank(row u, row sums) <= 3. This contains "some row image has rank <= 1" (rank <= 1 + 2). |
+| `sq_id`, `gram`, `perp` | on L: <t, s> = <R(t), R(s)> + <C(t), C(s)> (entrywise dot product); hence D ⊥ L. |
+
+So a counterexample of dim 10 must have D ≠ 0 and rank(row u, row sums) >= 4 for every u.
+Caution: at n = 10 the second condition is automatic (rank = 10 - dim K_u and dim K_u <= 6). Its
+only real content is that every row image has rank >= 2, since rank(row u, row sums) <= r_u + 2.
+So for a 10-dim space the Lean file adds exactly "D ≠ 0 and every row rank >= 2". `partB` is a
+certificate for smaller spaces, not a restriction on 10-dim ones.
+
+**Coverage check (numerics, `num3/run2.py`):** hook and F_7 satisfy the `partB` criterion
+(rank 2), but the whole N8 family (N8 and the 21 walk spaces) has D = 2 and min_u rank = 4, so
+`partAB` certifies only n <= 10 for them. The proved cases do not reach the known extremal N8
+family; the gap is not a corner case.
+
+## A3.2 Route A ledger (candidate lemmas, cheap falsification)
+
+Test sets: hook, F_7, N8 + 21 walk spaces, G7, about 1000 random and coordinate subspaces of
+them, and 13 new random level spaces with forced doubly centred directions (`num3/lmD.py`, LM
+with the first 1-2 basis vectors constrained to P; n = 3..5, D = 1..2). Scripts in
+`gct196/num3/`.
+
+| # | candidate | status |
+|---|---|---|
+| A-1 | dim Γ(L) >= 2n - 1 for all level L (Γ = span(J, G2(L), G3(L), G4(L)), would give 3n <= 29) | **false**: row-supported subspaces (one row, sum zero) have Γ = n + 1, e.g. n = 6, Γ = 7. |
+| A-2 | D ≠ 0 ⇒ dim Γ(L) >= 2n (with `partA` this gives n <= 9) | **survives**: min Γ - 2n = 0 over about 950 subspaces with D ≠ 0, +4 on N8, +3 on F_7; random D-spaces have Γ = 28 - n. No proof idea beyond "Kneser for the gradient map". |
+| A-3 | D ∘ D ⊥ L (Hadamard square of D orthogonal to L) | holds on hook, F_7, N8 family, G7; **false** on all 13 random D-spaces (residual 0.04-0.2). So it is a property of maximal spaces only, not a lemma. |
+| A-4 | λ(D ∘ D) ⊆ λ(L)^⊥ with dim λ(D∘D) >= dim D (would give exactly λ + D <= 9) | equivalent to A-3 by the polarized cubic 2<d∘d', y> = <λ(d∘d'), λ(y)> (re-derived: Φ(y) = 2y∘y - 2y∘(R1ᵀ + 1Cᵀ) + RCᵀ mod row/column effects). Dimension part holds on F_7, N8 (2 = D) but fails on G7 (1 < 3; also with D∘D∘D only 2 < 3). Dead as a general mechanism. |
+| A-5 | an equivariant linear map D → λ(L)^⊥ | impossible: P ≅ C^4_0 ⊗ C^7_0 and Λ ≅ C^4_0 ⊕ C^7_0 share no S4 × S7 summand; any mechanism must be nonlinear in D or depend on L. |
+| A-6 | row-centred part: dim L_0 <= 9 - (rank of row sums) | equivalent to the target; F_7 (0, 8), hook (2, 6), N8 (3, 5) all have slack 1. |
+
+## A3.3 Why the Rado / zero-pattern route stalls (paper, q-generic)
+
+Column induction with strict Hall (codim of {t: columns U zero} >= |U| + 1 if n = q + 3) plus
+Rado gives one prescribed entry per column plus one extra. For per this kills nothing: the
+smallest Frobenius–König pattern is a full row (blocked by `lO`); the next ones need 2q - 2
+cells, or 2q - 3 cells plus a quadratic (`cD`/`lB`). On the row-centred part the identity
+Σ_j Π_r (c + y_rj) = q c^4 + Ω(y)/6 with Ω = μ01μ23 + μ02μ13 + μ03μ12 gives, on the Rado affine
+family, Ω ≡ -6q, and Ω ≡ 0 on its direction space Z. Deleting the prescribed cell from each
+column turns Z into a 3-row column-product core space, so 175 gives only dim Z <= q - 1, hence
+dim L_0 <= 2q - 1. No contradiction.
+
+## A3.4 Remaining gap (precise)
+
+Rule out a 10-dim level L with D = L ∩ P ≠ 0 and every row rank r_u >= 2 (all that the proved
+cases leave). The known extremal N8 family has these features. The most promising unrefuted statement is A-2
+(Kneser-type growth of the gradient span when D ≠ 0). Otherwise use the inlinable Lean tools
+(L157, L175, Rado) in a 215-style case split on the ranks rank(row u, row sums) ∈ {4, 5, ...}
+and the kernels K_u (each a row-centred 3 x 7 level space of dim n - rank).
