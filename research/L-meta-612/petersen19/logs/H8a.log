@@ -9,3 +9,5 @@ H8a s=8 RESULT UNSAT 0.1s
 H8a s=9 RESULT UNSAT 0.1s 
 H8a s=10 RESULT UNSAT 0.2s 
 H8a s=11 RESULT UNSAT 1.6s 
+H8a s=12 (v1: rest_H8a, no lexbot) killed by me after ~21 min (superseded by v2 UNSAT)
+H8a s=12 
