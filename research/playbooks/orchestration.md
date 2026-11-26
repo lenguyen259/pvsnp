@@ -43,3 +43,6 @@
 - 2026-11-25 18:1x: The human set model choice by task. Lean-writing agents use `sonnet` at medium
   effort. Other agents use `fable` at medium effort. Run SAT jobs myself where a validated script
   exists.
+- 2026-11-26: The human set the model for SAT-running agents to `sonnet` at medium effort. Lean
+  writers also use `sonnet` medium; research and analysis agents use `fable` medium. Agents already
+  running keep their model until they finish.
