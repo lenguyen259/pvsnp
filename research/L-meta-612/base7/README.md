@@ -54,6 +54,18 @@ drat-trim check of the m = Phi-1 run (all smaller m were also VERIFIED, see logs
 
 (The old 900 s sweep without restriction constraints timed out on all eight.)
 
-### Level 8 (task (b))
+### Level 8, triangle-free bicyclic (task (b), first part): ALL 4 CLOSED, DRAT
+
+| name | edges | tau | Phi | label | restrictions | kissat total | drat-trim at Phi-1 |
+|---|---|---|---|---|---|---|---|
+| G8tf0 | 01 02 03 14 15 26 37 47 67 | 4 | 12 | DRAT | 2156 | 3.9 s | VERIFIED (0.9 s, 1.8 MB) |
+| G8tf1 | 01 02 03 14 15 26 37 46 57 | 4 | 12 | DRAT | 2202 | 237.9 s | VERIFIED (358.9 s, 271 MB) |
+| G8tf2 (theta(3,3,3), girth 6) | 01 02 03 14 25 36 47 57 67 | 4 | 12 | DRAT | 2162 | 519.0 s | VERIFIED (693.4 s, 401 MB) |
+| G8tf3 | 01 02 03 14 25 37 46 57 67 | 4 | 12 | DRAT | 2188 | 296.1 s | VERIFIED (428.8 s, 294 MB) |
+
+### Level 8 with triangles (task (b), second part; 27 graphs G8t00..G8t26 in `batch8tr.txt`)
+
+Run in chunks (`batch8tr_a.txt` = G8t00..G8t07 first). The container restarted once (2026-11-25/26);
+no run was lost (all results above were already recorded).
 
 (filled in as runs finish)
