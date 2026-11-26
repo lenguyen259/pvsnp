@@ -59,3 +59,15 @@
   - Accepted "positive twin" proofs to copy: L_meta_12038 to L_meta_12056.
 - 2026-11-25: L-meta-10524 is now `checked` on the public data, so our first accepted step is
   credited to lenguyen259.
+- 2026-11-26 (L-meta-9246, RUP run for PHP(5,4) with <= 12 clauses, level open): 75 min, unresolved.
+  A layered-UP SAT encoding (`research/meta9246/enc.py`) is validated on PHP(4,3) (min 5, UNSAT 4 in
+  148 s) but kissat finds neither 12 nor 13 for PHP(5,4) in 10 CPU-min. "Their own run uses 13" was
+  not available to us; without it, even the upper bound must be rediscovered. Re-triage such "open"
+  items at 30 min.
+- 2026-11-26: "False:" / "It is false that:" steps are the negated twins of "Table 2" steps. The
+  fleet's own seat (`seat-intake-1`) checks the positive twin and marks the negation `refuted`
+  within hours; by the time our Lean proof of L-meta-13789 / 12905 / 14208 was ready (about 8 hours
+  after settling the negations by SAT), all three twins were already `checked` and the desk
+  answered "That step is not open". So a settled negation is worth only its release reason
+  (`statement_seems_false`), unless the Lean proof of the twin can be produced within minutes.
+  Do not spend Lean-agent effort on twins of settled "False:" steps.

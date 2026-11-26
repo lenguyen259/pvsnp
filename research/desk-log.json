@@ -165,7 +165,7 @@
   "outcome": "released (statement false)",
   "reason": "statement_seems_false",
   "ai": "1 Fable agent (medium), ~45 min, 1 CPU slot; orchestrator re-checked the 10-gate circuit",
-  "notes": "Exact synthesis on all 64 rows: monotone minimum 10 (circuit verified), general AND/OR/NOT minimum also 10 (UNSAT at 9 in normal-form encoding, DRAT verified). So NOT saves nothing; the positive twin L-meta-12905 holds. research/meta12906/."
+  "notes": "Exact synthesis on all 64 rows: monotone minimum 10 (circuit verified), general AND/OR/NOT minimum also 10 (UNSAT at 9 in normal-form encoding, DRAT verified). So NOT saves nothing; the positive twin L-meta-12905 holds. research/meta12906/. Afterwards the fleet checked the positive twin itself; our own Lean proofs of the twins (research/lean/L_meta_12905.lean, L_meta_13789.lean, both build) came too late to be leased."
  },
  {
   "gap": "L-meta-13790",
@@ -177,7 +177,7 @@
   "outcome": "released (statement false)",
   "reason": "statement_seems_false",
   "ai": "orchestrator only, reusing the validated 12906 encoder (no subagent), ~10 min",
-  "notes": "Monotone and general minima both 7 (general UNSAT at 6 DRAT-verified); optimal circuit is a 2-rectangle cover using the C4. research/meta13790/."
+  "notes": "Monotone and general minima both 7 (general UNSAT at 6 DRAT-verified); optimal circuit is a 2-rectangle cover using the C4. research/meta13790/. Afterwards the fleet checked the positive twin itself; our own Lean proofs of the twins (research/lean/L_meta_12905.lean, L_meta_13789.lean, both build) came too late to be leased."
  },
  {
   "gap": "L-meta-6987",

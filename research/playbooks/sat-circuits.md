@@ -60,3 +60,6 @@ These work:
 - 2026-11-26: drat-trim takes about 1.5x the kissat time; text proofs grow about 80 MB per kissat minute
   (1.1 GB for a 14 min run). Budget disk and time for both before launching.
 - 2026-11-26: In shell until-loops, `grep -q "s=11"` also matches "clauses=110757". Match " s=11 ".
+- 2026-11-26 (meta9246): "find k clauses, each RUP" as one SAT instance scales badly: 20 variables,
+  k = 12 gives 1.1M clauses and no answer in 10 CPU-min; forcing 3 of 7 clauses did not help. Check
+  `ps` CPU time, not wall time: cpuslot waits behind other agents' jobs.
