@@ -24,6 +24,7 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 | L-meta-9745 | 2026-11-25T16:12Z | 2026-11-25T17:10Z | open, 793 points | released | other | 1 Opus agent (high), ~55 min, 1 CPU slot |
 | L-meta-12906 | 2026-11-25T17:06Z | 2026-11-25T17:5xZ | solid, 30 points | released (statement false) | statement_seems_false | 1 Fable agent (medium), ~45 min, 1 CPU slot; orchestrator re-checked the 10-gate circuit |
 | L-meta-13790 | 2026-11-25T17:53Z | 2026-11-25T18:0xZ | solid, 42 points | released (statement false) | statement_seems_false | orchestrator only, reusing the validated 12906 encoder (no subagent), ~10 min |
+| L-meta-6987 | 2026-11-26T03:12Z | 2026-11-26T03:14Z | solid, 52 points, kind cut | released | other | orchestrator triage (<2 min) |
 
 ## Notes
 
@@ -42,11 +43,11 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - **L-meta-9745**: exhibit a <=25-gate AND/OR/NOT circuit for a 14-vertex 20-edge graph (Heawood graph minus one edge; C4-free, tau 7, |E|+tau-1 = 26). A monotone 25-gate circuit would refute L-meta-612. Window LNS with exact don't-cares (3005 windows, up to 9 gates) never went below 26; SAT never chose NOT. Restriction + rectangle-gadget analysis explains why simple gadgets cannot save. research/meta9745/.
 - **L-meta-12906**: refute: for a monotone 6-input function, NOT gates save at least one gate. Exact synthesis on all 64 rows: monotone minimum 10 (circuit verified), general AND/OR/NOT minimum also 10 (UNSAT at 9 in normal-form encoding, DRAT verified). So NOT saves nothing; the positive twin L-meta-12905 holds. research/meta12906/.
 - **L-meta-13790**: refute: for a monotone 6-input function (edge function of a 7-edge bipartite graph with a C4), NOT gates save a gate. Monotone and general minima both 7 (general UNSAT at 6 DRAT-verified); optimal circuit is a 2-rectangle cover using the C4. research/meta13790/.
+- **L-meta-6987**: cut step: statement about the 13-point projective plane (Singer set {0,1,3,9}), 26 variables, <=50 rectangles/pieces. Dense C4-free graph instance (order-3 plane, 52 edges); no proof sketch, offered as a cut. Out of reach without a reduction idea; token budget preserved for running tasks.
 
 ## Summary so far
 
-- Assigned: 15. Proved and submitted: 1 (L-meta-10524, upstream PR #14149 awaiting the official check).
-  Settled false with machine evidence and released: 2 (L-meta-12906, L-meta-13790). Withdrawn by the desk: 1.
-  Lease lost or expired: 2. Other releases: 9.
-- Triage time for out-of-reach steps: under 1 minute each.
-- Reuse: L-meta-13790 was settled in about 10 minutes, without a subagent, by reusing the encoder validated on L-meta-12906.
+- Assigned: 17 (incl. L-meta-14209, whose lease expired during a usage-limit outage with monotone minimum <= 12 and 11 unsettled).
+- L-meta-10524: proved, merged, status checked, credited to lenguyen259.
+- L-meta-12906 and L-meta-13790: settled false (NOT saves nothing), released; their positive twins L-meta-12905 and L-meta-13789 are being formalized in Lean for a proof-of lease.
+- Triage time for out-of-reach steps: under 2 minutes each.

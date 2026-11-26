@@ -178,5 +178,17 @@
   "reason": "statement_seems_false",
   "ai": "orchestrator only, reusing the validated 12906 encoder (no subagent), ~10 min",
   "notes": "Monotone and general minima both 7 (general UNSAT at 6 DRAT-verified); optimal circuit is a 2-rectangle cover using the C4. research/meta13790/."
+ },
+ {
+  "gap": "L-meta-6987",
+  "assigned": "2026-11-26T03:12Z",
+  "ended": "2026-11-26T03:14Z",
+  "program": "meta",
+  "level": "solid, 52 points, kind cut",
+  "task": "cut step: statement about the 13-point projective plane (Singer set {0,1,3,9}), 26 variables, <=50 rectangles/pieces",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "orchestrator triage (<2 min)",
+  "notes": "Dense C4-free graph instance (order-3 plane, 52 edges); no proof sketch, offered as a cut. Out of reach without a reduction idea; token budget preserved for running tasks."
  }
 ]
