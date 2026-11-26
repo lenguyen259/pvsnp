@@ -60,3 +60,4 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - 2026-11-27 L-meta-24373 (two-lit fn, 6 pts, mask 279104447, <=7 gates with NOT): syn3.py exact SAT: 7 UNSAT, 8 SAT (circuit uses NOT). Released statement_seems_false.
 - 2026-11-27 L-meta-23407 (two-lit fn, 6 pts, mask 2113671, <=7 gates): syn3.py: 7 UNSAT, 8 SAT. Released statement_seems_false.
 - 2026-11-27 L-meta-24224 (two-lit fn, 6 pts, mask 274976447, <=6 gates): syn3.py: 6 UNSAT, 7 SAT. Released statement_seems_false.
+- 2026-11-27 L-meta-23690 (4x6 mask 817135, RepSizeAtMost 9; a search unit): syn2.py 9 UNSAT. Released statement_seems_false. No refutation twin field on this unit.
