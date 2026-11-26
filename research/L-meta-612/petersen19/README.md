@@ -5,7 +5,7 @@ AND/OR circuit with 19 (or 18) gates? Labels: **PROVED** (argument here or cited
 **UNSAT** (SAT solver, encoding validated for non-vacuity; "DRAT" = kissat proof checked by drat-trim),
 **DATA**, **TIMEOUT**.
 
-RESULTS: see section 5 (filled at the end of the run).
+RESULTS: section 5.
 
 ## 1. Encoding `enc5.py` (new)
 
@@ -110,7 +110,51 @@ All cubes use the full H9 encoding (`rest2_H9.json`, factc, viol, lexbot) plus c
 * level e (`refine2.py`, sample): split by the first gate (op and input pair, 72 children). Sample on 2 of the
   23 parents: 144 cubes, 137 UNSAT, 7 TIMEOUT at 300 s (6 of them under the same parent). The hardness
   does not shrink at this level: the hard part is not the bottom layer.
-* long sample (`jobs_H9_15f.txt`): 2 of the hard grandchildren at 3600 s: see below.
+* long sample (`jobs_H9_15f.txt`): 2 hard level-e children at 3600 s: p1_o_k5_r1_g01o **UNSAT in 1626 s**
+  (so level-d cube p1_o_k5_r1 is closed: its other 71 children were UNSAT), p6_o_k5_r4_g12a **TIMEOUT 3600 s**
+  (its parent has at least 6 children that survive 300 s).
+* level g (`jobs_H9_15g.txt`): the other 22 open level-d cubes, whole, at 7200 s each, 2 workers; started
+  2026-11-26 ~04:35 UTC and left running at hand-off (resumable: `cubes.py` skips finished cubes).
 
-Status: **H9 s=15 TIMEOUT / undetermined.** Remaining open: the 23 level-d cubes listed in
-`logs/cubes_H9_15d.jsonl` (equivalently the 7 sampled level-e children plus the 21 unsampled level-d cubes).
+Cost estimate from the samples: an open level-d cube costs from ~0.5 h to well over 2 h of kissat time; with
+22 of them the remaining work is roughly 20-50 CPU-hours.
+
+Status: **H9 s=15 undetermined.** Of the partition, everything is UNSAT except 22 level-d cubes
+(all names in `jobs_H9_15g.txt`; results will appear in `logs/cubes_H9_15g.jsonl`).
+Coverage of the partition: level b is a complete prefix tree x output op; level c adds every exact AND count;
+level d is again a complete prefix tree on further bits; level e enumerates every (op, pair) of gate n.
+
+## 4. Search for a size-19 circuit (DATA, nothing found)
+
+* `ls.py` simulated annealing on full 1024-row truth tables: could not even reach size 20 (best 18 wrong
+  rows in 150 s). Useless as a search method here.
+* `lns.py` large-neighbourhood SAT: keep a random downward-closed set of K gates of a known size-20 circuit
+  (U, OR13) and ask enc5 (no canon, factc) for the remaining 19-K gates. 126 neighbourhoods
+  (K=13: 60, K=12: 60, K=11: 6), **all UNSAT** (K=11 ~65 s each). So no size-19 circuit shares 11-13
+  downward-closed gates with these two circuits in the sampled neighbourhoods.
+* kissat on the full s=20 encoding (no viol) found no circuit in 1194 s (TIMEOUT).
+
+## 5. Verdict and precise remaining gap
+
+* **Size 19 and size 18: undetermined.** No circuit found; no UNSAT proof.
+* **Unconditional lower bound: C(f_P) >= 16** (sizes <= 15 UNSAT with only PROVED constraints; s=15 took
+  559 s; DRAT for P not yet produced). s = 16 timed out after ~1 h.
+* **New exact values (PROVED via DRAT-certified UNSAT + U circuits):** C(f_H7) = 11, C(f_H8b) = 12,
+  C(f_H8a) = 13. **C(f_{P-v}) >= 15** (UNSAT s <= 14, pysat only, no DRAT); C(f_{P-v}) >= 16 is open:
+  the s = 15 instance is split into cubes, all UNSAT except 22 open cubes (section 3.3).
+* What every UNSAT depends on (no conjecture is used): Theorem PF (Lean), Theorem S2 and Fact C (hand
+  proofs in nf.md / girth5.md), the sequential-elimination bound for U-singletons (section 1), the
+  minimum-circuit normal forms (section 1), and solver correctness (DRAT where stated).
+* Gap, in order: (1) close the 22 H9 s=15 cubes (estimate 20-50 CPU-h) -> C(f_{P-v}) = 16, which makes the
+  old conditional constraint "x_v := 0 eliminates <= s-16 gates" unconditional; (2) with it, redo P at
+  s = 16, 17 (the old conditional runs did <= 17 in 146 s with a weaker encoding, so this is likely fast);
+  (3) P at s = 18 and 19 still need a large cube-and-conquer (old conditional s=18 cases ran 300-1800 s
+  each, several timed out). Nothing in this folder brings 19 within a few CPU-hours.
+
+## 6. Files
+
+`plib.py` (graph, Aut, canon, lexbot form), `enc5.py` (encoder), `grest.py`/`grest2.py` (restriction
+families), `proven.json` (H7=11, H8a=13, H8b=12), `rest*.json`, `mku.py`/`ulb.py`/`known.py` (validation
+circuits), `runlevel.sh`/`runlevel2.sh` (level runs), `drat.sh` (kissat+drat-trim), `cubes.py`,
+`refine.py`, `refine2.py`, `jobs_*.txt` (cube partitions), `runk.py`, `lns.py`, `ls.py`, `kissat`,
+`drat-trim` (built from source); logs in `logs/`.
