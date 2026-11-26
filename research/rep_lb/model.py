@@ -156,3 +156,50 @@ def unfolded_cost(S, k, st, cache):
             c += unfolded_cost(S, k - 1, ch, cache)
     cache[key] = c
     return c
+
+# ---------------------------------------------------------------- exact mirror of the frontier (expand / fr)
+def l_singles(l):
+    if not l:
+        return []
+    a, rest = l[0], l[1:]
+    return [(a, rest)] + [(b, [a] + bs) for (b, bs) in l_singles(rest)]
+
+def l_pairs(l):
+    if not l:
+        return []
+    a, rest = l[0], l[1:]
+    return [(a, b, bs) for (b, bs) in l_singles(rest)] + [(b, c, [a] + bs) for (b, c, bs) in l_pairs(l[1:])]
+
+def l_kids_w(I, extra, a, b, r, w):
+    v = I.sep(w) | I.cuts(r)
+    full = I.full
+    out = []
+    if v == full:
+        out.append((extra, [w] + r))
+    if extra != 0:
+        if (v | I.sep(a)) == full:
+            out.append((extra - 1, [w, a] + r))
+        if (v | I.sep(b)) == full:
+            out.append((extra - 1, [w, b] + r))
+    if extra >= 2 and (v | I.sep(a) | I.sep(b)) == full:
+        out.append((extra - 2, [w, a, b] + r))
+    return out
+
+def l_expand(I, q):
+    extra, ws = q
+    out = []
+    for (a, b, r) in l_pairs(ws):
+        for w in (a & b, a | b):
+            out.extend(l_kids_w(I, extra, a, b, r, w))
+    return out
+
+def frontier(I, F, d):
+    """fr d F; asserts the frOK condition (no state equals [goal] before the last level)."""
+    for _ in range(d):
+        for q in F:
+            assert q[1] != [I.goal]
+        nxt = []
+        for q in F:
+            nxt.extend(l_expand(I, q))
+        F = nxt
+    return F
