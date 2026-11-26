@@ -37,3 +37,5 @@ it 7450 size 34 best 34 360
 it 7800 size 34 best 34 374
 it 7900 size 34 best 34 379
 it 8700 size 34 best 34 412
+it 9050 size 34 best 34 433
+it 9100 size 34 best 34 435
