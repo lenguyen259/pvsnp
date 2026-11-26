@@ -28,24 +28,19 @@ def run(seed,usestars,usetris,pr):
     base=[]
     if usetris:base+=tris
     if usestars:base+=stars
-    sig={i:i for i in range(N)};nxt=N
     T=[set(t) for t in terms]
     cache={}
     def bsig(b):
-        if b in cache:return cache[b]
         l=sorted(b);w=l[0]
         for x in l[1:]:w=c.gate('A',w,x)
         return w
-    used=Counter()
     for t in T:
         while True:
             opts=[b for b in base if b<=t]
-            if not opts:break
-            b=rnd.choice(opts) if rnd.random()<pr else None
-            if b is None:break
+            if not opts or rnd.random()>=pr:break
+            b=rnd.choice(opts)
             t-=b
-            if b not in cache:
-                cache[b]=nxt;sig[nxt]=bsig(b);nxt+=1
+            if b not in cache:cache[b]=bsig(b)
             t.add(cache[b])
     while True:
         cnt=Counter()
@@ -56,25 +51,24 @@ def run(seed,usestars,usetris,pr):
         if not cnt:break
         m=max(cnt.values())
         if m<2:break
-        a,b=rnd.choice([p for p,v in cnt.items() if v==m])
-        sig[nxt]=c.gate('A',sig[a],sig[b])
+        a,b=rnd.choice(sorted(p for p,v in cnt.items() if v==m))
+        w=c.gate('A',a,b)
         for t in T:
-            if a in t and b in t:t-={a,b};t.add(nxt)
-        nxt+=1
+            if a in t and b in t:t-={a,b};t.add(w)
     memo={}
     def F(ts):
         ts=[frozenset(t) for t in ts];key=frozenset(ts)
         if key in memo:return memo[key]
         if len(ts)==1:
-            l=sorted(ts[0]);w=sig[l[0]]
-            for x in l[1:]:w=c.gate('A',w,sig[x])
+            l=sorted(ts[0]);w=l[0]
+            for x in l[1:]:w=c.gate('A',w,x)
             memo[key]=w;return w
         cnt=Counter(x for t in ts for x in t)
-        x,m=max(cnt.items(),key=lambda kv:(kv[1],rnd.random()))
+        x,m=max(sorted(cnt.items()),key=lambda kv:(kv[1],rnd.random()))
         if m>=2:
             wi=[t-{x} for t in ts if x in t];rest=[t for t in ts if x not in t]
-            if any(len(t)==0 for t in wi):w=sig[x]
-            else:w=c.gate('A',sig[x],F(wi))
+            if any(len(t)==0 for t in wi):w=x
+            else:w=c.gate('A',x,F(wi))
             if rest:w=c.gate('O',w,F(rest))
         else:
             ws=[F([t]) for t in ts];w=ws[0]
