@@ -58,3 +58,4 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - 2026-11-26 L-meta-20780 (5x5 mask 31362048, RepSizeAtMost 7): SAT min 8 (7 UNSAT). Released statement_seems_false. Not credited unless the Lean lower bound (negated twin) is filed; same template as 20499.
 - 2026-11-27 L-meta-21083 (4x5 mask 112125, RepSizeAtMost 9): syn2.py exact SAT: 9 gates UNSAT (and 8 UNSAT), so the statement is false; encoding validated on 3x5 mask 7549 (9 SAT, 8 UNSAT). Released statement_seems_false. Lean lower bound not written.
 - 2026-11-27 L-meta-24373 (two-lit fn, 6 pts, mask 279104447, <=7 gates with NOT): syn3.py exact SAT: 7 UNSAT, 8 SAT (circuit uses NOT). Released statement_seems_false.
+- 2026-11-27 L-meta-23407 (two-lit fn, 6 pts, mask 2113671, <=7 gates): syn3.py: 7 UNSAT, 8 SAT. Released statement_seems_false.

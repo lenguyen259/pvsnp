@@ -1,6 +1,6 @@
 import sys, itertools
 from pysat.solvers import Cadical153
-S=int(sys.argv[1]); mask=279104447; N=6
+S=int(sys.argv[1]); mask=int(sys.argv[2]) if len(sys.argv)>2 else 279104447; N=6
 rows=sorted(set((min(i,j),max(i,j)) for i in range(N) for j in range(N)))
 def inp(r,w): return w==r[0] or w==r[1]
 tgt={r:bool((mask>>(6*r[0]+r[1]))&1) for r in rows}
