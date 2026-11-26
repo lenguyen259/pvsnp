@@ -1,6 +1,6 @@
 import sys, itertools
 from pysat.solvers import Cadical153
-mask=int(sys.argv[2]) if len(sys.argv)>2 else 3242; n,m=3,5; S=int(sys.argv[1])
+mask=int(sys.argv[2]) if len(sys.argv)>2 else 3242; n,m=int(sys.argv[3]) if len(sys.argv)>3 else 3,int(sys.argv[4]) if len(sys.argv)>4 else 5; S=int(sys.argv[1])
 rows=[(u,v) for u in range(n) for v in range(m)]
 I=n+m
 def inp(r,w):
@@ -45,7 +45,7 @@ out=nv()  # output selector among gates: pick last-or-any
 osel=[nv() for g in range(S)]
 cl.append(osel)
 for r in rows:
-    t=bool((mask>>(5*r[0]+r[1]))&1)
+    t=bool((mask>>(m*r[0]+r[1]))&1)
     for g in range(S): cl.append([-osel[g], val[g,r] if t else -val[g,r]])
 s=Cadical153(bootstrap_with=cl)
 if s.solve():

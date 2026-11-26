@@ -55,3 +55,4 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 
 - 2026-11-26 L-meta-20499 (3x5 mask 3242, RepSizeAtMost 7): exact SAT (research/meta20499/syn.py) gives min 8 (7 UNSAT; encoding validated: mask 7549 min 9 as in accepted L_meta_20535). Released statement_seems_false. The refuting Lean lower bound (live-set search, template L_meta_5469) not written.
 - 2026-11-26 L-meta-18173 (3-colourability, 65 gates): best 277 gates, released other. L-meta-9768, 9807: open-level, released other. L-meta-11045: lease expired by container restart.
+- 2026-11-26 L-meta-20780 (5x5 mask 31362048, RepSizeAtMost 7): SAT min 8 (7 UNSAT). Released statement_seems_false. Not credited unless the Lean lower bound (negated twin) is filed; same template as 20499.

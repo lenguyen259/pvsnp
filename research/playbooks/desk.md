@@ -96,3 +96,4 @@
   kind=prove at level hard/open and so threw away L-meta-17964 ("union of paths, folded circuits",
   435 points), which is in our PF/paths territory. Never auto-release prove steps. A step released
   as `other` is not offered again for an hour.
+- 2026-11-26: RepSizeAtMost steps (rect, 3x5 / 5x5 masks): `research/meta20499/syn.py S MASK n m` is a 10-second exact synthesis on the 15/25 one-hot rows (validated on 20535: mask 7549 min 9). If SAT at the posted size, write the Lean file from accepted L_meta_20535 (upperC + decide +kernel). If UNSAT, the statement is false: release statement_seems_false; credit needs the refuting lower-bound file (live-set search template L_meta_5469 with an external generator) -- budget that before releasing.
