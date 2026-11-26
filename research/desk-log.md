@@ -52,3 +52,6 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - Assigned: 17. Proved, merged and credited: 1 (L-meta-10524).
 - Settled false with machine evidence, released: L-meta-12906, 13790 (14209 unsettled when its lease expired); the fleet then checked their positive twins itself.
 - Triage time for out-of-reach steps: under 2 minutes each.
+
+- 2026-11-26 L-meta-20499 (3x5 mask 3242, RepSizeAtMost 7): exact SAT (research/meta20499/syn.py) gives min 8 (7 UNSAT; encoding validated: mask 7549 min 9 as in accepted L_meta_20535). Released statement_seems_false. The refuting Lean lower bound (live-set search, template L_meta_5469) not written.
+- 2026-11-26 L-meta-18173 (3-colourability, 65 gates): best 277 gates, released other. L-meta-9768, 9807: open-level, released other. L-meta-11045: lease expired by container restart.
