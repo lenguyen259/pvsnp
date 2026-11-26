@@ -42,3 +42,6 @@ it 9100 size 34 best 34 435
 it 9250 size 34 best 34 444
 it 9600 size 34 best 34 461
 it 10600 size 34 best 34 501
+it 10950 size 34 best 34 514
+it 11000 size 34 best 34 515
+it 11100 size 34 best 34 518

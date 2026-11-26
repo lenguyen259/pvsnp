@@ -50,3 +50,5 @@ it 8400 size 34 best 34 426
 it 8700 size 34 best 34 445
 it 9100 size 34 best 34 463
 it 9300 size 34 best 34 470
+it 10050 size 34 best 34 509
+it 10250 size 34 best 34 519
