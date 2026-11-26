@@ -11,3 +11,5 @@
 05:13:49 s=9 vars=143043 clauses=579476 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.3s, proof 0.0 MB)
 05:13:51 s=10 vars=163562 clauses=678301 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.5s, proof 0.0 MB)
 05:14:06 s=11 vars=184509 clauses=784557 kissat: UNSAT 11.8s ; drat-trim: VERIFIED (2.8s, proof 2.1 MB)
+05:44:08 s=12 vars=205140 clauses=895851 kissat: TIMEOUT 1800.0s ; drat-trim: -
+05:44:08 NOT CLOSED (results {"1": "UNSAT", "2": "UNSAT", "3": "UNSAT", "4": "UNSAT", "5": "UNSAT", "6": "UNSAT", "7": "UNSAT", "8": "UNSAT", "9": "UNSAT", "10": "UNSAT", "11": "UNSAT", "12": "TIMEOUT"})
