@@ -10,3 +10,4 @@
 03:46:51 s=8 vars=129912 clauses=512663 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.3s, proof 0.0 MB)
 03:46:52 s=9 vars=152007 clauses=611487 kissat: UNSAT 0.1s ; drat-trim: VERIFIED (0.4s, proof 0.0 MB)
 03:46:55 s=10 vars=174107 clauses=716465 kissat: UNSAT 1.2s ; drat-trim: VERIFIED (0.8s, proof 1.3 MB)
+03:48:35 s=11 vars=196020 clauses=827452 kissat: UNSAT 43.8s ; drat-trim: VERIFIED (54.0s, proof 94.6 MB)

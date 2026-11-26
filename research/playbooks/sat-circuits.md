@@ -63,3 +63,12 @@ These work:
 - 2026-11-26 (meta9246): "find k clauses, each RUP" as one SAT instance scales badly: 20 variables,
   k = 12 gives 1.1M clauses and no answer in 10 CPU-min; forcing 3 of 7 clauses did not help. Check
   `ps` CPU time, not wall time: cpuslot waits behind other agents' jobs.
+- 2026-11-26 (petersen19): the hierarchy is now proved up to H8a/H8b (DRAT); H9 <= 14 UNSAT (pysat,
+  55 min at s=14); P >= 16 unconditional (s=15 UNSAT in 559 s). Restriction rows are cheap in enc5
+  (4 binary clauses per gate) and the U-singleton family (`grest2.py`, A:=1 with N(A) partly free,
+  bound L(H)+|U|) helps. Cube lessons on H9 s=15: cubes with an AND bottom gate on an early pair die in
+  ~10 s; exact #AND split kills all k outside {4..7} at once; splitting further on lexbot bits or on the
+  first gate leaves one or more children as hard as the parent (the hardness is in the upper circuit).
+  Estimate a whole level from a 2-parent sample before committing; prefix splits look cheap but are not.
+- drat-trim prints "\rs VERIFIED": strip \r before grepping (see petersen19/drat.sh).
+- Other agents may call petersen19/kissat; count only your own PIDs (check the parent).

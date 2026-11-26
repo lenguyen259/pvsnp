@@ -190,5 +190,17 @@
   "reason": "other",
   "ai": "orchestrator triage (<2 min)",
   "notes": "Dense C4-free graph instance (order-3 plane, 52 edges); no proof sketch, offered as a cut. Out of reach without a reduction idea; token budget preserved for running tasks."
+ },
+ {
+  "gap": "L-meta-9246",
+  "assigned": "2026-11-26T03:13Z",
+  "ended": "2026-11-26T04:5xZ",
+  "program": "proof_complexity",
+  "level": "open, 944 points",
+  "task": "RUP refutation of PHP(5,4) with at most 12 learned clauses (desk's own run has 13)",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "1 Fable agent (medium), 75 min, SAT encodings (monolithic SAT not viable)",
+  "notes": "Definitions decoded and a checker validated (PHP(4,3) minimum 5 = accepted L_meta_9208 agrees). No evidence for or against 12; could not even rediscover a 13-run. Next serious attempt: symmetry-reduced cubing on the first clause, or skeleton search (conditional helper + units). research/meta9246/."
  }
 ]

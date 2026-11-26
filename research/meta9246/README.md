@@ -31,7 +31,7 @@ impossibility proof. No Lean file written.
   The useful clauses are not symmetric: one conditional helper with a positive literal, then units.
   Sequence so far 2, 5, then 13 claimed by the desk (2,5,12 would be Pell; 2,5,13 odd Fibonacci).
 - TIMEOUT: PHP(5,4), k = 12 and k = 13, plain encoding T = 10 (kissat, about 9 CPU-min each) and
-  deterministic encoding with --unit pos, T = 9 (kissat, about 9 CPU-min each): no answer. The same
+  deterministic encoding with --unit pos, T = 9 (kissat, about 16 CPU-min each, k = 13 ended UNKNOWN at its 1000 s limit): no answer. The same
   solver does not even rediscover a 13-clause run, so these timeouts say nothing about 12.
 - TIMEOUT: restricted class 'exclude pigeons 1,2,3 from hole 0 (clauses x_i1 x_i2 x_i3) within 7
   clauses, then the 6-clause finish -x11-x22, -x11, -x12-x21, -x12, -x21, empty': no answer in 4 min.
