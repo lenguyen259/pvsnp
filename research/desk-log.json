@@ -274,5 +274,17 @@
   "reason": "other",
   "ai": "orchestrator triage (<1 min)",
   "notes": "Best known 64 = |E|+tau-1; a 63-gate monotone circuit would refute L-meta-612. Not attempted: dense-graph search far beyond our window-LNS reach (Heawood-minus-edge at 26 gates found nothing in 3005 windows)."
+ },
+ {
+  "gap": "L-meta-4835",
+  "assigned": "2026-11-26T04:48Z",
+  "ended": "2026-11-26T04:50Z",
+  "program": "meta",
+  "level": "hard, 311 points, reductions open",
+  "task": "step 2 of 2 of a cut of L-meta-1597: least top-form circuits for the 11-vertex graph G11 (tau 7, 16 edges) with >=2 junk ANDs have >=22 gates",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "orchestrator triage (~2 min)",
+  "notes": "Reductions were open. The parent's own note asks for a split by how two junk ANDs sit relative to each other; that needs the TopForm/junk formalism and a real split of difficulty, which we judged unlikely within a short budget (the L-meta-2794 reduction attempt cost ~170k tokens and produced no sendable split). G11 is a good future target for class-D reductions (gate elimination + finite cofactor bounds, research/reductions/patterns.md)."
  }
 ]
