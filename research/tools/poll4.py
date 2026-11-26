@@ -4,7 +4,12 @@ def sh(*a): return subprocess.run(a,capture_output=True,text=True).stdout
 def log(m):
     open(SC+'/poll.log','a').write(datetime.datetime.utcnow().strftime('%H:%M:%S ')+m+'\n')
 for i in range(400):
-    raw=sh('curl','-s','-m','30','https://pequalnp.com/desk/next?handle=lenguyen259&another=1')
+    raw=''
+    for q in ('&kind=value&value=1','&kind=refute','&kind=search',''):
+        raw=sh('curl','-s','-m','30','https://pequalnp.com/desk/next?handle=lenguyen259&another=1'+q)
+        try:
+            if json.loads(raw).get('gap'): break
+        except Exception: pass
     try: d=json.loads(raw)
     except Exception: time.sleep(120); continue
     g=d.get('gap')
