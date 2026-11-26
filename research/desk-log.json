@@ -202,5 +202,17 @@
   "reason": "other",
   "ai": "1 Fable agent (medium), 75 min, SAT encodings (monolithic SAT not viable)",
   "notes": "Definitions decoded and a checker validated (PHP(4,3) minimum 5 = accepted L_meta_9208 agrees). No evidence for or against 12; could not even rediscover a 13-run. Next serious attempt: symmetry-reduced cubing on the first clause, or skeleton search (conditional helper + units). research/meta9246/."
+ },
+ {
+  "gap": "L-meta-4715",
+  "assigned": "2026-11-26T03:54Z",
+  "ended": "2026-11-26T03:55Z",
+  "program": "meta",
+  "level": "hard, 312 points, kind cut",
+  "task": "cut step on an 11-vertex, 16-edge graph (edge-ownership cover statement)",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "orchestrator triage (<1 min)",
+  "notes": "No proof sketch; offered as a cut; out of reach."
  }
 ]
