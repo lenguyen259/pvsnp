@@ -1,0 +1,6 @@
+it 150 size 34 best 34 8
+it 400 size 34 best 34 21
+it 600 size 34 best 34 26
+it 700 size 34 best 34 35
+it 900 size 34 best 34 43
+it 950 size 34 best 34 48
