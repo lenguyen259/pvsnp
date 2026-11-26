@@ -86,7 +86,29 @@ Why these are fast: each contains a closed 7-vertex graph H = G - v with Phi(H) 
 i.e. every gate survives, which leaves almost nothing to search. The triangle-free G8tf1..3 have no such
 subgraph (max tL 9-10) and took 4-9 min plus 6-12 min of drat-trim.
 
-Remaining: G8t08..G8t26 (19 graphs; Phi 12 x 6, 13 x 8, 14 x 4, 15 x 1), not yet run.
+Chunks b/c/d/e/f (G8t08..G8t26, 2026-11-26 03:2x-09:49 UTC, one solver at a time, kissat cap 1800 s):
+G8t08..G8t14 DRAT (see logs, ledger); G8t15..G8t18 and G8t20 DRAT; **G8t19, G8t21..G8t26 TIMEOUT**.
+All TIMEOUTs are at s = Phi-1 (all smaller s UNSAT); no SAT anywhere. Cube-and-conquer not started.
+
+| name | edges | tau | Phi | label | restrictions | kissat total | drat-trim at Phi-1 |
+|---|---|---|---|---|---|---|---|
+| G8t15 | 01 02 03 14 16 25 37 46 57 | 5 | 13 | DRAT | 2238 | 696.5 s | VERIFIED (804.7 s, 503 MB) |
+| G8t16 | 01 02 06 13 16 24 27 35 47 | 5 | 13 | DRAT | 2249 | 25.7 s | VERIFIED (4.3 s, 64 MB) |
+| G8t17 | 01 02 13 24 26 35 37 46 57 | 5 | 13 | DRAT | 2238 | 559.3 s | VERIFIED (513.1 s, 430 MB) |
+| G8t18 | 01 02 03 14 15 26 27 46 57 67 | 4 | 13 | DRAT | 2134 | 9.9 s | VERIFIED (1.0 s, 1.8 MB) |
+| G8t19 | 01 02 03 14 25 36 46 47 57 67 | 4 | 13 | TIMEOUT at s=12 (1800 s) | 2118 | - | - |
+| G8t20 | 01 02 06 13 17 24 26 35 37 47 | 4 | 13 | DRAT | 2131 | 11.6 s | VERIFIED (1.4 s, 1.7 MB) |
+| G8t21 | 01 02 06 13 24 26 35 37 47 57 | 4 | 13 | TIMEOUT at s=12 (1800 s) | 2120 | - | - |
+| G8t22 | 01 02 03 14 16 25 27 46 47 57 | 5 | 14 | TIMEOUT at s=13 (1800 s; s<=12 UNSAT) | 2170 | - | - |
+| G8t23 | 01 02 03 14 16 25 37 46 47 57 | 5 | 14 | TIMEOUT at s=13 (s<=12 UNSAT, s=12 kissat 738 s) | 2159 | - | - |
+| G8t24 | 01 02 03 14 17 25 36 46 47 57 | 5 | 14 | TIMEOUT at s=13 (s<=12 UNSAT, s=12 kissat 776 s) | 2156 | - | - |
+| G8t25 | 01 02 06 13 16 24 27 35 47 57 | 5 | 14 | TIMEOUT at s=13 (s<=12 UNSAT, s=12 kissat 596 s) | 2156 | - | - |
+| G8t26 | 01 02 06 13 17 24 26 35 37 47 56 | 5 | 15 | TIMEOUT at s=13 (s<=12 UNSAT) | 2078 | - | - |
+
+Open (TIMEOUT, candidates for cube-and-conquer, `cubes7.py`): G8t19, G8t21, G8t22, G8t23, G8t24, G8t25, G8t26.
+Note: G8t22..G8t26 time out at s = 13 = Phi-1 for Phi = 14, and G8t26 at s = 13 < Phi-1 = 14
+(its s = 14 was never reached). Interrupted partial logs: `logs/G8t15|16|23|25.interrupted.log` (the
+background-task limit of 2 h kills a whole batch.sh; the runs were restarted from the interrupted graph).
 
 ## Run log (UTC)
 
@@ -94,4 +116,4 @@ Remaining: G8t08..G8t26 (19 graphs; Phi 12 x 6, 13 x 8, 14 x 4, 15 x 1), not yet
 * 16:18-17:31: batch7 (G7a..G7h), all DRAT; hardest G7g (s = 11: kissat 841 s, drat-trim 1230 s, 1.1 GB).
 * 17:31-18:15: batch8tf (G8tf0..G8tf3), all DRAT.
 * 2026-11-26 03:13-03:15 (after container restart): batch8tr_a (G8t00..G8t07), all DRAT.
-* No TIMEOUT and no SAT anywhere; cube-and-conquer (`cubes7.py`, prepared) was never needed.
+* 2026-11-26 03:43-09:49: batch8tr_c..f (G8t15..G8t26): 5 DRAT, 7 TIMEOUT (see above); no SAT.
