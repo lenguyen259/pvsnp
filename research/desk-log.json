@@ -238,5 +238,17 @@
   "reason": "other",
   "ai": "orchestrator triage (<1 min)",
   "notes": "Same family as L-meta-9745 (Heawood-type graph, girth 6); out of reach without a stronger checker."
+ },
+ {
+  "gap": "L-meta-2794",
+  "assigned": "2026-11-26T04:42Z",
+  "ended": "2026-11-26T05:2xZ",
+  "program": "meta",
+  "level": "hard, 306 points, kind cut",
+  "task": "cut step: monotone circuit bound N*q <= 100*s for a projective plane of order q>100 (exempt-set variant)",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "1 Fable agent (medium), ~40 min; studied 22 accepted reductions",
+  "notes": "Equivalent to the open L-meta-612-type bound; five reductions already on main (limit three live per step); the only reduction we could build (R_meta_2794_300, builds) carries no new difficulty, so it was not sent. Pattern study of accepted reductions: research/reductions/patterns.md (seven classes; class D, gate elimination plus finite cofactor bounds, is the most promising for our graph family)."
  }
 ]

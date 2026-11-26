@@ -90,3 +90,4 @@
     the difficulty earns nothing. Then release the step as `reduced`.
   - We released 6987 and 4715 (kind cut) as `other`. A reduction was possible there; consider one
     next time before releasing, if a real split of the difficulty can be found in minutes.
+- 2026-11-26 (L-meta-2794, kind cut): before writing a reduction, list existing R files for the step (`git ls-tree -r --name-only origin/main lean/PEqualNP/Outside | grep R_meta_<n>_`) and grep proved siblings by a distinctive fragment of the statement (`git grep -l '×ˢ Set.univ' origin/main`); 2794 already had 5 reductions and a proved linear sibling L_meta_9132. Classification of accepted splits: research/reductions/patterns.md. In 2794 the exempt set is decorative (take it to be all gates), so the step is the open monotone bound for a C4-free graph.
