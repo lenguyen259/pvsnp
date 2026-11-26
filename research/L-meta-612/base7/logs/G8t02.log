@@ -10,3 +10,5 @@
 03:13:58 s=8 vars=116962 clauses=472781 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.3s, proof 0.0 MB)
 03:13:59 s=9 vars=136643 clauses=562463 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.4s, proof 0.0 MB)
 03:14:00 s=10 vars=156113 clauses=657204 kissat: UNSAT 0.0s ; drat-trim: VERIFIED (0.4s, proof 0.0 MB)
+03:14:08 s=11 vars=175811 clauses=758340 kissat: UNSAT 5.2s ; drat-trim: VERIFIED (1.0s, proof 1.8 MB)
+03:14:08 PROVED size >= Phi = 12 (label DRAT, kissat total 5.3s); recorded in ledger/proven_subcubic.json

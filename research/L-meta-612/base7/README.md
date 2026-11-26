@@ -68,4 +68,30 @@ drat-trim check of the m = Phi-1 run (all smaller m were also VERIFIED, see logs
 Run in chunks (`batch8tr_a.txt` = G8t00..G8t07 first). The container restarted once (2026-11-25/26);
 no run was lost (all results above were already recorded).
 
-(filled in as runs finish)
+Chunk a (G8t00..G8t07, run 2026-11-26 03:13-03:15 UTC): 8/8 CLOSED, DRAT, every one in seconds.
+
+| name | edges | tau | Phi | label | restrictions | kissat total | drat-trim at Phi-1 |
+|---|---|---|---|---|---|---|---|
+| G8t00 | 01 02 03 14 15 26 27 47 67 | 4 | 12 | DRAT | 2169 | 8.4 s | VERIFIED (1.1 s, 1.8 MB) |
+| G8t01 | 01 02 03 14 17 25 36 47 57 | 4 | 12 | DRAT | 2213 | 6.8 s | VERIFIED (1.0 s, 2.1 MB) |
+| G8t02 | 01 02 03 14 17 25 46 47 57 | 4 | 12 | DRAT | 2166 | 5.3 s | VERIFIED (1.0 s, 1.8 MB) |
+| G8t03 | 01 02 03 14 25 27 46 47 57 | 4 | 12 | DRAT | 2175 | 7.0 s | VERIFIED (1.0 s, 2.0 MB) |
+| G8t04 | 01 02 03 14 25 27 46 57 67 | 4 | 12 | DRAT | 2183 | 8.7 s | VERIFIED (0.8 s, 1.3 MB) |
+| G8t05 | 01 02 03 14 25 37 46 47 67 | 4 | 12 | DRAT | 2183 | 11.3 s | VERIFIED (1.7 s, 2.3 MB) |
+| G8t06 | 01 02 03 14 25 46 47 57 67 | 4 | 12 | DRAT | 2153 | 7.4 s | VERIFIED (0.9 s, 1.8 MB) |
+| G8t07 | 01 02 03 14 27 45 47 56 57 | 4 | 12 | DRAT | 2136 | 2.4 s | VERIFIED (0.7 s, 1.2 MB) |
+
+Why these are fast: each contains a closed 7-vertex graph H = G - v with Phi(H) = Phi(G) - 1 = 11
+(max tL 11; G8t05 has max tL 10). The restriction x_v := 0 then forces at least 11 = s surviving gates,
+i.e. every gate survives, which leaves almost nothing to search. The triangle-free G8tf1..3 have no such
+subgraph (max tL 9-10) and took 4-9 min plus 6-12 min of drat-trim.
+
+Remaining: G8t08..G8t26 (19 graphs; Phi 12 x 6, 13 x 8, 14 x 4, 15 x 1), not yet run.
+
+## Run log (UTC)
+
+* 2026-11-25 16:17-16:18: N6a, N6b (DRAT).
+* 16:18-17:31: batch7 (G7a..G7h), all DRAT; hardest G7g (s = 11: kissat 841 s, drat-trim 1230 s, 1.1 GB).
+* 17:31-18:15: batch8tf (G8tf0..G8tf3), all DRAT.
+* 2026-11-26 03:13-03:15 (after container restart): batch8tr_a (G8t00..G8t07), all DRAT.
+* No TIMEOUT and no SAT anywhere; cube-and-conquer (`cubes7.py`, prepared) was never needed.

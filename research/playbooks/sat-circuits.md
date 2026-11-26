@@ -52,3 +52,11 @@ These work:
   `meta12906/validate.py`). An `a <= b` symmetry clause plus "NOT has b = missing wire" silently
   forced NOT to read only the false wire, so two UNSAT lines were void. Finding the target at the
   monotone size does not exercise NOT.
+- 2026-11-26 (base7, subcubic base cases): `L-meta-612/base7/run7.py NAME EDGES` does the whole bottom-up
+  step per graph (restriction family from proven bounds + missing-subgraph report, U-circuit validation,
+  every m = 1..Phi-1 through kissat --no-binary + drat-trim, record in ledger/proven_subcubic.json).
+  With the full hierarchy below them, all 8 open 7-vertex graphs closed (<= 15 min kissat each), the
+  4 triangle-free 8-vertex ones in <= 9 min, and 8-vertex graphs with a subgraph G - v of Phi - 1 in seconds.
+- 2026-11-26: drat-trim takes about 1.5x the kissat time; text proofs grow about 80 MB per kissat minute
+  (1.1 GB for a 14 min run). Budget disk and time for both before launching.
+- 2026-11-26: In shell until-loops, `grep -q "s=11"` also matches "clauses=110757". Match " s=11 ".
