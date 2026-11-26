@@ -95,3 +95,22 @@ C(f_H8b) = 12, C(f_H8a) = 13 (upper bounds: U circuits). The H7 value was open i
 
 So **C(f_P) >= 16 unconditionally** (UNSAT, not yet DRAT-certified for s=15). Earlier (first try,
 weak family `rest_all.json` = pseudoforest restrictions only) s=15 did not finish in 600 s.
+
+### 3.3 H9 at s = 15: cube-and-conquer (in progress / undetermined)
+
+All cubes use the full H9 encoding (`rest2_H9.json`, factc, viol, lexbot) plus cube literals; kissat via
+`cubes.py` (results in `logs/cubes_H9_15*.jsonl`). Every split is a complete case partition:
+* level b (`jobs_H9_15b.txt`): output op (2) x prefix tree on the first 6 lexbot bits
+  (b(01,&)=1 | b(01,&)=0,b(01,|)=1 | ... | all six 0): 14 cubes. 6 UNSAT in about 10 s each (exactly the
+  cubes where the bottom layer has an AND on the pair 01, 02 or 03), 8 TIMEOUT at 600 s.
+* level c (`jobs_H9_15c.txt`): each of the 8 hard cubes x exact AND count k = 0..15: 128 cubes,
+  **106 UNSAT, 22 TIMEOUT** at 300 s. The hard ones all have k in {4,5,6,7}.
+* level d (`refine.py`, `jobs_H9_15d.txt`): each of the 22 x prefix tree on the next 4 unfixed lexbot bits:
+  110 cubes, **87 UNSAT, 23 TIMEOUT** at 400 s (one cube, p6_a_k7_r4, needed 469 s).
+* level e (`refine2.py`, sample): split by the first gate (op and input pair, 72 children). Sample on 2 of the
+  23 parents: 144 cubes, 137 UNSAT, 7 TIMEOUT at 300 s (6 of them under the same parent). The hardness
+  does not shrink at this level: the hard part is not the bottom layer.
+* long sample (`jobs_H9_15f.txt`): 2 of the hard grandchildren at 3600 s: see below.
+
+Status: **H9 s=15 TIMEOUT / undetermined.** Remaining open: the 23 level-d cubes listed in
+`logs/cubes_H9_15d.jsonl` (equivalently the 7 sampled level-e children plus the 21 unsampled level-d cubes).

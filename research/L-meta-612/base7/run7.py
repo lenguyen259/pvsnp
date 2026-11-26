@@ -99,6 +99,8 @@ def main():
                 o = subprocess.run([DRATTRIM, cnf, prf, '-t', str(a.drat_to)], capture_output=True, text=True,
                                    timeout=a.drat_to + 60).stdout
                 dr = 'VERIFIED' if '\ns VERIFIED' in '\n' + o.replace('\r', '') else ('NOT VERIFIED' if 'NOT VERIFIED' in o else 'TIMEOUT/?')
+                if not dr.startswith('VERIFIED'):
+                    with open(os.path.join(HERE, 'logs', '%s_%d_drattrim.txt' % (nm, m)), 'w') as fh: fh.write(o[-5000:])
             except subprocess.TimeoutExpired: dr = 'TIMEOUT'
             dr += ' (%.1fs, proof %.1f MB)' % (time.time() - t1, psz / 1e6)
         if not dr.startswith('VERIFIED'): alldrat = False
