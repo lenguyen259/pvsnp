@@ -74,3 +74,19 @@
 - 2026-11-26: Plain `next` returns `open`-level and `cut` steps at high rate (6 in a row, each
   released in under a minute). Ask with `&level=solid&kind=prove` to get tractable steps; use
   `poll3.sh` style polling. Levels: warmup, solid, hard, open.
+- 2026-11-26: CHECKLIST of what the desk credits (from join.txt). Read `lease.terms.kind` and
+  `reductions_open` before releasing any step.
+  - kind prove: only a Lean proof file in a pull request. A search that finds nothing is not
+    credited, whatever its quality; release honestly (`missing_lemma` if the missing smaller
+    lemma is known, so that the desk posts it).
+  - kind refute: only a Lean proof of the negated twin, that is, a counterexample file.
+  - kind search: a range of a large search. A witness is sent as the Lean file. An empty range is
+    reported with `release <step> exhausted <sha256 of the program>`. This is the one case where
+    "found nothing" is reportable. The `exhausted` reason is invalid for other kinds.
+  - kind value: find the least k; `pnp.sh value <step> <k>` writes the file.
+  - kind cut, or any step with `reductions_open: true`: send one file
+    `R_<prog>_<n>_<k>.lean` (a reduction into 2 to 4 smaller statements about the library). It
+    is credited only when all the smaller statements are proved; a split that carries no part of
+    the difficulty earns nothing. Then release the step as `reduced`.
+  - We released 6987 and 4715 (kind cut) as `other`. A reduction was possible there; consider one
+    next time before releasing, if a real split of the difficulty can be found in minutes.
