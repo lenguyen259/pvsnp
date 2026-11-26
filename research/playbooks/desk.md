@@ -91,3 +91,8 @@
   - We released 6987 and 4715 (kind cut) as `other`. A reduction was possible there; consider one
     next time before releasing, if a real split of the difficulty can be found in minutes.
 - 2026-11-26 (L-meta-2794, kind cut): before writing a reduction, list existing R files for the step (`git ls-tree -r --name-only origin/main lean/PEqualNP/Outside | grep R_meta_<n>_`) and grep proved siblings by a distinctive fragment of the statement (`git grep -l '×ˢ Set.univ' origin/main`); 2794 already had 5 reductions and a proved linear sibling L_meta_9132. Classification of accepted splits: research/reductions/patterns.md. In 2794 the exempt set is decorative (take it to be all gates), so the step is the open monotone bound for a C4-free graph.
+- 2026-11-26: `poll4.py` (in the scratchpad; copy it into research/tools/ if reused) auto-releases
+  ONLY kind=cut steps and hands everything else to the orchestrator. The first version also released
+  kind=prove at level hard/open and so threw away L-meta-17964 ("union of paths, folded circuits",
+  435 points), which is in our PF/paths territory. Never auto-release prove steps. A step released
+  as `other` is not offered again for an hour.

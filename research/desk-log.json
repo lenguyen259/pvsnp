@@ -298,5 +298,41 @@
   "reason": "other",
   "ai": "orchestrator triage (<2 min)",
   "notes": "A general-basis lower bound of 18 for Petersen with side wires; our SAT hierarchy covers only the monotone basis (Petersen >= 16 monotone, 18/19 open). Not reducible within our means."
+ },
+ {
+  "gap": "L-meta-4007",
+  "assigned": "2026-11-26T04:49Z",
+  "ended": "2026-11-26T04:5xZ",
+  "program": "meta",
+  "level": "hard, 313 points, kind cut",
+  "task": "cut step on the G11 TopForm family (sibling of L-meta-4835)",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "orchestrator triage",
+  "notes": "Same family as 4835; no real split found cheaply."
+ },
+ {
+  "gap": "L-meta-17964",
+  "assigned": "2026-11-26T04:49Z",
+  "ended": "2026-11-26T04:49Z",
+  "program": "meta",
+  "level": "hard, 435 points, kind prove",
+  "task": "For a union of paths with every piece of at least 4 vertices, every folded AND/OR circuit representing it has 8 times EXTRA plus 2 at least the sum of (m - 3)",
+  "outcome": "auto-released by the polling script",
+  "reason": "other",
+  "ai": "none (script rule: release kind=cut)",
+  "notes": "Released within seconds by the auto-triage rule. L-meta-17964 (union of paths, folded circuits) is in our tractable territory (PF/paths) and was released by the earlier too-broad rule; retry after the one-hour cool-down."
+ },
+ {
+  "gap": "L-meta-6028",
+  "assigned": "2026-11-26T04:49Z",
+  "ended": "2026-11-26T04:49Z",
+  "program": "meta",
+  "level": "hard, 234 points, kind cut",
+  "task": "∀ (x1 : PEqualNP.CircuitLowerBounds.Circuit) (x2 : Fin (10 : ℕ) → Fin (10 : ℕ)), PEqualNP.MetaComplexity.FanInTwo x1 → x1.size ≤ (18 : ℕ) → (∃ (x5 : PEqualNP.Ci",
+  "outcome": "auto-released by the polling script",
+  "reason": "other",
+  "ai": "none (script rule: release kind=cut)",
+  "notes": "Auto-triage."
  }
 ]
