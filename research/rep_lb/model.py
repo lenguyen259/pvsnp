@@ -139,3 +139,20 @@ class Search:
                 break
         self.memo[key] = res
         return res
+
+def unfolded_cost(S, k, st, cache):
+    """Number of optimized-calls Lean makes without any table (dead states: all children are visited)."""
+    key = (k, st)
+    c = cache.get(key)
+    if c is not None:
+        return c
+    g = S.I.goal
+    if st == (g,) or k == 0:
+        c = 1
+    else:
+        extra = max(k + 1 - len(st), 0)
+        c = 1
+        for ch, _ in S.children(st, extra):
+            c += unfolded_cost(S, k - 1, ch, cache)
+    cache[key] = c
+    return c
