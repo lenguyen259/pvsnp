@@ -67,3 +67,4 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - 2026-11-27 L-meta-23520 (4x6 mask 1900153, <=10 gates, search unit): syn2.py 10 undecided after ~50 min (4x6 encodings with 10 gates exceed the quick-SAT regime). Released other.
 - 2026-11-27 L-meta-20887 (4x5 mask 34014, <=8 gates, search unit): syn2.py 8 UNSAT. Released statement_seems_false.
 - 2026-11-27 L-meta-24354 (two-lit fn 6 pts mask 270651325, <=7 gates): syn3.py 7 UNSAT, 8 SAT. Released statement_seems_false.
+- 2026-11-27 L-meta-24148 (two-lit fn 5 pts mask 17043521, <=10 gates, hard 228 pts): 9 gates UNSAT (syn3.py); 10 undecided after two ~50 min runs (syn3 and symmetry-broken syn3s). Released other.
