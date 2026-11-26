@@ -72,3 +72,4 @@ These work:
   Estimate a whole level from a 2-parent sample before committing; prefix splits look cheap but are not.
 - drat-trim prints "\rs VERIFIED": strip \r before grepping (see petersen19/drat.sh).
 - Other agents may call petersen19/kissat; count only your own PIDs (check the parent).
+- 2026-11-26 (meta18434, RepSizeAtMost Fin 10 u!=v, 34 -> 33?): `research/meta18434/lns.py` (monotone, 100-row windowed LNS, copy of meta9745 lns with unary choice removed) runs ~40 windows/s; 2x30 min (75k windows, plateau at 34) found nothing. The local pequalnp-proofs clone working tree is stale (no Defs/Represents.lean): read defs with `git show origin/main:lean/PEqualNP/Defs/Represents.lean` and build in a copy checked out at origin/main. In this sandbox `sleep N` in run_in_background returns at once; wait with `timeout N tail -f log | grep -m1 ...`.

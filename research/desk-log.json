@@ -334,5 +334,17 @@
   "reason": "other",
   "ai": "none (script rule: release kind=cut)",
   "notes": "Auto-triage."
+ },
+ {
+  "gap": "L-meta-18434",
+  "assigned": "2026-11-26T04:30Z",
+  "ended": "2026-11-26T05:1xZ",
+  "program": "meta",
+  "level": "solid, 63 points",
+  "task": "exhibit a <=33-gate AND/OR circuit representing the 10x10 crown graph (u~v iff u!=v) on one-hot pairs",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "1 Sonnet agent (medium), ~60 min, 2 LNS seeds x 30 min (~75k windows)",
+  "notes": "Best 34 (the accepted rung, structure: 10 ORs z_i=x_i|y_i + threshold-2 with 24 gates). 33 neither found nor refuted. Not tried: biclique covers with shared OR trees, whole-circuit CEGAR SAT. research/meta18434/."
  }
 ]
