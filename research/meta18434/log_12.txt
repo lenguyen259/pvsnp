@@ -37,3 +37,4 @@ it 6300 size 34 best 34 309
 it 6650 size 34 best 34 324
 it 6700 size 34 best 34 328
 it 6800 size 34 best 34 335
+it 7200 size 34 best 34 358
