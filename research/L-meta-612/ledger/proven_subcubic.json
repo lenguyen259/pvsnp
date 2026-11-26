@@ -4546,5 +4546,71 @@
 }
 },
 "date": "2026-11-26"
+},
+{
+"name": "G8t21",
+"edges": [
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+6
+],
+[
+1,
+3
+],
+[
+2,
+4
+],
+[
+2,
+6
+],
+[
+3,
+5
+],
+[
+3,
+7
+],
+[
+4,
+7
+],
+[
+5,
+7
+]
+],
+"n": 8,
+"m": 10,
+"tau": 4,
+"phi": 13,
+"L": 13,
+"status": "UNSAT-all-m",
+"label": "DRAT",
+"method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+"flags": "sizes 1..11: run7.py; size 12: cubes7.py (26 cubes, all UNSAT, all DRAT VERIFIED), log base7/logs/G8t21_cubes_12.jsonl",
+"subgraph_bounds_missing": [],
+"validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+"kissat_total_s": 11.6,
+"drat": "yes",
+"per_size": {
+"12": {
+"result": "UNSAT",
+"method": "26 cubes (cubes7.py)",
+"drat": "all VERIFIED"
+}
+},
+"date": "2026-11-27"
 }
 ]

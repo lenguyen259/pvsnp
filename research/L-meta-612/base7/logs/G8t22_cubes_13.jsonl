@@ -1,0 +1,2 @@
+{"cube": "&0", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.7s, proof 1.1 MB)", "time": "21:16:30"}
+{"cube": "|0", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.9s, proof 1.1 MB)", "time": "21:16:32"}
