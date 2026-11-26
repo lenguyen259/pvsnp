@@ -1,0 +1,5 @@
+G8t21 12 {'cube': '&0', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 0.9 MB)', 'time': '20:08:40'}
+G8t21 12 {'cube': '|0', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.6s, proof 0.9 MB)', 'time': '20:08:42'}
+G8t21 12 {'cube': '&1', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 0.6 MB)', 'time': '20:08:44'}
+G8t21 12 {'cube': '|1', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.6s, proof 0.7 MB)', 'time': '20:08:46'}
+G8t21 12 {'cube': '&2', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.6s, proof 0.7 MB)', 'time': '20:08:48'}
