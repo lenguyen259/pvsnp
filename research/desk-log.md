@@ -71,3 +71,4 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - 2026-11-27 L-meta-22162 (4x6 mask 841068, <=12 gates, search unit, gap 4): syn2.py 12 undecided after ~50 min. Released other.
 - 2026-11-27 L-meta-23205 (two-lit fn 6 pts mask 33836, <=6 gates, hard 213 pts): syn3.py 6 UNSAT, 7 SAT (matches desk). Released statement_seems_false.
 - 2026-11-27 L-meta-23277 (two-lit fn 6 pts mask 34094, <=7 gates): syn3 7 UNSAT. Released statement_seems_false (lease may already have expired).
+- 2026-11-27 L-meta-19631 (5x5 mask 12075255 with NOT, <=9 gates): syn4_tool.py undecided after ~50 min. Released other.
