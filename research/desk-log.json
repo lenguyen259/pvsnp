@@ -214,5 +214,17 @@
   "reason": "other",
   "ai": "orchestrator triage (<1 min)",
   "notes": "No proof sketch; offered as a cut; out of reach."
+ },
+ {
+  "gap": "L-meta-9750",
+  "assigned": "2026-11-26T03:54Z",
+  "ended": "2026-11-26T03:55Z",
+  "program": "meta",
+  "level": "open, 845 points",
+  "task": "no AND/OR/NOT circuit with <=20 gates for a 12-vertex, 16-edge graph (lower bound 21)",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "orchestrator triage (<1 min)",
+  "notes": "Same shape as the Table-2 rows but 12 vertices: needs a gate-elimination tree whose base rows would exceed the accepted checker's base cap (<=12 gates, <=7 vertices). Out of reach without a new checker."
  }
 ]
