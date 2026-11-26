@@ -81,3 +81,18 @@ Python search itself is instant for all of the below.
 | 5x5 mask 16236086 | 10 | 1 | 1.0M (too big, accepted file uses ReplayTree tables) |
 | 4x6 mask 1881597 | 11 | 1 | 7.6M |
 | 4x5 mask 103895 | 11 | 1 | 70M |
+
+## Verified builds (worktree of origin/main 950172491, `lake build PEqualNP.Outside.<M>`, axioms = propext, Classical.choice, Quot.sound)
+
+| file in examples/ | build | peak RSS (incl. ~7 GB Mathlib import) |
+|---|---|---|
+| 3x5_m3242_K7 | 27 s | 7.4 GB |
+| 3x5_m7549_K8 | 127 s | 8.4 GB |
+| 5x5_m31362048_K7 | 29 s | 7.1 GB |
+| 4x5_m112125_K9 | 676 s | 10.9 GB |
+| 4x6_m817135_K9 | 339 s | 9.9 GB |
+| 3x5_m3242_K7_value (`--with-upper`) | 28 s | 7.4 GB |
+
+The module names inside examples/ are placeholders (L_meta_9000x); pass the real MODULE to gen.py.
+K = min refused: 3x5 3242 K=8, 3x5 7549 K=9, 4x5 112125 K=10, 5x5 32441376 K=8 (circuit printed and re-checked).
+`python3 selftest.py` re-checks the Python side.
