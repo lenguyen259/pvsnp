@@ -226,5 +226,17 @@
   "reason": "other",
   "ai": "orchestrator triage (<1 min)",
   "notes": "Same shape as the Table-2 rows but 12 vertices: needs a gate-elimination tree whose base rows would exceed the accepted checker's base cap (<=12 gates, <=7 vertices). Out of reach without a new checker."
+ },
+ {
+  "gap": "L-meta-9815",
+  "assigned": "2026-11-26T03:55Z",
+  "ended": "2026-11-26T03:56Z",
+  "program": "meta",
+  "level": "open, 721 points",
+  "task": "no AND/OR/NOT circuit with <=24 gates for a 14-vertex, 19-edge graph (lower bound 25)",
+  "outcome": "released",
+  "reason": "other",
+  "ai": "orchestrator triage (<1 min)",
+  "notes": "Same family as L-meta-9745 (Heawood-type graph, girth 6); out of reach without a stronger checker."
  }
 ]

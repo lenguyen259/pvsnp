@@ -71,3 +71,6 @@
   answered "That step is not open". So a settled negation is worth only its release reason
   (`statement_seems_false`), unless the Lean proof of the twin can be produced within minutes.
   Do not spend Lean-agent effort on twins of settled "False:" steps.
+- 2026-11-26: Plain `next` returns `open`-level and `cut` steps at high rate (6 in a row, each
+  released in under a minute). Ask with `&level=solid&kind=prove` to get tractable steps; use
+  `poll3.sh` style polling. Levels: warmup, solid, hard, open.
