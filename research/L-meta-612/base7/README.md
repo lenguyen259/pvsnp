@@ -117,3 +117,5 @@ background-task limit of 2 h kills a whole batch.sh; the runs were restarted fro
 * 17:31-18:15: batch8tf (G8tf0..G8tf3), all DRAT.
 * 2026-11-26 03:13-03:15 (after container restart): batch8tr_a (G8t00..G8t07), all DRAT.
 * 2026-11-26 03:43-09:49: batch8tr_c..f (G8t15..G8t26): 5 DRAT, 7 TIMEOUT (see above); no SAT.
+
+- 2026-11-27: G8t19 and G8t21 closed (s=12, 26 cubes each, DRAT). G8t22 s=13: 26 of 28 cubes UNSAT (k=6 cubes 1141-1561 s); the two k=5 cubes (&5, |5) are TIMEOUT at 1800 s and at 6600 s, so G8t22 stays open. Needs a finer split of the k=5 family (e.g. on the first gate's inputs) before more CPU. Open: G8t22 (k=5), G8t23, G8t24, G8t25, G8t26.
