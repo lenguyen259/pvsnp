@@ -6,3 +6,7 @@
 {"cube": "|2", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.7s, proof 3.0 MB)", "time": "03:43:36"}
 {"cube": "&3", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.7s, proof 3.1 MB)", "time": "03:43:38"}
 {"cube": "|3", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.8s, proof 3.2 MB)", "time": "03:43:41"}
+{"cube": "&4", "result": "UNSAT", "kissat_s": 276.9, "drat": "VERIFIED (597.3s, proof 424.5 MB)", "time": "03:58:17"}
+{"cube": "|4", "result": "UNSAT", "kissat_s": 201.9, "drat": "VERIFIED (510.3s, proof 322.0 MB)", "time": "04:10:11"}
+{"cube": "&5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "04:50:12"}
+{"cube": "|5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "05:30:14"}
