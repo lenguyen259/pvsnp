@@ -23,7 +23,7 @@ for i in range(400):
         log('AUTO-RELEASED %s kind=%s level=%s'%(g['id'],kind,lvl)); time.sleep(20); continue
     import re
     LOWER=re.compile(r'needs at least|at least \d+|No .*circuit|requires at least|cannot|not computable|is not|least|lower bound|False:',re.I)
-    if kind=='prove' and lvl!='open' and not LOWER.search(title) and not (g.get('statement','').lstrip().startswith(('¬','PEqualNP.MetaComplexity.¬'))):
+    if kind=='prove' and not LOWER.search(title) and not (g.get('statement','').lstrip().startswith(('¬','PEqualNP.MetaComplexity.¬'))):
         sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=other'%d['lease']['id'])
         open(SC+'/autorel.jsonl','a').write(json.dumps(dict(gap=g['id'],t=datetime.datetime.utcnow().isoformat(),kind=kind,level=lvl,points=t.get('points'),title=title,why='existence/search step, human wants proof steps only'))+'\n')
         log('SKIPPED %s (not a proof-of-lower-bound step) level=%s'%(g['id'],lvl)); time.sleep(20); continue
