@@ -23,3 +23,4 @@ G8t24 13 {'cube': '&5_ooa', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-'
 G8t24 13 {'cube': '|5_aaa', 'result': 'UNSAT', 'kissat_s': 6.0, 'drat': 'VERIFIED (4.0s, proof 14.8 MB)', 'time': '13:45:14'}
 G8t24 13 {'cube': '|5_aao', 'result': 'UNSAT', 'kissat_s': 75.6, 'drat': 'VERIFIED (173.8s, proof 118.8 MB)', 'time': '13:49:25'}
 G8t24 13 {'cube': '|5_aoa', 'result': 'UNSAT', 'kissat_s': 203.9, 'drat': 'VERIFIED (495.1s, proof 275.3 MB)', 'time': '14:01:06'}
+G8t24 13 {'cube': '|5_aoo', 'result': 'UNSAT', 'kissat_s': 2197.8, 'drat': 'VERIFIED (3624.6s, proof 1610.5 MB)', 'time': '15:38:10'}
