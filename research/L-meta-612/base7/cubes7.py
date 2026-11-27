@@ -10,7 +10,7 @@ KISSAT = os.path.join(P19, 'kissat'); DRATTRIM = os.path.join(P19, 'drat-trim')
 SCR = '/tmp/claude-0/-home-user/0fc37754-ef86-508b-897b-e5f1fd591c14/scratchpad/base7'
 ap = argparse.ArgumentParser(); ap.add_argument('name'); ap.add_argument('edges'); ap.add_argument('m', type=int)
 ap.add_argument('--to', type=int, default=1800); ap.add_argument('--drat-to', type=int, default=5400)
-ap.add_argument('--nodrat', action='store_true'); ap.add_argument('--only'); ap.add_argument('--subonly', help='comma list of 3-op sub-cube keys to refine; use with --splitops 8,9,10,11'); ap.add_argument('--splitops', help='comma list of gate wires whose op is split (&/|) inside every selected cube')
+ap.add_argument('--nodrat', action='store_true'); ap.add_argument('--only'); ap.add_argument('--skiptimeout', action='store_true'); ap.add_argument('--subonly', help='comma list of 3-op sub-cube keys to refine; use with --splitops 8,9,10,11'); ap.add_argument('--splitops', help='comma list of gate wires whose op is split (&/|) inside every selected cube')
 a = ap.parse_args(); nm = a.name; m = a.m
 rf = os.path.join(HERE, 'rest', 'rest_%s.json' % nm); assert os.path.exists(rf)
 out_f = os.path.join(HERE, 'logs', '%s_cubes_%d.jsonl' % (nm, m))
@@ -18,6 +18,7 @@ done = {}
 if os.path.exists(out_f):
     for l in open(out_f):
         r = json.loads(l)
+        if a.skiptimeout and r['result'] == 'TIMEOUT': done[r['cube']] = r
         if r['result'] == 'UNSAT' and (a.nodrat or r['drat'].startswith('VERIFIED')): done[r['cube']] = r
 cubes = [(o, k) for k in range(m + 1) for o in '&|']
 SPL = [int(x) for x in a.splitops.split(',')] if a.splitops else []
