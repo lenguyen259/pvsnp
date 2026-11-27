@@ -26,3 +26,4 @@
 {"cube": "|12", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.7s, proof 0.6 MB)", "time": "01:01:51"}
 {"cube": "&13", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.6s, proof 1.1 MB)", "time": "01:01:53"}
 {"cube": "|13", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.6s, proof 1.1 MB)", "time": "01:01:55"}
+{"cube": "|5", "result": "TIMEOUT", "kissat_s": 6600.0, "drat": "-", "time": "02:52:04"}
