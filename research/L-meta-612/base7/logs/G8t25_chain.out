@@ -6,3 +6,6 @@ G8t25 13 {'cube': '&5_ooo', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-'
 G8t25 13 {'cube': '|5_aaa', 'result': 'UNSAT', 'kissat_s': 21.0, 'drat': 'VERIFIED (11.6s, proof 14.0 MB)', 'time': '11:24:46'}
 G8t25 13 {'cube': '|5_aao', 'result': 'UNSAT', 'kissat_s': 60.8, 'drat': 'VERIFIED (171.3s, proof 153.1 MB)', 'time': '11:28:39'}
 G8t25 13 {'cube': '|5_aoa', 'result': 'UNSAT', 'kissat_s': 122.7, 'drat': 'VERIFIED (272.5s, proof 201.0 MB)', 'time': '11:35:16'}
+G8t25 13 {'cube': '|5_aoo', 'result': 'UNSAT', 'kissat_s': 759.0, 'drat': 'VERIFIED (1237.0s, proof 600.8 MB)', 'time': '12:17:34'}
+G8t25 13 {'cube': '|5_oaa', 'result': 'UNSAT', 'kissat_s': 117.4, 'drat': 'VERIFIED (289.2s, proof 193.2 MB)', 'time': '12:24:22'}
+G8t25 13 {'cube': '|5_oao', 'result': 'UNSAT', 'kissat_s': 914.4, 'drat': 'VERIFIED (1519.4s, proof 697.4 MB)', 'time': '13:04:58'}

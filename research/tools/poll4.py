@@ -5,7 +5,7 @@ def log(m):
     open(SC+'/poll.log','a').write(datetime.datetime.utcnow().strftime('%H:%M:%S ')+m+'\n')
 for i in range(400):
     raw=''
-    for q in ('&kind=value&value=1','&kind=refute','&kind=search',''):
+    for q in ('',):
         raw=sh('curl','-s','-m','30','https://pequalnp.com/desk/next?handle=lenguyen259&another=1'+q)
         try:
             if json.loads(raw).get('gap'): break
