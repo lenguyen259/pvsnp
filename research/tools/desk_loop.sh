@@ -1,8 +1,4 @@
 #!/bin/sh
-# poll -> auto-handle two-lit steps -> repeat; stops (exit) when a step needs the orchestrator
+# poll for PROOF steps only (lower bounds / negations); anything that passes poll4's filter stops the loop for the orchestrator
 cd /home/user/pvsnp/research/tools
-while true; do
-  python3 poll4.py || exit 1
-  python3 auto_twolit.py; rc=$?
-  [ $rc -eq 0 ] || [ $rc -eq 4 ] || exit $rc
-done
+python3 poll4.py
