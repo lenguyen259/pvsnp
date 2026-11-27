@@ -10,3 +10,18 @@
 {"cube": "|4", "result": "UNSAT", "kissat_s": 260.0, "drat": "VERIFIED (547.2s, proof 382.2 MB)", "time": "04:09:40"}
 {"cube": "&5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "04:49:41"}
 {"cube": "|5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "05:29:43"}
+{"cube": "&6", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "06:23:36"}
+{"cube": "|6", "result": "UNSAT", "kissat_s": 2090.3, "drat": "VERIFIED (2629.2s, proof 1416.8 MB)", "time": "07:42:17"}
+{"cube": "&7", "result": "UNSAT", "kissat_s": 16.8, "drat": "VERIFIED (3.5s, proof 4.7 MB)", "time": "07:42:39"}
+{"cube": "|7", "result": "UNSAT", "kissat_s": 16.4, "drat": "VERIFIED (4.5s, proof 16.6 MB)", "time": "07:43:02"}
+{"cube": "&8", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.6s, proof 3.0 MB)", "time": "07:43:04"}
+{"cube": "|8", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.6s, proof 2.9 MB)", "time": "07:43:07"}
+{"cube": "&9", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.7s, proof 3.0 MB)", "time": "07:43:09"}
+{"cube": "|9", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 3.1 MB)", "time": "07:43:12"}
+{"cube": "&10", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 3.0 MB)", "time": "07:43:15"}
+{"cube": "|10", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 2.9 MB)", "time": "07:43:19"}
+{"cube": "&11", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 3.1 MB)", "time": "07:43:22"}
+{"cube": "|11", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 3.2 MB)", "time": "07:43:25"}
+{"cube": "&12", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.7s, proof 0.6 MB)", "time": "07:43:27"}
+{"cube": "|12", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.7s, proof 0.6 MB)", "time": "07:43:30"}
+{"cube": "&13", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.7s, proof 1.0 MB)", "time": "07:43:32"}

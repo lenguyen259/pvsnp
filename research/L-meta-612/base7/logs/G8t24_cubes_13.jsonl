@@ -10,3 +10,4 @@
 {"cube": "|4", "result": "UNSAT", "kissat_s": 124.3, "drat": "VERIFIED (294.5s, proof 259.0 MB)", "time": "03:56:57"}
 {"cube": "&5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "04:36:59"}
 {"cube": "|5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "05:17:01"}
+{"cube": "&6", "result": "UNSAT", "kissat_s": 2391.8, "drat": "VERIFIED (3157.3s, proof 1560.0 MB)", "time": "07:16:05"}

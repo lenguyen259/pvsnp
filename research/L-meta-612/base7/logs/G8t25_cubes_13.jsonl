@@ -10,3 +10,22 @@
 {"cube": "|4", "result": "UNSAT", "kissat_s": 201.9, "drat": "VERIFIED (510.3s, proof 322.0 MB)", "time": "04:10:11"}
 {"cube": "&5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "04:50:12"}
 {"cube": "|5", "result": "TIMEOUT", "kissat_s": 2400.0, "drat": "-", "time": "05:30:14"}
+{"cube": "&6", "result": "UNSAT", "kissat_s": 1254.2, "drat": "VERIFIED (1433.1s, proof 975.2 MB)", "time": "06:28:23"}
+{"cube": "|6", "result": "UNSAT", "kissat_s": 1072.7, "drat": "VERIFIED (1573.9s, proof 862.0 MB)", "time": "07:12:32"}
+{"cube": "&7", "result": "UNSAT", "kissat_s": 16.1, "drat": "VERIFIED (5.8s, proof 4.9 MB)", "time": "07:12:55"}
+{"cube": "|7", "result": "UNSAT", "kissat_s": 14.7, "drat": "VERIFIED (3.9s, proof 9.7 MB)", "time": "07:13:15"}
+{"cube": "&8", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.7s, proof 3.0 MB)", "time": "07:13:18"}
+{"cube": "|8", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.7s, proof 2.9 MB)", "time": "07:13:21"}
+{"cube": "&9", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.8s, proof 3.0 MB)", "time": "07:13:23"}
+{"cube": "|9", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.8s, proof 3.2 MB)", "time": "07:13:26"}
+{"cube": "&10", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.8s, proof 3.1 MB)", "time": "07:13:29"}
+{"cube": "|10", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.7s, proof 2.9 MB)", "time": "07:13:32"}
+{"cube": "&11", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.7s, proof 3.1 MB)", "time": "07:13:34"}
+{"cube": "|11", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.7s, proof 3.2 MB)", "time": "07:13:37"}
+{"cube": "&12", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.6s, proof 0.6 MB)", "time": "07:13:39"}
+{"cube": "|12", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.6s, proof 0.6 MB)", "time": "07:13:41"}
+{"cube": "&13", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.6s, proof 1.1 MB)", "time": "07:13:43"}
+{"cube": "|13", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.6s, proof 1.1 MB)", "time": "07:13:45"}
+{"cube": "&5_aaa", "result": "UNSAT", "kissat_s": 7.4, "drat": "VERIFIED (3.1s, proof 12.1 MB)", "time": "07:13:57"}
+{"cube": "&5_aao", "result": "UNSAT", "kissat_s": 54.7, "drat": "VERIFIED (161.0s, proof 137.7 MB)", "time": "07:17:34"}
+{"cube": "&5_aoa", "result": "UNSAT", "kissat_s": 101.2, "drat": "VERIFIED (280.3s, proof 209.6 MB)", "time": "07:23:58"}
