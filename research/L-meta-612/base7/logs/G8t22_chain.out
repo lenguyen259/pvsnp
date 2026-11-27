@@ -1,0 +1,4 @@
+G8t22 13 {'cube': '&5_ooo', 'result': 'UNSAT', 'kissat_s': 2207.8, 'drat': 'VERIFIED (3417.1s, proof 1571.0 MB)', 'time': '11:17:53'}
+G8t22 13 {'cube': '|5_aaa', 'result': 'UNSAT', 'kissat_s': 7.4, 'drat': 'VERIFIED (2.6s, proof 11.3 MB)', 'time': '11:18:05'}
+G8t22 13 {'cube': '|5_aao', 'result': 'UNSAT', 'kissat_s': 44.3, 'drat': 'VERIFIED (149.3s, proof 118.7 MB)', 'time': '11:21:20'}
+G8t22 13 {'cube': '|5_aoa', 'result': 'UNSAT', 'kissat_s': 113.2, 'drat': 'VERIFIED (306.8s, proof 206.0 MB)', 'time': '11:28:22'}

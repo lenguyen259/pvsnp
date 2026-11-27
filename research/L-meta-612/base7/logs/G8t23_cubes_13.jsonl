@@ -30,3 +30,5 @@
 {"cube": "&5_aaa", "result": "UNSAT", "kissat_s": 5.7, "drat": "VERIFIED (3.1s, proof 16.9 MB)", "time": "09:20:13"}
 {"cube": "&5_aao", "result": "UNSAT", "kissat_s": 43.8, "drat": "VERIFIED (101.8s, proof 110.3 MB)", "time": "09:22:40"}
 {"cube": "&5_aoa", "result": "UNSAT", "kissat_s": 107.5, "drat": "VERIFIED (357.2s, proof 191.0 MB)", "time": "09:30:26"}
+{"cube": "&5_aoo", "result": "UNSAT", "kissat_s": 1522.9, "drat": "VERIFIED (2522.2s, proof 1044.4 MB)", "time": "10:51:33"}
+{"cube": "&5_oaa", "result": "UNSAT", "kissat_s": 192.1, "drat": "VERIFIED (496.3s, proof 282.1 MB)", "time": "11:03:04"}
