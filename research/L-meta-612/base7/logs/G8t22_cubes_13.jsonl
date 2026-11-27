@@ -10,3 +10,19 @@
 {"cube": "|4", "result": "UNSAT", "kissat_s": 282.5, "drat": "VERIFIED (542.1s, proof 405.0 MB)", "time": "21:46:38"}
 {"cube": "&5", "result": "TIMEOUT", "kissat_s": 1800.0, "drat": "-", "time": "22:16:39"}
 {"cube": "|5", "result": "TIMEOUT", "kissat_s": 1800.0, "drat": "-", "time": "22:46:42"}
+{"cube": "&6", "result": "UNSAT", "kissat_s": 1561.3, "drat": "VERIFIED (1962.2s, proof 1084.3 MB)", "time": "00:15:20"}
+{"cube": "|6", "result": "UNSAT", "kissat_s": 1141.5, "drat": "VERIFIED (1491.7s, proof 881.6 MB)", "time": "00:59:15"}
+{"cube": "&7", "result": "UNSAT", "kissat_s": 33.4, "drat": "VERIFIED (29.9s, proof 57.8 MB)", "time": "01:00:20"}
+{"cube": "|7", "result": "UNSAT", "kissat_s": 45.8, "drat": "VERIFIED (17.6s, proof 76.3 MB)", "time": "01:01:25"}
+{"cube": "&8", "result": "UNSAT", "kissat_s": 1.0, "drat": "VERIFIED (0.6s, proof 3.0 MB)", "time": "01:01:27"}
+{"cube": "|8", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.6s, proof 2.9 MB)", "time": "01:01:30"}
+{"cube": "&9", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 3.0 MB)", "time": "01:01:33"}
+{"cube": "|9", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.6s, proof 3.2 MB)", "time": "01:01:35"}
+{"cube": "&10", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.7s, proof 3.0 MB)", "time": "01:01:38"}
+{"cube": "|10", "result": "UNSAT", "kissat_s": 0.7, "drat": "VERIFIED (0.7s, proof 2.9 MB)", "time": "01:01:41"}
+{"cube": "&11", "result": "UNSAT", "kissat_s": 0.8, "drat": "VERIFIED (0.8s, proof 3.1 MB)", "time": "01:01:44"}
+{"cube": "|11", "result": "UNSAT", "kissat_s": 0.6, "drat": "VERIFIED (0.8s, proof 3.2 MB)", "time": "01:01:47"}
+{"cube": "&12", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.6s, proof 0.6 MB)", "time": "01:01:49"}
+{"cube": "|12", "result": "UNSAT", "kissat_s": 0.1, "drat": "VERIFIED (0.7s, proof 0.6 MB)", "time": "01:01:51"}
+{"cube": "&13", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.6s, proof 1.1 MB)", "time": "01:01:53"}
+{"cube": "|13", "result": "UNSAT", "kissat_s": 0.2, "drat": "VERIFIED (0.6s, proof 1.1 MB)", "time": "01:01:55"}
