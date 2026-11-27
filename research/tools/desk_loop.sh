@@ -4,6 +4,5 @@ cd /home/user/pvsnp/research/tools
 while true; do
   python3 poll4.py || exit 1
   python3 auto_twolit.py; rc=$?
-  [ $rc -eq 2 ] && exit 2
-  [ $rc -eq 3 ] && exit 3
+  [ $rc -eq 0 ] || [ $rc -eq 4 ] || exit $rc
 done

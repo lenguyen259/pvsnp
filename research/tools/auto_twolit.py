@@ -13,7 +13,8 @@ if g['title'].startswith('The two-lit function'):
     mono='Monotone2' in st
 elif g['title'].startswith('One-a-side promise') or g['title'].startswith('Table 1a'):
     FAM='rep'
-    m=re.search(r'Fin (\d+)\)? \(?v?\s*:?\s*Fin (\d+)\)? => \((\d+) : ℕ\)\.testBit.*\) (\d+)\s*$',st.strip()); if m: NL,NR,mask,K=map(int,m.groups())
+    m=re.search(r'Fin (\d+)\)? \(?v?\s*:?\s*Fin (\d+)\)? => \((\d+) : ℕ\)\.testBit.*\) (\d+)\s*$',st.strip())
+    if m: NL,NR,mask,K=map(int,m.groups())
     else:
         m=re.search(r'fun u v : Fin (\d+) => \((\d+) : ℕ\)\.testBit.*\) (\d+)\s*$',st.strip()); NL=NR=int(m.group(1)); mask=int(m.group(2)); K=int(m.group(3))
     mono=True
