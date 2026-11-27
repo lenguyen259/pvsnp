@@ -29,3 +29,6 @@
 {"cube": "&5_aaa", "result": "UNSAT", "kissat_s": 7.4, "drat": "VERIFIED (3.1s, proof 12.1 MB)", "time": "07:13:57"}
 {"cube": "&5_aao", "result": "UNSAT", "kissat_s": 54.7, "drat": "VERIFIED (161.0s, proof 137.7 MB)", "time": "07:17:34"}
 {"cube": "&5_aoa", "result": "UNSAT", "kissat_s": 101.2, "drat": "VERIFIED (280.3s, proof 209.6 MB)", "time": "07:23:58"}
+{"cube": "&5_aoo", "result": "UNSAT", "kissat_s": 572.5, "drat": "VERIFIED (1014.6s, proof 544.9 MB)", "time": "08:10:22"}
+{"cube": "&5_oaa", "result": "UNSAT", "kissat_s": 85.6, "drat": "VERIFIED (237.6s, proof 176.4 MB)", "time": "08:15:47"}
+{"cube": "&5_oao", "result": "UNSAT", "kissat_s": 938.3, "drat": "VERIFIED (1556.4s, proof 777.5 MB)", "time": "08:57:23"}
