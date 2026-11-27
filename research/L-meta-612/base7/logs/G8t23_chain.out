@@ -7,3 +7,4 @@ G8t23 13 {'cube': '&5_aoo', 'result': 'UNSAT', 'kissat_s': 1522.9, 'drat': 'VERI
 G8t23 13 {'cube': '&5_oaa', 'result': 'UNSAT', 'kissat_s': 192.1, 'drat': 'VERIFIED (496.3s, proof 282.1 MB)', 'time': '11:03:04'}
 G8t23 13 {'cube': '&5_oao', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '12:34:18'}
 G8t23 13 {'cube': '&5_ooa', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '13:24:21'}
+G8t23 13 {'cube': '|5_aaa', 'result': 'UNSAT', 'kissat_s': 8.7, 'drat': 'VERIFIED (3.0s, proof 11.5 MB)', 'time': '13:45:16'}

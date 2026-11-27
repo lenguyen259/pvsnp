@@ -33,3 +33,4 @@
 {"cube": "&5_oaa", "result": "UNSAT", "kissat_s": 206.6, "drat": "VERIFIED (463.2s, proof 287.6 MB)", "time": "11:03:51"}
 {"cube": "&5_oao", "result": "TIMEOUT", "kissat_s": 3000.0, "drat": "-", "time": "12:34:18"}
 {"cube": "&5_ooa", "result": "TIMEOUT", "kissat_s": 3000.0, "drat": "-", "time": "13:24:21"}
+{"cube": "|5_aaa", "result": "UNSAT", "kissat_s": 6.0, "drat": "VERIFIED (4.0s, proof 14.8 MB)", "time": "13:45:14"}
