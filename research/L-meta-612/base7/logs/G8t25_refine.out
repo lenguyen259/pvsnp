@@ -1,2 +1,4 @@
 G8t25 13 {'cube': '&5_ooaa', 'result': 'UNSAT', 'kissat_s': 512.4, 'drat': 'VERIFIED (1089.9s, proof 501.1 MB)', 'time': '16:05:55'}
 G8t25 13 {'cube': '&5_ooao', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '16:55:57'}
+G8t25 13 {'cube': '&5_oooa', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '18:29:23'}
+G8t25 13 {'cube': '&5_oooo', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '19:19:25'}
