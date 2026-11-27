@@ -18,6 +18,9 @@ elif g['title'].startswith('One-a-side promise') or g['title'].startswith('Table
     else:
         m=re.search(r'fun u v : Fin (\d+) => \((\d+) : ℕ\)\.testBit.*\) (\d+)\s*$',st.strip()); NL=NR=int(m.group(1)); mask=int(m.group(2)); K=int(m.group(3))
     mono=True
+elif 'Represents (fun u v : Fin' in st and 'FanInTwo' in st:
+    FAM='repnot'
+    m=re.search(r'C\.size ≤ (\d+).*Fin (\d+) => \((\d+) : ℕ\)\.testBit',st); K=int(m.group(1)); NL=NR=int(m.group(2)); mask=int(m.group(3)); mono=False
 else: sys.exit(2)
 stop=False
 def beat():
@@ -30,6 +33,8 @@ threading.Thread(target=beat,daemon=True).start()
 def log(x): open(SC+'/poll.log','a').write(datetime.datetime.utcnow().strftime('%H:%M:%S ')+x+'\n')
 if FAM=='two':
     env=dict(os.environ,NPTS=str(N)); args=['python3',HERE+'/syn3_tool.py',str(K),str(mask)]+(['mono'] if mono else [])
+elif FAM=='repnot':
+    env=dict(os.environ,NL=str(NL),NR=str(NR)); args=['python3',HERE+'/syn4_tool.py',str(K),str(mask)]
 else:
     env=dict(os.environ); args=['python3',HERE+'/syn2_tool.py',str(K),str(mask),str(NL),str(NR)]
 try: out=subprocess.run(args,capture_output=True,text=True,timeout=1500,env=env).stdout.strip()
