@@ -22,6 +22,8 @@ for i in range(400):
         open(SC+'/autorel.jsonl','a').write(json.dumps(dict(gap=g['id'],t=datetime.datetime.utcnow().isoformat(),kind=kind,level=lvl,points=t.get('points'),title=title))+'\n')
         log('AUTO-RELEASED %s kind=%s level=%s'%(g['id'],kind,lvl)); time.sleep(20); continue
     import re
+    if kind!='prove':
+        sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=other'%d['lease']['id']); log('SKIPPED %s kind=%s'%(g['id'],kind)); time.sleep(20); continue
     LOWER=re.compile(r'needs at least|at least \d+|No .*circuit|requires at least|cannot|not computable|is not|least|lower bound|False:',re.I)
     if kind=='prove' and not LOWER.search(title) and not (g.get('statement','').lstrip().startswith(('¬','PEqualNP.MetaComplexity.¬'))):
         sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=other'%d['lease']['id'])
