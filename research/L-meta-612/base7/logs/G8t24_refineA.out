@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/home/user/pvsnp/research/L-meta-612/base7/cubes7.py", line 42, in <module>
+    psz = os.path.getsize(prf); t1 = time.time()
+  File "<frozen genericpath>", line 86, in getsize
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/claude-0/-home-user/0fc37754-ef86-508b-897b-e5f1fd591c14/scratchpad/base7/G8t24_13_A5_oaoo.drat'
