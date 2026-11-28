@@ -1,0 +1,18 @@
+circs/01.json 1 0s
+circs/01_02.json 1 0s
+circs/01_02_12.json 12 0s
+circs/01_23.json 1 0s
+circs/03_13_23.json 3 0s
+circs/01_03_12.json 5 0s
+circs/03_12_13_23.json 13 0s
+circs/01_12_34.json 1 0s
+circs/04_14_24_34.json 15 0s
+circs/04_13_23_34.json 8 0s
+circs/01_04_12_23.json 2 0s
+circs/01_02_12_34.json 24 0s
+circs/04_14_23_24_34.json 59 0s
+circs/01_02_04_12_23.json 24 0s
+circs/04_12_13_23_34.json 87 2s
+circs/01_04_12_23_34.json 38 2s
+circs/01_04_14_23_24_34.json 431 33s
+DONE

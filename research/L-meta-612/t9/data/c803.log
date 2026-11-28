@@ -1,0 +1,2 @@
+G 8 0,3 Phi 14 s 13 s0 11 rows 40 vars 8347 clauses 167895 {'n0': 8, 'S': '0,3', 'cnd': True, 'zu': True, 'andcap': True, 'timeout': 2400, 'solver': 'cadical195'}
+C8{03} s=13 --cnd --zu --andcap: TIMEOUT (>2400 s, killed by outer timeout 2500 s)

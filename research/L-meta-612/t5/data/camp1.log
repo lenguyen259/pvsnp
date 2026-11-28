@@ -1,0 +1,14 @@
+{"name": "bull", "best": 100, "it": 2822899, "ninst": 0}
+{"name": "dstar", "best": 100, "it": 2882319, "ninst": 0}
+{"name": "C7ch", "best": 2, "it": 1262700, "ninst": 7}
+{"name": "triC5e", "best": 2, "it": 1609209, "ninst": 48}
+{"name": "2C5e", "best": 2, "it": 1092161, "ninst": 140}
+{"name": "tri-C5", "best": 2, "it": 983308, "ninst": 10}
+{"name": "net", "best": 100, "it": 2349550, "ninst": 0}
+{"name": "psun:5:0,1", "best": 2, "it": 1724500, "ninst": 29}
+{"name": "psun:6:0,1", "best": 2, "it": 1346136, "ninst": 3}
+{"name": "2tri+bridge", "best": 100, "it": 1333452, "ninst": 0}
+{"name": "constrS7", "best": 2, "it": 1268107, "ninst": 89}
+{"name": "psun:5:0,1,2", "best": 2, "it": 1474243, "ninst": 11}
+{"name": "Pet-v", "best": 0, "it": 864365, "ninst": 170}
+DONE

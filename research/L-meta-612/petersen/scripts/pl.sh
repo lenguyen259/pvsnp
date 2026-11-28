@@ -1,0 +1,1 @@
+for s in 23 22 21 20; do timeout 2500 python3 msat.py '[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]' $s --lemd --brk pet --timeout 2400 | grep RESULT >> pet_lemd.log; done

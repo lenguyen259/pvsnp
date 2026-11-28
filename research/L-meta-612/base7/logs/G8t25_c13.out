@@ -1,0 +1,31 @@
+G8t25 13 {'cube': '&0', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.5s, proof 1.1 MB)', 'time': '03:43:24'}
+G8t25 13 {'cube': '|0', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 1.1 MB)', 'time': '03:43:26'}
+G8t25 13 {'cube': '&1', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 0.8 MB)', 'time': '03:43:28'}
+G8t25 13 {'cube': '|1', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.7s, proof 0.8 MB)', 'time': '03:43:31'}
+G8t25 13 {'cube': '&2', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.6s, proof 0.8 MB)', 'time': '03:43:33'}
+G8t25 13 {'cube': '|2', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.7s, proof 3.0 MB)', 'time': '03:43:36'}
+G8t25 13 {'cube': '&3', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.7s, proof 3.1 MB)', 'time': '03:43:38'}
+G8t25 13 {'cube': '|3', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.8s, proof 3.2 MB)', 'time': '03:43:41'}
+G8t25 13 {'cube': '&4', 'result': 'UNSAT', 'kissat_s': 276.9, 'drat': 'VERIFIED (597.3s, proof 424.5 MB)', 'time': '03:58:17'}
+G8t25 13 {'cube': '|4', 'result': 'UNSAT', 'kissat_s': 201.9, 'drat': 'VERIFIED (510.3s, proof 322.0 MB)', 'time': '04:10:11'}
+G8t25 13 {'cube': '&5', 'result': 'TIMEOUT', 'kissat_s': 2400.0, 'drat': '-', 'time': '04:50:12'}
+G8t25 13 {'cube': '|5', 'result': 'TIMEOUT', 'kissat_s': 2400.0, 'drat': '-', 'time': '05:30:14'}
+G8t25 13 {'cube': '&6', 'result': 'UNSAT', 'kissat_s': 1254.2, 'drat': 'VERIFIED (1433.1s, proof 975.2 MB)', 'time': '06:28:23'}
+G8t25 13 {'cube': '|6', 'result': 'UNSAT', 'kissat_s': 1072.7, 'drat': 'VERIFIED (1573.9s, proof 862.0 MB)', 'time': '07:12:32'}
+G8t25 13 {'cube': '&7', 'result': 'UNSAT', 'kissat_s': 16.1, 'drat': 'VERIFIED (5.8s, proof 4.9 MB)', 'time': '07:12:55'}
+G8t25 13 {'cube': '|7', 'result': 'UNSAT', 'kissat_s': 14.7, 'drat': 'VERIFIED (3.9s, proof 9.7 MB)', 'time': '07:13:15'}
+G8t25 13 {'cube': '&8', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.7s, proof 3.0 MB)', 'time': '07:13:18'}
+G8t25 13 {'cube': '|8', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.7s, proof 2.9 MB)', 'time': '07:13:21'}
+G8t25 13 {'cube': '&9', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.8s, proof 3.0 MB)', 'time': '07:13:23'}
+G8t25 13 {'cube': '|9', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.8s, proof 3.2 MB)', 'time': '07:13:26'}
+G8t25 13 {'cube': '&10', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.8s, proof 3.1 MB)', 'time': '07:13:29'}
+G8t25 13 {'cube': '|10', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.7s, proof 2.9 MB)', 'time': '07:13:32'}
+G8t25 13 {'cube': '&11', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.7s, proof 3.1 MB)', 'time': '07:13:34'}
+G8t25 13 {'cube': '|11', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.7s, proof 3.2 MB)', 'time': '07:13:37'}
+G8t25 13 {'cube': '&12', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.6s, proof 0.6 MB)', 'time': '07:13:39'}
+G8t25 13 {'cube': '|12', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 0.6 MB)', 'time': '07:13:41'}
+G8t25 13 {'cube': '&13', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 1.1 MB)', 'time': '07:13:43'}
+G8t25 13 {'cube': '|13', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 1.1 MB)', 'time': '07:13:45'}
+G8t25 13 {'cube': '&5_aaa', 'result': 'UNSAT', 'kissat_s': 7.4, 'drat': 'VERIFIED (3.1s, proof 12.1 MB)', 'time': '07:13:57'}
+G8t25 13 {'cube': '&5_aao', 'result': 'UNSAT', 'kissat_s': 54.7, 'drat': 'VERIFIED (161.0s, proof 137.7 MB)', 'time': '07:17:34'}
+G8t25 13 {'cube': '&5_aoa', 'result': 'UNSAT', 'kissat_s': 101.2, 'drat': 'VERIFIED (280.3s, proof 209.6 MB)', 'time': '07:23:58'}

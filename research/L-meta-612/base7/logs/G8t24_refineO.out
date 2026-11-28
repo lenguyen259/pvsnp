@@ -1,0 +1,6 @@
+G8t24 13 {'cube': '|5_oaoa', 'result': 'UNSAT', 'kissat_s': 369.0, 'drat': 'VERIFIED (835.0s, proof 397.1 MB)', 'time': '02:06:20'}
+G8t24 13 {'cube': '|5_oaoo', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '02:56:21'}
+G8t24 13 {'cube': '|5_ooaa', 'result': 'UNSAT', 'kissat_s': 942.4, 'drat': 'VERIFIED (1662.6s, proof 849.9 MB)', 'time': '03:39:48'}
+G8t24 13 {'cube': '|5_ooao', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '04:36:24'}
+G8t24 13 {'cube': '|5_oooa', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '05:26:26'}
+G8t24 13 {'cube': '|5_oooo', 'result': 'TIMEOUT', 'kissat_s': 3000.0, 'drat': '-', 'time': '06:36:32'}

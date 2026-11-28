@@ -1,0 +1,4 @@
+/usr/local/lib/python3.13/site-packages/networkx/algorithms/graph_hashing.py:211: UserWarning: The hashes produced for graphs without node or edge attributes changed in v3.5 due to a bugfix (see documentation).
+  node_labels = _init_node_labels(G, edge_attr, node_attr)
+20 classes
+ONLY 0 {'E': [(0, 1), (1, 2), (2, 3), (3, 4), (4, 0), (0, 5), (1, 6), (2, 7), (3, 8), (4, 9), (5, 7), (7, 9), (9, 6), (6, 8), (8, 5)], 'n': 10, 'm': 15, 'tau': 6, 'phi': 20, 'lo': 17, 'lb': 18, 'status': 'open', 'log': [(17, 'UNSAT', 146.1), (18, 'TO', 3600)], 'to': 3600}

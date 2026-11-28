@@ -1,0 +1,17 @@
+CLASS 5 phi 11 s 10 case 0 & nrest 104 RESULT UNSAT 2.9s
+CLASS 5 phi 11 s 10 case 0 | nrest 104 RESULT UNSAT 95.2s
+CLASS 5 phi 11 s 10 case 1 & nrest 104 RESULT UNSAT 6.7s
+CLASS 5 phi 11 s 10 case 1 | nrest 104 RESULT UNSAT 56.9s
+CLASS 5 phi 11 s 10 case 2 & nrest 104 RESULT UNSAT 11.7s
+CLASS 5 phi 11 s 10 case 2 | nrest 104 RESULT UNSAT 28.0s
+CLASS 5 phi 11 s 10 case 3 & nrest 104 RESULT UNSAT 71.6s
+CLASS 5 phi 11 s 10 case 3 | nrest 104 RESULT UNSAT 413.9s
+CLASS 5 phi 11 s 10 case 4 & nrest 104 RESULT UNSAT 4.1s
+CLASS 5 phi 11 s 10 case 4 | nrest 104 RESULT UNSAT 105.8s
+CLASS 5 phi 11 s 10 case 5 & nrest 104 RESULT UNSAT 3.4s
+CLASS 5 phi 11 s 10 case 5 | nrest 104 RESULT UNSAT 56.2s
+CLASS 5 phi 11 s 10 case 6 & nrest 104 RESULT UNSAT 8.3s
+CLASS 5 phi 11 s 10 case 6 | nrest 104 RESULT UNSAT 61.5s
+CLASS 5 phi 11 s 10 case 7 & nrest 104 RESULT UNSAT 5.7s
+CLASS 5 phi 11 s 10 case 7 | nrest 104 RESULT UNSAT 29.7s
+DONE

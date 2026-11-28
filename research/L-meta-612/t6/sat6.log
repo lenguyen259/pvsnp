@@ -1,0 +1,39 @@
+== 7 0,1,2 --cnd 14:15:56
+G 7 0,1,2 Phi 14 s 13 s0 10 rows 43 vars 5884 clauses 120889 {'n0': 7, 'S': '0,1,2', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 77.4s
+== 7 0,1,4 --cnd 14:17:14
+G 7 0,1,4 Phi 14 s 13 s0 10 rows 40 vars 5733 clauses 113633 {'n0': 7, 'S': '0,1,4', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 75.3s
+== 8 0,1 --cnd 14:18:29
+G 8 0,1 Phi 14 s 13 s0 11 rows 43 vars 7413 clauses 163273 {'n0': 8, 'S': '0,1', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+== ABORTED (reader-count bug: pair at inserted side was counted as a reader of x_w); results above INVALID
+#### q2 (fixed reader count) Tue Nov 24 14:31:56 UTC 2026
+== 5 0,1,2 --cnd 14:31:56
+G 5 0,1,2 Phi 11 s 10 s0 7 rows 29 vars 2533 clauses 29979 {'n0': 5, 'S': '0,1,2', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 1.4s
+== 6 0,1 --cnd 14:31:58
+G 6 0,1 Phi 11 s 10 s0 8 rows 26 vars 3339 clauses 42600 {'n0': 6, 'S': '0,1', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 7.9s
+== 6 0,3 --cnd 14:32:06
+G 6 0,3 Phi 11 s 10 s0 8 rows 23 vars 3255 clauses 39497 {'n0': 6, 'S': '0,3', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 9.0s
+== 7 0,1,2 --cnd 14:32:15
+G 7 0,1,2 Phi 14 s 13 s0 10 rows 43 vars 6639 clauses 123174 {'n0': 7, 'S': '0,1,2', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 222.7s
+== 7 0,1,4 --cnd 14:35:57
+G 7 0,1,4 Phi 14 s 13 s0 10 rows 40 vars 6488 clauses 115918 {'n0': 7, 'S': '0,1,4', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 244.3s
+== 8 0,1 --cnd 14:40:02
+G 8 0,1 Phi 14 s 13 s0 11 rows 43 vars 8491 clauses 166507 {'n0': 8, 'S': '0,1', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 810.6s
+== 8 0,3 --cnd 14:53:32  (no RESULT line: killed by outer timeout 3700 s => TIMEOUT)
+G 8 0,3 Phi 14 s 13 s0 11 rows 40 vars 8319 clauses 158244 {'n0': 8, 'S': '0,3', 'cnd': True, 'timeout': 3600, 'solver': 'cadical195'}
+== 6 0,1,2,3 (no cnd) 15:55:12
+G 6 0,1,2,3 Phi 14 s 13 s0 9 rows 42 vars 4699 clauses 84393 {'n0': 6, 'S': '0,1,2,3', 'timeout': 3600, 'solver': 'cadical195'}
+RESULT UNSAT 34.1s
+DONE
+#### q3 Tue Nov 24 19:09:11 UTC 2026
+== 8 0,3 --cnd --pdist 19:09:11
+G 8 0,3 Phi 14 s 13 s0 11 rows 50 vars 11839 clauses 191969 {'n0': 8, 'S': '0,3', 'cnd': True, 'timeout': 3550, 'solver': 'cadical195', 'pdist': True}
+DONE3
+NOTE q3: no RESULT line; outer timeout 3700 s killed it => TIMEOUT

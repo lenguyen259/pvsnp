@@ -1,0 +1,3 @@
+lexbot: |Aut| = 8
+s 12 rows 152 rest 352 vars 50081 clauses 239019
+RESULT UNSAT 243.6s

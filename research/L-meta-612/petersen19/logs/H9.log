@@ -1,0 +1,15 @@
+H9 s=1 [rest2_H9.json lexbot] RESULT UNSAT 0.1s 
+H9 s=2 [rest2_H9.json lexbot] RESULT UNSAT 0.2s 
+H9 s=3 [rest2_H9.json lexbot] RESULT UNSAT 0.2s 
+H9 s=4 [rest2_H9.json lexbot] RESULT UNSAT 0.1s 
+H9 s=5 [rest2_H9.json lexbot] RESULT UNSAT 0.2s 
+H9 s=6 [rest2_H9.json lexbot] RESULT UNSAT 0.2s 
+H9 s=7 [rest2_H9.json lexbot] RESULT UNSAT 0.2s 
+H9 s=8 [rest2_H9.json lexbot] RESULT UNSAT 0.2s 
+H9 s=9 [rest2_H9.json lexbot] RESULT UNSAT 0.3s 
+H9 s=10 [rest2_H9.json lexbot] RESULT UNSAT 0.3s 
+H9 s=11 [rest2_H9.json lexbot] RESULT UNSAT 0.3s 
+H9 s=12 [rest2_H9.json lexbot] RESULT UNSAT 0.3s 
+H9 s=13 [rest2_H9.json lexbot] RESULT UNSAT 7.7s 
+H9 s=14 [rest2_H9.json lexbot] RESULT UNSAT 3292.9s 
+H9 s=15 [rest2_H9.json lexbot] TIMEOUT (5400 s solver limit, killed by outer timeout at 5700 s)

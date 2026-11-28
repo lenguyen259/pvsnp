@@ -1,0 +1,27 @@
+G8t23 13 {'cube': '&0', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 1.1 MB)', 'time': '03:43:24'}
+G8t23 13 {'cube': '|0', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 1.1 MB)', 'time': '03:43:26'}
+G8t23 13 {'cube': '&1', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.6s, proof 0.7 MB)', 'time': '03:43:28'}
+G8t23 13 {'cube': '|1', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.6s, proof 0.8 MB)', 'time': '03:43:31'}
+G8t23 13 {'cube': '&2', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.7s, proof 0.8 MB)', 'time': '03:43:33'}
+G8t23 13 {'cube': '|2', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.7s, proof 3.0 MB)', 'time': '03:43:35'}
+G8t23 13 {'cube': '&3', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.8s, proof 3.1 MB)', 'time': '03:43:38'}
+G8t23 13 {'cube': '|3', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.7s, proof 3.2 MB)', 'time': '03:43:41'}
+G8t23 13 {'cube': '&4', 'result': 'UNSAT', 'kissat_s': 227.4, 'drat': 'VERIFIED (520.9s, proof 338.1 MB)', 'time': '03:56:11'}
+G8t23 13 {'cube': '|4', 'result': 'UNSAT', 'kissat_s': 260.0, 'drat': 'VERIFIED (547.2s, proof 382.2 MB)', 'time': '04:09:40'}
+G8t23 13 {'cube': '&5', 'result': 'TIMEOUT', 'kissat_s': 2400.0, 'drat': '-', 'time': '04:49:41'}
+G8t23 13 {'cube': '|5', 'result': 'TIMEOUT', 'kissat_s': 2400.0, 'drat': '-', 'time': '05:29:43'}
+G8t23 13 {'cube': '&6', 'result': 'TIMEOUT', 'kissat_s': 2400.0, 'drat': '-', 'time': '06:23:36'}
+G8t23 13 {'cube': '|6', 'result': 'UNSAT', 'kissat_s': 2090.3, 'drat': 'VERIFIED (2629.2s, proof 1416.8 MB)', 'time': '07:42:17'}
+G8t23 13 {'cube': '&7', 'result': 'UNSAT', 'kissat_s': 16.8, 'drat': 'VERIFIED (3.5s, proof 4.7 MB)', 'time': '07:42:39'}
+G8t23 13 {'cube': '|7', 'result': 'UNSAT', 'kissat_s': 16.4, 'drat': 'VERIFIED (4.5s, proof 16.6 MB)', 'time': '07:43:02'}
+G8t23 13 {'cube': '&8', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.6s, proof 3.0 MB)', 'time': '07:43:04'}
+G8t23 13 {'cube': '|8', 'result': 'UNSAT', 'kissat_s': 0.6, 'drat': 'VERIFIED (0.6s, proof 2.9 MB)', 'time': '07:43:07'}
+G8t23 13 {'cube': '&9', 'result': 'UNSAT', 'kissat_s': 0.7, 'drat': 'VERIFIED (0.7s, proof 3.0 MB)', 'time': '07:43:09'}
+G8t23 13 {'cube': '|9', 'result': 'UNSAT', 'kissat_s': 0.8, 'drat': 'VERIFIED (0.8s, proof 3.1 MB)', 'time': '07:43:12'}
+G8t23 13 {'cube': '&10', 'result': 'UNSAT', 'kissat_s': 0.8, 'drat': 'VERIFIED (0.8s, proof 3.0 MB)', 'time': '07:43:15'}
+G8t23 13 {'cube': '|10', 'result': 'UNSAT', 'kissat_s': 0.8, 'drat': 'VERIFIED (0.8s, proof 2.9 MB)', 'time': '07:43:19'}
+G8t23 13 {'cube': '&11', 'result': 'UNSAT', 'kissat_s': 0.8, 'drat': 'VERIFIED (0.8s, proof 3.1 MB)', 'time': '07:43:22'}
+G8t23 13 {'cube': '|11', 'result': 'UNSAT', 'kissat_s': 0.8, 'drat': 'VERIFIED (0.8s, proof 3.2 MB)', 'time': '07:43:25'}
+G8t23 13 {'cube': '&12', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.7s, proof 0.6 MB)', 'time': '07:43:27'}
+G8t23 13 {'cube': '|12', 'result': 'UNSAT', 'kissat_s': 0.1, 'drat': 'VERIFIED (0.7s, proof 0.6 MB)', 'time': '07:43:30'}
+G8t23 13 {'cube': '&13', 'result': 'UNSAT', 'kissat_s': 0.2, 'drat': 'VERIFIED (0.7s, proof 1.0 MB)', 'time': '07:43:32'}

@@ -1,0 +1,2 @@
+for seed in 1 2 3 4 5 6 7 8; do timeout 400 python3 sa.py '[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]' lemd 30 5000000 $seed "$(cat init27.json)" | grep -E "BEST|final" | tail -2 >> sa_lemd.log; done
+for S in 26 24 22; do for seed in 11 12 13; do timeout 400 python3 sa.py '[[0,1],[1,2],[2,3],[3,4],[4,0],[0,5],[1,6],[2,7],[3,8],[4,9],[5,7],[7,9],[9,6],[6,8],[8,5]]' lemd $S 5000000 $seed | grep -E "BEST|final" | tail -2 >> sa_lemd.log; done; done

@@ -1,0 +1,160 @@
+# Petersen graph at sizes 18 and 19: an unconditional hierarchy plus SAT
+
+Question: does f_P (Petersen, |E| = 15, tau = 6, conjectured bound Phi = 20) have a monotone fan-in-2
+AND/OR circuit with 19 (or 18) gates? Labels: **PROVED** (argument here or cited proved theorem),
+**UNSAT** (SAT solver, encoding validated for non-vacuity; "DRAT" = kissat proof checked by drat-trim),
+**DATA**, **TIMEOUT**.
+
+RESULTS: section 5.
+
+## 1. Encoding `enc5.py` (new)
+
+Variables per gate i (gates n..n+s-1): left selector l(i,j), right selector r(i,k), j < k, op(i)
+(true = AND), child values L(i,t), R(i,t) and gate value v(i,t) for every row t. This is much smaller
+than the pair-selector encodings of `../petersen/sat19/enc*.py`: a restriction costs 4 binary clauses per
+gate, because "gate i survives restriction rho" is just L(i,hi) & ~L(i,lo) & R(i,hi) & ~R(i,lo).
+
+Rows: the 15 edges (output 1) and the 15 maximal independent sets (output 0) determine a monotone
+function; plus singleton rows (for Fact C / violation) and two rows per restriction.
+
+Constraints and why each is sound. We prove "no circuit of size <= s" by showing that every size m <= s
+is UNSAT, where the size-m encoding only needs to admit **some** circuit of size m *if the minimum size
+is m*:
+* (min) every non-output gate is used; gates pairwise distinct and non-constant on the 30 core rows.
+  If two gates agree on the core rows, replacing one by the other keeps every value on the core rows,
+  so the output is still correct on the 30 rows, hence (monotone) still computes f with fewer gates.
+  A gate constant on the core rows can be replaced by a constant and propagated away.
+* (canon) depth-canonical order: depth non-decreasing; equal depth => (j,k,op) strictly
+  lex-increasing (AND before OR). Every circuit has exactly one such ordering (level by level).
+* (lexbot, PROVED symmetry breaking) let b be the 2*C(n,2)-bit vector "some gate reads input pair p with
+  op o". We require b to be lex-maximal over Aut(G) (all automorphisms, computed with networkx). Every
+  circuit has an automorphic image with lex-max b; all other constraints are Aut-invariant (the
+  restriction families below are closed under Aut by construction: they are all (A,B) with a bound
+  that depends only on the isomorphism type). Supersedes `--symb`.
+* (factc) Fact C (argument.md/girth5.md): every edge uv is created at an AND gate h1&h2 with
+  u in S1\S2, v in S2\S1. Valid for every circuit.
+* (viol) Theorem S2 (nf/nf.md, PROVED for C4-free G): a circuit satisfying N1 and N3 has size >= Phi.
+  So for s < Phi some AND gate violates N1 (h(e_u)=1) or N3 (u in S1, v in S2, u != v, uv not an edge).
+  Used only for s < Phi(G).
+* (rest) restriction constraints, the new lever. A restriction rho sets an independent set A to 1 and
+  a set B (disjoint from A) to 0; U = N(A)\B stays free, H = G - A - N(A) - B. Then
+  f|rho = OR_{u in U} x_u  v  f_H. Gate g *survives* if both its inputs are non-constant under rho
+  (for monotone g: value 1 on the row hi = all-ones-except-B and 0 on lo = indicator of A). The
+  surviving gates, with copies collapsed, form a circuit for f|rho, so:
+  - U empty, H a pseudoforest: #surviving AND >= tau(H), #surviving OR >= |E(H)| - 1
+    (**Theorem PF**, t9.md, Lean PF_AND.lean + L_meta_599; H is C4-free as an induced subgraph);
+  - U empty, H with a bound L(H) PROVED in this folder (table `proven.json`): #surviving >= L(H);
+  - U non-empty: #surviving >= L(H) + |U| if H has an edge (zero the u in U one at a time: f still
+    depends on the next u, so a reader of x_u is eliminated each time; then L(H) remain), and
+    >= |U| - 1 if H is edgeless.
+  Families: `grest.py` (U empty) and `grest2.py` (all, with a threshold minL on the bound, which
+  keeps the family Aut-invariant).
+
+Validation (non-vacuity): for every graph, the U (star-cover) circuit of size Phi, put in lexbot form,
+is accepted at s = Phi with all flags except viol (`mku.py`, `ulb.py`, `--fixc`). For Petersen also the
+13-OR size-20 circuit of deg3.md is accepted (also with viol). `--lexbot` rejects the U circuit in a
+non-lex-max labelling (sanity check). All SAT models are decoded and verified on all 2^n inputs.
+
+## 2. The hierarchy (making the old conditional assumption unconditional)
+
+Induced subgraphs of P that are not pseudoforests, up to isomorphism: H7 = P - (path of 3 vertices)
+(7 v, 8 e, Phi 11), H8a = P - edge (8 v, 10 e, Phi 13), H8b = P - non-edge (8 v, 9 e, Phi 12),
+H9 = P - v (9 v, 12 e, Phi 16). Every induced subgraph on <= 6 vertices, and every 7-vertex one other
+than H7, is a pseudoforest (checked in plib.py/grest.py). Each level is proved with the levels below.
+
+## 3. Runs and results
+
+All solver times are wall-clock on a shared 4-core machine. Sizes s <= 4 are trivially UNSAT at every
+level (some restriction demands more surviving gates than s; the encoder then emits an empty clause).
+
+### 3.1 Hierarchy levels
+
+| graph | Phi | sizes | result | certificate |
+|---|---|---|---|---|
+| H7 = [01,05,16,24,46,63,35,52] | 11 | s=7..10 (`rest_H7.json`, factc, viol) | UNSAT (s=10: 68.5 s pysat) | DRAT, s=5..10 kissat + drat-trim VERIFIED |
+| H8b = P - {0,2} | 12 | s<=11 (`rest_H8b.json`, uses H7) | UNSAT (s=11: 0.4 s) | DRAT s=5..11 VERIFIED |
+| H8a = P - {0,1} | 13 | s<=11 (`rest_H8a.json`); s=12 (`rest2_H8a.json`, lexbot) | UNSAT (s=12: 243.6 s pysat) | DRAT s=5..12 VERIFIED |
+| H9 = P - 0 | 16 | s<=14 (`rest2_H9.json`, lexbot, uses H7/H8a/H8b) | UNSAT (s=13: 7.7 s, s=14: 3292.9 s pysat) | no DRAT yet |
+| H9 | 16 | s=15 monolithic | TIMEOUT (pysat 5400 s; kissat 5400 s) | |
+| H9 | 16 | s=15 cube-and-conquer | see 3.3 | |
+
+Non-vacuity at s = Phi (U circuit in lexbot form, all flags except viol): SAT for H7 (also found
+unconstrained at s=11 in 7.5 s), H8a, H8b, H9 and P (both `rest2_P_noH9.json`; P also accepts the
+13-OR circuit with viol).
+
+**PROVED (modulo the cited theorems and solver correctness; DRAT-certified):** C(f_H7) = 11,
+C(f_H8b) = 12, C(f_H8a) = 13 (upper bounds: U circuits). The H7 value was open in sat19/README.md.
+
+### 3.2 Petersen, unconditional family (`rest2_P_noH9.json`: pseudoforests + H7/H8a/H8b + U-singletons, minL 8)
+
+| s | result |
+|---|---|
+| 1..14 | UNSAT (s=14: 7.4 s) |
+| 15 | UNSAT (559.1 s pysat) |
+| 16 | TIMEOUT (no result after ~1 h; a parallel kissat run stopped after 46 min) |
+
+So **C(f_P) >= 16 unconditionally** (UNSAT, not yet DRAT-certified for s=15). Earlier (first try,
+weak family `rest_all.json` = pseudoforest restrictions only) s=15 did not finish in 600 s.
+
+### 3.3 H9 at s = 15: cube-and-conquer (in progress / undetermined)
+
+All cubes use the full H9 encoding (`rest2_H9.json`, factc, viol, lexbot) plus cube literals; kissat via
+`cubes.py` (results in `logs/cubes_H9_15*.jsonl`). Every split is a complete case partition:
+* level b (`jobs_H9_15b.txt`): output op (2) x prefix tree on the first 6 lexbot bits
+  (b(01,&)=1 | b(01,&)=0,b(01,|)=1 | ... | all six 0): 14 cubes. 6 UNSAT in about 10 s each (exactly the
+  cubes where the bottom layer has an AND on the pair 01, 02 or 03), 8 TIMEOUT at 600 s.
+* level c (`jobs_H9_15c.txt`): each of the 8 hard cubes x exact AND count k = 0..15: 128 cubes,
+  **106 UNSAT, 22 TIMEOUT** at 300 s. The hard ones all have k in {4,5,6,7}.
+* level d (`refine.py`, `jobs_H9_15d.txt`): each of the 22 x prefix tree on the next 4 unfixed lexbot bits:
+  110 cubes, **87 UNSAT, 23 TIMEOUT** at 400 s (one cube, p6_a_k7_r4, needed 469 s).
+* level e (`refine2.py`, sample): split by the first gate (op and input pair, 72 children). Sample on 2 of the
+  23 parents: 144 cubes, 137 UNSAT, 7 TIMEOUT at 300 s (6 of them under the same parent). The hardness
+  does not shrink at this level: the hard part is not the bottom layer.
+* long sample (`jobs_H9_15f.txt`): 2 hard level-e children at 3600 s: p1_o_k5_r1_g01o **UNSAT in 1626 s**
+  (so level-d cube p1_o_k5_r1 is closed: its other 71 children were UNSAT), p6_o_k5_r4_g12a **TIMEOUT 3600 s**
+  (its parent has at least 6 children that survive 300 s).
+* level g (`jobs_H9_15g.txt`): the other 22 open level-d cubes, whole, at 7200 s each, 2 workers; started
+  2026-11-26 ~04:35 UTC and left running at hand-off (resumable: `cubes.py` skips finished cubes).
+
+Cost estimate from the samples: an open level-d cube costs from ~0.5 h to well over 2 h of kissat time; with
+22 of them the remaining work is roughly 20-50 CPU-hours.
+
+Status: **H9 s=15 undetermined.** Of the partition, everything is UNSAT except 22 level-d cubes
+(all names in `jobs_H9_15g.txt`; results will appear in `logs/cubes_H9_15g.jsonl`).
+Coverage of the partition: level b is a complete prefix tree x output op; level c adds every exact AND count;
+level d is again a complete prefix tree on further bits; level e enumerates every (op, pair) of gate n.
+
+## 4. Search for a size-19 circuit (DATA, nothing found)
+
+* `ls.py` simulated annealing on full 1024-row truth tables: could not even reach size 20 (best 18 wrong
+  rows in 150 s). Useless as a search method here.
+* `lns.py` large-neighbourhood SAT: keep a random downward-closed set of K gates of a known size-20 circuit
+  (U, OR13) and ask enc5 (no canon, factc) for the remaining 19-K gates. 126 neighbourhoods
+  (K=13: 60, K=12: 60, K=11: 6), **all UNSAT** (K=11 ~65 s each). So no size-19 circuit shares 11-13
+  downward-closed gates with these two circuits in the sampled neighbourhoods.
+* kissat on the full s=20 encoding (no viol) found no circuit in 1194 s (TIMEOUT).
+
+## 5. Verdict and precise remaining gap
+
+* **Size 19 and size 18: undetermined.** No circuit found; no UNSAT proof.
+* **Unconditional lower bound: C(f_P) >= 16** (sizes <= 15 UNSAT with only PROVED constraints; s=15 took
+  559 s; DRAT for P not yet produced). s = 16 timed out after ~1 h.
+* **New exact values (PROVED via DRAT-certified UNSAT + U circuits):** C(f_H7) = 11, C(f_H8b) = 12,
+  C(f_H8a) = 13. **C(f_{P-v}) >= 15** (UNSAT s <= 14, pysat only, no DRAT); C(f_{P-v}) >= 16 is open:
+  the s = 15 instance is split into cubes, all UNSAT except 22 open cubes (section 3.3).
+* What every UNSAT depends on (no conjecture is used): Theorem PF (Lean), Theorem S2 and Fact C (hand
+  proofs in nf.md / girth5.md), the sequential-elimination bound for U-singletons (section 1), the
+  minimum-circuit normal forms (section 1), and solver correctness (DRAT where stated).
+* Gap, in order: (1) close the 22 H9 s=15 cubes (estimate 20-50 CPU-h) -> C(f_{P-v}) = 16, which makes the
+  old conditional constraint "x_v := 0 eliminates <= s-16 gates" unconditional; (2) with it, redo P at
+  s = 16, 17 (the old conditional runs did <= 17 in 146 s with a weaker encoding, so this is likely fast);
+  (3) P at s = 18 and 19 still need a large cube-and-conquer (old conditional s=18 cases ran 300-1800 s
+  each, several timed out). Nothing in this folder brings 19 within a few CPU-hours.
+
+## 6. Files
+
+`plib.py` (graph, Aut, canon, lexbot form), `enc5.py` (encoder), `grest.py`/`grest2.py` (restriction
+families), `proven.json` (H7=11, H8a=13, H8b=12), `rest*.json`, `mku.py`/`ulb.py`/`known.py` (validation
+circuits), `runlevel.sh`/`runlevel2.sh` (level runs), `drat.sh` (kissat+drat-trim), `cubes.py`,
+`refine.py`, `refine2.py`, `jobs_*.txt` (cube partitions), `runk.py`, `lns.py`, `ls.py`, `kissat`,
+`drat-trim` (built from source); logs in `logs/`.

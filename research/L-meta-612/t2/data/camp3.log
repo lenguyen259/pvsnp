@@ -1,0 +1,14 @@
+{"name": "net", "kinds": "mAB", "found": null, "best": 1, "it": 702493}
+{"name": "bull", "kinds": "mAB", "found": null, "best": 2, "it": 906685}
+{"name": "2tri+bridge", "kinds": "mAB", "found": "6=1|0 7=2&3 8=5|7 9=4&8 10=0|9 11=1&10 12=9|11 13=2|12 14=8|4 15=12|3 16=14&15 17=13&6 18=16|17", "size": 13, "P": 10, "nand": 5, "it": 132050, "t": 24.36684560775757}
+{"name": "2tri+bridge", "kinds": "AB", "found": null, "best": 3, "it": 487252}
+{"name": "constrS7", "kinds": "mAB", "found": "7=2|3 8=2|4 9=6&5 10=9|0 11=10&4 12=11|5 13=10|8 14=1&13 15=12|14 16=6|14 17=16&7 18=3|10 19=15&18 20=17|19 21=20|14", "size": 15, "P": 12, "nand": 5, "it": 259451, "t": 64.04568934440613}
+{"name": "constrS7", "kinds": "AB", "found": null, "best": 1, "it": 350852}
+{"name": "n8", "kinds": "mAB", "found": null, "best": 1, "it": 340112}
+{"name": "P6", "kinds": "mAB", "found": null, "best": 2, "it": 688796}
+{"name": "C7", "kinds": "mAB", "found": null, "best": 2, "it": 470488}
+{"name": "Pet-v", "kinds": "mAB", "found": null, "best": 1, "it": 231113}
+{"name": "Pet", "kinds": "mAB", "found": null, "best": 1, "it": 160736}
+{"name": "sun5", "kinds": "mAB", "found": null, "best": 1, "it": 255986}
+{"name": "C6+2p", "kinds": "mAB", "found": null, "best": 1, "it": 383955}
+DONE

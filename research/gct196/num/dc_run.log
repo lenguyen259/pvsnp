@@ -1,0 +1,8 @@
+dc 4 7 3 seed 0 cost 3.48e-28 check 5.49e-15 time 0.2
+dc 4 7 3 seed 1 cost 8.86e-30 check 5.84e-16 time 0.3
+dc 4 7 3 seed 2 cost 1.44e-29 check 9.74e-16 time 0.3
+dc 4 7 3 seed 3 cost 1.62e-28 check 4.34e-15 time 0.3
+dc 4 7 4 seed 0 cost 0.000727 check 0.00967 time 2.6
+dc 4 7 4 seed 1 cost 0.000254 check 0.00422 time 13.9
+dc 4 7 4 seed 2 cost 0.000194 check 0.0068 time 3.5
+dc 4 7 4 seed 3 cost 0.000201 check 0.0077 time 10.8
