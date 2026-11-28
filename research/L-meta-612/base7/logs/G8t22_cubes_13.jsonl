@@ -42,3 +42,4 @@
 {"cube": "|5_oaa", "result": "UNSAT", "kissat_s": 165.5, "drat": "VERIFIED (349.8s, proof 237.1 MB)", "time": "12:30:42"}
 {"cube": "|5_oao", "result": "UNSAT", "kissat_s": 1731.6, "drat": "VERIFIED (2782.2s, proof 1154.5 MB)", "time": "15:00:18"}
 {"cube": "|5_ooa", "result": "UNSAT", "kissat_s": 2506.9, "drat": "VERIFIED (4446.2s, proof 1791.5 MB)", "time": "19:41:16"}
+{"cube": "|5_ooo", "result": "UNSAT", "kissat_s": 2950.0, "drat": "VERIFIED (5043.5s, proof 2218.5 MB; checked by direct drat-trim run)", "time": "01:09:00"}

@@ -15,3 +15,5 @@ Status: open. Not proved, no counterexample found.
   (UNSAT at size bound - 1). `s7.txt`: the 7-vertex sweep (46 of 73 checked, 27 timed out).
 
 Run a script with `python3 -I scripts/<name>.py` after `pip install python-sat`.
+
+G8t22 (s=13) closed 2026-11-28: all 28 top cubes UNSAT, k=5 via 8 sub-cubes each op; |5_ooo checked by a direct drat-trim run (5043 s). Recorded with base7/addledger2.py (37 graphs).

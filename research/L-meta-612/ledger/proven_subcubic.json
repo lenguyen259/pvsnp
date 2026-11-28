@@ -4612,5 +4612,71 @@
 }
 },
 "date": "2026-11-27"
+},
+{
+"name": "G8t22",
+"edges": [
+[
+0,
+1
+],
+[
+0,
+2
+],
+[
+0,
+3
+],
+[
+1,
+4
+],
+[
+1,
+6
+],
+[
+2,
+5
+],
+[
+2,
+7
+],
+[
+4,
+6
+],
+[
+4,
+7
+],
+[
+5,
+7
+]
+],
+"n": 8,
+"m": 10,
+"tau": 5,
+"phi": 14,
+"L": 14,
+"status": "UNSAT-all-m",
+"label": "DRAT",
+"method": "base7/run7.py: enc5.py sizes 1..Phi-1 each UNSAT (kissat 4.0.4); restrictions from proven bounds of proper induced subgraphs",
+"flags": "sizes 1..12: run7.py; size 13: cubes7.py (top cubes by output op x #AND; k=5 cubes split on op of gates 8,9,10 into 8 sub-cubes; 42 cubes total, all UNSAT, all DRAT VERIFIED), log base7/logs/G8t22_cubes_13.jsonl",
+"subgraph_bounds_missing": [],
+"validation": "U circuit accepted at s=Phi (fixc, rest+factc+lexbot)",
+"kissat_total_s": 11.6,
+"drat": "yes",
+"per_size": {
+"13": {
+"result": "UNSAT",
+"method": "42 cubes (cubes7.py, --splitops 8,9,10 for k=5)",
+"drat": "all VERIFIED"
+}
+},
+"date": "2026-11-28"
 }
 ]
