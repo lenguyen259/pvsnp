@@ -75,3 +75,4 @@ Steps proved ahead of time but never assigned are not listed here: L-meta-413, 4
 - 2026-11-27 L-meta-23087 (3x6 mask 14205, RepSizeAtMost 8): syn2.py 8 UNSAT. Released statement_seems_false.
 - 2026-11-27 L-meta-20779 (Table 1a 5x5 mask 30510080, RepSizeAtMost 7): syn2 UNSAT. Released statement_seems_false.
 - 2026-11-28 L-meta-17667 (prove, solid, 45 pts, TopForm G11 step 2 of 2): statement is a structural inequality over arbitrary circuits (centreless/orN\lam counting); needs the TopForm helper lemmas not available here. Released missing_lemma.
+- 2026-11-28 L-meta-7909 (prove, solid, 50 pts, projective-plane rung 0, step 2 of 2): N*q <= 100*size for sound monotone circuits accepting incidences; full combinatorial lower bound, no helper lemma available. Released missing_lemma.
