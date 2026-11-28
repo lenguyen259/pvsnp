@@ -25,6 +25,8 @@ for i in range(400):
     if kind!='prove':
         sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=other'%d['lease']['id']); log('SKIPPED %s kind=%s'%(g['id'],kind)); time.sleep(20); continue
     LOWER=re.compile(r'needs at least|at least \d+|No .*circuit|requires at least|cannot|not computable|is not|least|lower bound|False:',re.I)
+    if kind=='prove' and g.get('statement','').lstrip().startswith('∃'):
+        sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=other'%d['lease']['id']); log('SKIPPED %s existence statement'%g['id']); time.sleep(20); continue
     SKIPFAM=re.compile(r'Rung 0 target|top-form fan-in|TopForm|A step toward: Rung|A step toward: Fano plane',re.I)
     if kind=='prove' and SKIPFAM.search(title):
         sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=missing_lemma'%d['lease']['id']); log('SKIPFAM %s'%g['id']); time.sleep(20); continue
