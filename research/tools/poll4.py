@@ -27,7 +27,7 @@ for i in range(400):
     LOWER=re.compile(r'needs at least|at least \d+|No .*circuit|requires at least|cannot|not computable|is not|least|lower bound|False:',re.I)
     if kind=='prove' and g.get('statement','').lstrip().startswith('∃'):
         sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=other'%d['lease']['id']); log('SKIPPED %s existence statement'%g['id']); time.sleep(20); continue
-    SKIPFAM=re.compile(r'Rung 0 target|top-form fan-in|TopForm|A step toward: Rung|A step toward: Fano plane|Small cases only',re.I)
+    SKIPFAM=re.compile(r'Rung 0 target|top-form fan-in|TopForm|A step toward: Rung|A step toward: Fano plane|Small cases only|on 24 vertices with 44 edges',re.I)
     if kind=='prove' and (SKIPFAM.search(title) or (title.startswith('A step toward') and len(g.get('statement',''))>900)):
         sh('curl','-s','-m','30','-X','POST','https://pequalnp.com/desk/release?lease=%s&reason=missing_lemma'%d['lease']['id']); log('SKIPFAM %s'%g['id']); time.sleep(20); continue
     if kind=='prove' and not LOWER.search(title) and not (g.get('statement','').lstrip().startswith(('¬','PEqualNP.MetaComplexity.¬'))):
